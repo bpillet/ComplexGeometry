@@ -1,0 +1,142 @@
+\documentclass[a4paper,10pt,draft]{article}
+\usepackage[thm,couleur,draft]{dipneuste}
+
+\begin{document}
+\paragraph*{Notations.} $k$ sera un corps algébriquement clos. Et $V$ un $k$-espace vectoriel de dimension finie $d$. On notera $V^*$ son dual.
+
+On notera $=$ ou $\simeq$ les isomorphismes naturels (selon si ils sont plus ou moins naturels au sens commun) et $\cong$ ceux qui ne sont pas canoniques dans le contexte. Par exemple on pourra noter $V \cong k^d$. Par contre si préalablement, une base de $V$ a été fixée, on aurait du noter $V \simeq k^d$ (ou $V=k^d$), il existe un choix canonique d'un tel isomorphisme pour une base fixée.
+\section{Notions de base}
+\subsection{Algèbre multilinéaire}
+\begin{itemize}
+\item Produit tensoriel. Algèbre tensorielle
+\item Produit symétrique. Algèbre symétrique
+\item Produit extérieur. Algèbre extérieure
+\item Algèbre graduée
+\end{itemize}
+
+\begin{prop}
+\[
+S(V^*) \simeq K[V]
+\]
+\end{prop}
+
+\begin{prop}
+Si $G \subseteq V^*$ et $F \subseteq V$ sont deux sous-espaces vectoriels alors
+il existe des applications naturelles $V^{**} = V \rightarrow G^*$ et $V^* \rightarrow F^*$ dites de "restriction" obtenues par dualité à partir des inclusions ci-dessus. Et de plus, les suites 
+\[
+0 \rightarrow G^\circ \rightarrow V \rightarrow G^* \rightarrow 0
+\]
+et
+\[
+0 \rightarrow  F^\bot \rightarrow V^* \rightarrow F^* \rightarrow 0
+\]
+sont exactes.
+\end{prop}
+\subsection{Fibrés vectoriels}
+Soit $f : M \rightarrow N$ lisse, alors
+\begin{center}\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=2em,
+column sep=2.5em, text height=1.5ex, text depth=0.25ex]
+{ TM & f^*TN & TN \\
+   & M & N \\ };
+\path[->, font=\scriptsize]
+(m-1-1) edge node[auto] {$df$} (m-1-2)
+(m-1-1) edge node[auto] {} (m-2-2)
+(m-2-2) edge node[auto] {$f$} (m-2-3)
+(m-1-2) edge node[auto] {} (m-2-2)
+(m-1-2) edge node[auto] {$f_*$} (m-1-3)
+(m-1-3) edge node[auto] {} (m-2-3);
+\end{tikzpicture}\end{center}
+
+En particulier, on a une suite exacte de fibrés vectoriels sur $M$, \marginpar{peut-être faux}
+\[
+0 \rightarrow K \rightarrow TM \rightarrow f^*TN \rightarrow Q \rightarrow 0
+\]
+
+\begin{itemize}
+\item $Q = 0$ \ssi $f$ submersion \\
+Dès lors $K$ est le fibré \textit{tangent aux fibres de $f$ dans $M$}
+\item $K = 0$ \ssi $f$ immersion \\
+Dès lors $Q$ est le tiré-en-arrière du fibré \textit{normal à l'image de $f$ dans $N$}
+\end{itemize}
+
+
+
+
+\section{L'espace projectif}
+On note
+\[
+\Pro(V) = \ens{\ \ker \varphi}{\varphi : V \rightarrow k \; \text{ linéaire surjective }}
+\]
+Et
+\[
+\Oo(-1) = \ens{(K,\psi)\in \Pro V \times V^*}{\ker \psi \subseteq K}
+\]
+qui est un fibré localement libre (et inversible) de rang $1$.
+
+Fixons un $K \in \Pro(V)$.
+
+Alors $\Oo(-1)_K = \ens{\psi \in V^*}{\ker \psi \subseteq K} \subseteq V^*$
+
+On a une application naturelle
+$V \rightarrow (\Oo(-1)_K)^*$ qui a $v$ associe l'évaluation en $v$ : À $\psi \in V^*$ telle que $\ker \psi \subseteq K$, on associe $\psi(v)$. Dès lors le noyau de cette application est $K$, ce qui peut se résumer par la suite exacte suivante
+\[
+0 \rightarrow K \rightarrow V \rightarrow \Oo(-1)_K^* \rightarrow 0
+\]
+
+\begin{defi}
+On note
+\[
+\Oo(1) = \Oo(-1)^*
+\]
+Le fibré inversible dual, que l'on appelle le \textit{fibré universel} ou \textit{hyperplan}.
+\end{defi}
+On peut reformuler le résultat obtenu~:
+Pour $K \in \Pro V$, la suite
+\[
+0\rightarrow K \rightarrow V \rightarrow \Oo(1)_K \rightarrow 0
+\]
+est exacte.
+
+\section{Quelques suites exactes de fibrés vectoriels et leurs interprétations géométriques}
+\subsection{Suite exacte d'Euler}
+\[
+0 \rightarrow \Oo \rightarrow \underline{V} \otimes \Oo(1) \rightarrow T\Pro V \rightarrow 0
+\]
+
+
+
+\paragraph*{Unrelated}
+Il paraîtrait que le tangent en un point s'identifie naturellement à un espace vectoriel de la manière suivante
+\[
+T_K \Pro V \simeq \Hom(K,K^\circ)
+\]
+
+
+
+
+\paragraph*{also unrelated} Les $\Oo(n)$ pour $n>0$ ne sont JAMAIS des sous-fibré d'un fibré vectoriel trivial ! ! Tandis que les $\Oo(-n)$ le sont.
+
+En effet un section au dessus de $\Pro^n$ d'un fibré trivial est constante. Ainsi tout sous-fibré d'un fibré trivial ne peut avoir comme section que les sections constantes. Et en fait dans le cas des $\Oo(-n)$, cette constante doit appartenir à toutes les fibres, qui sont, dans le cas $\Oo(-1)$, toutes les droites de $\C^{n+1}$. Du coup cette constante est nécessairement nulle.
+Réciproquement les section des $\Oo(n)$ sont des restrictions de section de $((C^m)^\otimes n)*$ donc des formes $n$-linéaires sur $\C^m$. Reste à montrer que ce sont exactement celles-ci.
+
+\pagebreak
+
+\paragraph{Things to tell}\todo{ }
+\begin{itemize}
+\item Proj
+\item Euler exact sequence
+\item Chern class, Picard group…
+\item Tautological bundle
+\item Universal bundle
+\item Canonical bundle
+\item Bezout thm
+\item Grothendieck-Birkoff thm
+\end{itemize}
+
+
+
+%\bibliographystyle{amsalpha}
+%\nocite{*}
+%\bibliography{biblio}
+\end{document}
