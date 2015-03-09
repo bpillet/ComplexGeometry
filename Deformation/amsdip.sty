@@ -1,0 +1,225 @@
+%% Informations générales
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{amsdip}
+
+%% Chargement des extensions
+%CARACTERES
+\RequirePackage[utf8x]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{ucs}
+%GEOMETRY
+\RequirePackage{geometry}%\geometry{a4paper, hmargin=50pt, vmargin=75pt} % Régler les marges horizontales et verticales.
+%LANGUAGE
+\RequirePackage[english,francais]{babel}
+%SYMBOLS
+\RequirePackage{bm,amsmath,amssymb,amsthm}
+%GRAPHICS
+\RequirePackage{graphicx} % Permet de mettre des images
+%THEOREMS
+\RequirePackage{thmbox} % Met les théorèmes dans des boites
+%ENUMERATE
+\RequirePackage{enumerate} % Permet de faire des énumérations genre (i), (ii), (iii).
+%INDEX
+% Pas de makeindex, déjà pouvu par amsart
+%COULEURS PERSOS
+\RequirePackage{color}
+%FLECHES, SYMBOLES, GRAPHES, AUTOMATES
+\RequirePackage{tikz} % ajoute des symboles de flèches et autres.
+\usetikzlibrary{matrix,arrows,automata} % Permet de constuire des graphes.
+%ALGORITHMES
+\RequirePackage[ruled,vlined,french]{algorithm2e} % Permet d'écrire des algos.
+
+%LINKS
+\RequirePackage{hyperref} % toujours le mettre en dernier !
+\hypersetup{%
+colorlinks = true,%
+linkcolor = black,%
+urlcolor = blue,%
+citecolor = blue}
+
+
+
+%% Déclaration des booléens et des options
+\newif\if@category\@categoryfalse%
+\newif\if@thm\@thmfalse%
+\newif\if@couleur\@couleurfalse%
+\newif\if@draft\@draftfalse%
+\newif\if@minimal\@minimalfalse%
+
+\DeclareOption{ct}{\@categorytrue}
+\DeclareOption{thm}{\@thmtrue}
+\DeclareOption{couleur}{\@couleurtrue}
+\DeclareOption{draft}{\@drafttrue}
+\DeclareOption{minimal}{%
+	\@minimaltrue%
+	\@couleurfalse%
+	\@thmfalse%*
+	\@categoryfalse%
+}
+
+\DeclareOption*{%
+\PackageWarning{dipneuste}{Option inconnue : ‘\CurrentOption’}%
+}
+
+
+\ProcessOptions\relax
+
+
+%% Définition des commandes
+%MATHBB
+\newcommand\N{\mathbb{N}} % Entiers naturels
+\newcommand\Z{\mathbb{Z}} % Entiers relatifs
+\newcommand\Q{\mathbb{Q}} % Rationnels
+\newcommand\R{\mathbb{R}} % Réels
+\newcommand\C{\mathbb{C}} % Complexes
+\newcommand\Ha{\mathbb{H}} % Quaternions (Ha__milton)
+\newcommand\K{\mathbb{K}} % Corps quelconque
+\newcommand\E{\mathbb{E}} % Espérance
+\newcommand\F{\mathbb{F}} % Corps fini
+\newcommand\Pro{\mathbb{P}} %  Proba
+\newcommand\B{\mathbb{B}} % aucune idée
+\newcommand\T{\mathbb{T}} % Tore
+\def\S{\mathbb{S}} % Sphère
+
+%MATHCAL
+\newcommand\Oo{\mathcal{O}}
+\newcommand\Uu{\mathcal{U}}
+\newcommand\Gg{\mathcal{G}}
+\newcommand\Ll{\mathcal{L}} % Applications linéaires 
+\newcommand\Cc{\mathcal{C}} % Fonctions continues
+\newcommand\Pp{\mathcal{P}} % Parties d'un ensemble
+\newcommand\Rr{\mathcal{R}} % Relation d'équivalence
+\newcommand\Ff{\mathcal{F}} % Tribu / Ensemble des fonctions …
+\newcommand\Bb{\mathcal{B}} % Boréliens
+\newcommand\Aa{\mathcal{A}} % Tribu
+\newcommand\Mm{\mathcal{M}} % Matrices
+\newcommand\Nn{\mathcal{N}} % …
+\newcommand\Tt{\mathcal{T}} % Topologie
+\newcommand\Hh{\mathcal{H}} % Espace de Hilbert
+\newcommand\Ee{\mathcal{E}} % Espace total d'un fibré
+
+\newcommand\Gl{\mathcal{G}\ell} % Gl_n (K)
+
+%MATHFRAC
+\DeclareMathOperator\Sf{\mathfrak{S}} % Groupe symétrique
+\DeclareMathOperator\Al{\mathfrak{A}} % Groupe alterné
+
+
+%CATEGORY THEORY
+\if@category%
+	\DeclareMathOperator\domain{\text{domain}}%
+	\DeclareMathOperator\codom{\text{codomain}}%
+	\DeclareMathOperator\CC{\textbf{C}}%
+	\DeclareMathOperator\0{\textbf{0}}%
+	\DeclareMathOperator\one{\textbf{1}}%
+	\DeclareMathOperator\2{\textbf{2}}%
+	\DeclareMathOperator\3{\textbf{3}}%
+	\DeclareMathOperator\Cat{\textbf{Cat}}%
+\fi
+
+%DERIVATIONS
+\DeclareMathOperator{\dd}{d\!} 	% d d'intégration comme dans dµ ou dt
+\if@minimal\else
+\DeclareMathOperator{\dbarre}{\bar{\partial}}
+\newcommand\dpp[2]{\dfrac{\partial{#1}}{\partial{#2}}} %\dpp{f}{x} = df/dx
+\newcommand\dppp[3]{\dfrac{\partial^2{#1}}{\partial{#2}\partial{#3}}} %\dppp{f}{x}{y} = df/(dxdy)
+\newcommand\dpppp[4]{\dfrac{\partial^3{#1}}{\partial{#2}\partial{#3}\partial{#4}}} %\dppp{f}{x}{y}{z} = df/(dxdydz)
+\newcommand\dpppP[4]{\dfrac{\partial^3{#1}}{\partial{#2} {#3} {#4}}} %\dppp{f}{x}{y}{z} = df/(dxyz)
+\DeclareMathOperator{\Div}{div} % divergence
+\fi
+
+\DeclareMathOperator{\demi}{\frac{1}{2}} % fraction 1/2
+
+\newcommand\ssi{\; \textbf{ssi} \;} % ssi
+
+\DeclareMathOperator{\Vv}{| \! | \! |} % Norme subordonnée ||| A |||
+\newcommand\NLd[1]{\left\Vert {#1} \right\Vert_{L^2}} % Norme 2 : \NLd{f} = || f ||_2
+
+\DeclareMathOperator{\sh}{sh} % sinus hyperbolique
+
+\DeclareMathOperator{\Id}{Id} % Identité
+
+% Interval d'entiers ou interprétation d'un terme en logique.
+\DeclareMathOperator{\llbracket}{[\![}
+\DeclareMathOperator{\rrbracket}{]\!]}
+
+\newcommand\name[2]{{#1}\textsc{ {#2}}} % utilisation : \name{Stefàn}{Banach}
+
+\newcommand\ens[2]{\left\lbrace {#1} \; \left| \; {#2} \right. \right\rbrace } 
+% utilisation : \ens{(x,y) \in \R^2}{x^2 + y^2 = 1}
+
+\DeclareMathOperator{\image}{Im} % Image
+\newcommand\End{\text{End}} % Endomorphismes
+\newcommand\Hom{\text{Hom}} % Hom-set
+
+\newcommand\quot[1]{\Z/{#1}\Z} % \quot{n} = Z/nZ
+
+\newcommand\Card{\text{Card}} % Cardinal
+
+\newcommand\Legendre[2]{\left(\dfrac{{#1}}{{#2}}\right)}  % Symbole de Legendre et Jacobi
+
+% INDICATRICE
+%\newcommand\1[1]{\mathbf{1}_{\{#1\}}} % Fonction indicatrice
+\newcommand\carac[1]{\mathbf{1}_{#1}} % Fonction indicatrice 2
+
+%LABEL ITEMS
+\AtBeginDocument{%
+\renewcommand{\labelitemi}{$\bullet$}%
+\renewcommand{\labelitemii}{$\blacktriangleright$}%
+\renewcommand{\labelitemiii}{$\circ$}%
+\renewcommand{\labelitemiv}{$\triangleright$}%
+}
+
+% COULEURS
+\if@couleur
+	\definecolor{DarkRed}{rgb}{0.55,0,0.1} 
+	\definecolor{DarkBlue}{rgb}{0.1,0,0.55}  
+	\definecolor{DarkGreen}{rgb}{0,0.55,0.1} 
+\fi
+%Pour utiliser sur le texte "banane" écrire {\color{DarkRed} banane}
+%... peut s'utiliser sur de larges parties du texte.
+
+%THM
+\if@thm
+	\newtheorem[M]{lem}{Lemme}
+	\newtheorem[S]{exemple}{Exemple}
+	\newtheorem[S]{exo}{Exercice}
+	\newtheorem[S]{rem}{Remarque}
+	\newtheorem[M,cut=false]{thm}{Théorème}
+
+	\theoremstyle{definition}
+	\newtheorem[M,cut=false]{defi}{Définition}
+	\newtheorem[S,cut=false]{prop}{Proposition}
+	\newtheorem[S]{cor}{Corollaire}
+	\newtheorem[S,cut=false, headstyle=\bfseries\boldmath{Exercise},bodystyle=\noindent]{Eno}{}
+\fi
+
+%DRAFT
+\if@draft
+	\newcommand{\todo}{%
+		\textbf{\large \color{DarkRed} To Do ! ! }%
+		\marginpar{ \color{DarkRed} To Do ! ! }%
+	}
+	\newcommand{\question}{%
+		\textbf{\large \color{DarkGreen} Question ?! }%
+		\marginpar{ \color{DarkGreen} Question ?! }%
+	}
+	\newcommand{\?}{%
+		\begin{tikzpicture}[remember picture,overlay,baseline=(0.base)]%
+			\node[] (0) {\bf ?};
+			\node[circle, draw, scale=3, fill=red, opacity=0.3, color=DarkGreen] {\bf ?};%
+		\end{tikzpicture}%
+	}
+	\newcommand{\excl}{%
+		\begin{tikzpicture}[remember picture,overlay,baseline=(0.base)]%
+			\node[] (0) {\bf !};
+			\node[circle, draw, scale=3, fill=red, opacity=0.3, color=DarkBlue] {\bf !};%
+		\end{tikzpicture}%
+	}
+	\geometry{a4paper, hmargin=60pt, vmargin=75pt}
+\fi
+
+
+%% Fin du package
+
+\endinput
