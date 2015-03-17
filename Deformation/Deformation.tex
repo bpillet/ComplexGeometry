@@ -31,7 +31,7 @@ Si une fonction $h_i$ est définie sur $W_i$ (resp. $U_i$, $V_i$) on note $h_i(z
 
 \subsection{But}
 On cherche à construire $\varphi_i(z,t)$ telle que
-\begin{enumerate}[($i$)]
+\begin{enumerate}[(\itshape i\, \normalshape)]
 \item convergence $\Vert \cdot \Vert_\infty$ \label{CVinfty}
 \item $[\varphi_i(z,t)]_1 = \sum_s t_s \beta_s(z_i)$\label{Initialisation}
 \item Respecte les changements de carte (ou se recolle)\label{Recollement}
@@ -41,13 +41,27 @@ On cherche à construire $\varphi_i(z,t)$ telle que
 \item Condition de domination\label{Domination}
 \item Conditions ponctuelle et angulaire\label{Pt-Ang}
 \begin{equation}
-[\varphi_0(0,t)]^m = [\varphi_0(0,t)]^1  = \sum_s t_s \beta_s(0)
+[\varphi_0(0,t)]^m = [\varphi_0(0,t)]^1  = \sum_{s=1}^{2n} \tau_s \alpha_s(0) = \tau
 \end{equation}
 \begin{equation}
-\left[\dpp{\varphi_0}{z}(0,t)\right]^m = \left[\dpp{\varphi_0}{z}(0,t)\right]^1  = \sum_s t_s \dpp{\beta_s}{z}(0)
+\left[\dpp{\varphi_0}{z}(0,t)\right]^m = \left[\dpp{\varphi_0}{z}(0,t)\right]^1  = \sum_{s=1}^{2n} \tau'_s \dpp{\alpha'_s}{z}(0) = \tau'
 \end{equation}
+\end{enumerate}
 
 Des fonctions $\varphi_i(z,t)$ satisfaisant \eqref{Initialisation}, \eqref{Recollement},et \eqref{Pt-Ang} sont appelées solutions formelles. Elles seront définies comme série formelle en $t$ à coefficients holomorphes en $z$. Sous les hypothèses supplémentaires \eqref{CVinfty}, et \eqref{Domination}, ces séries convergent sur un petit polydisque en $t$ et donnent lieu à une famille de déformations de $L$ dans $Z$.
 
-\end{enumerate}
+Pour obtenir la propriété \eqref{Recollement} on essayera de l'obtenir à tous les ordres
+\begin{equation}\label{Recollement_m}
+\left[\varphi_i(g_{ik}(z,\varphi),t)\right]_m = \left[f_{ik}(z, \varphi)\right]_m
+\end{equation}
+qui est équivalente à demander
+\begin{equation}\label{recollement_m}
+\left[\varphi^m_i(g_{ik}(z,\varphi^m),t)\right]_m = \left[f_{ik}(z, \varphi^m)\right]_m
+\end{equation}
+Ainsi il semble possible d'obtenir $\varphi$ par récurrence sur $m$.
+
+\subsection{Preuve d'existence de déformation}
+On raisonne par récurrence : on définit $\varphi^1$ par l'équation \eqref{Initialisation}, il est clair par définition que $\varphi_1$ satisfait \eqref{Recollement_m} pour $m=1$.
+
+Supposons que l'on ait construit $\varphi^m$ satisfaisant les conditions formelles \eqref{Initialisation}, et \eqref{Recollement_m},et \eqref{Pt-Ang} à l'ordre $m$. Alors on souhaite ajouter à $\varphi^m$ un polynôme homogène $\Phi_{m+1}$ de degré $m+1$ pour que $\varphi^{m+1} = \varphi^m + \Phi_{m+1}$ satisfasse  \eqref{Recollement_m},et \eqref{Pt-Ang} à l'ordre $m+1$.
 \end{document}
