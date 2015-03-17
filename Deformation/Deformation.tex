@@ -2,5 +2,52 @@
 \usepackage[thm,couleur,draft]{dipneuste}
 
 \begin{document}
-;
+Soit $L \subset Z$ une droite twistorielle de l'espace $Z$ des twisteurs d'une variété hyperkahlérienne $M$ de dimension $2n$. Soit $O \in L$.
+
+\subsection{Le fibré normal}
+Le fibré normal de $L$ dans $Z$, noté $N$ s'identifie à $\Oo(1) \otimes \C^{2n}$, ses sections globales forment donc un $\C$-ev de dimension $4n$ qui s'identifie naturellement aux polynômes de degré $1$ à coefficients dans $\C^{2n}$.
+\begin{equation}
+H^0(L,N) \simeq H^0(\Pro^1, \Oo(1)) \otimes \C^{2n} \simeq \C[\zeta]_1 \otimes \C^{2n}
+\end{equation}
+Modulo cette identification, une section globale $s$ de cet espace est donc donnée par
+\begin{equation}
+s(\zeta) = a + \zeta a' \qquad  a,a' \in \C^{2n}
+\end{equation}
+
+On construit une base $\beta = (\alpha_i, \alpha'_i)$ de cet espace de la manière suivante~:
+\begin{itemize}
+\item $\alpha_1, \cdots, \alpha_{2n}$ des sections globales qui évalués en $O$ forment la base canonique de $\C^{2n}$.
+C'est-à-dire $\alpha_i(\zeta) = a_i = (\delta_i^j)_j \in \C^{2n}$. 
+\item $\alpha'_1, \cdots, \alpha'_{2n}$ des sections globales qui s'annulent en $O$ tandis que leurs dérivées forment la base canonique de $\C^{2n}$.
+C'est-à-dire $\alpha'_i(\zeta) = \zeta a'_i = (\zeta \delta_i^j)_j \in \C^{2n}$. 
+\end{itemize}
+
+On désignera par $t \in \C^{4n}$ une section de $H^0(L,N)$ vue dans la base $\beta$, au besoin on notera $t = (\tau, \tau') \in \C^{2n} \oplus \C^{2n}$ les composantes sur $\alpha$ et $\alpha'$.
+
+On notera en majuscule les polynômes homogènes en $t$.
+
+
+Si une fonction $h_i$ est définie sur $W_i$ (resp. $U_i$, $V_i$) on note $h_i(z,w)$ au lieu de $h_i(z_i,w_i)$ (resp. $h_i(z)$ au lieu de $h_i(z_i)$ et $h_i(w)$ au lieu de $h_i(w_i)$)
+
+\subsection{But}
+On cherche à construire $\varphi_i(z,t)$ telle que
+\begin{enumerate}[($i$)]
+\item convergence $\Vert \cdot \Vert_\infty$ \label{CVinfty}
+\item $[\varphi_i(z,t)]_1 = \sum_s t_s \beta_s(z_i)$\label{Initialisation}
+\item Respecte les changements de carte (ou se recolle)\label{Recollement}
+\begin{equation}
+\varphi_i(g_{ik}(z,\varphi),t) = f_{ik}(z, \varphi)
+\end{equation}
+\item Condition de domination\label{Domination}
+\item Conditions ponctuelle et angulaire\label{Pt-Ang}
+\begin{equation}
+[\varphi_0(0,t)]^m = [\varphi_0(0,t)]^1  = \sum_s t_s \beta_s(0)
+\end{equation}
+\begin{equation}
+\left[\dpp{\varphi_0}{z}(0,t)\right]^m = \left[\dpp{\varphi_0}{z}(0,t)\right]^1  = \sum_s t_s \dpp{\beta_s}{z}(0)
+\end{equation}
+
+Des fonctions $\varphi_i(z,t)$ satisfaisant \eqref{Initialisation}, \eqref{Recollement},et \eqref{Pt-Ang} sont appelées solutions formelles. Elles seront définies comme série formelle en $t$ à coefficients holomorphes en $z$. Sous les hypothèses supplémentaires \eqref{CVinfty}, et \eqref{Domination}, ces séries convergent sur un petit polydisque en $t$ et donnent lieu à une famille de déformations de $L$ dans $Z$.
+
+\end{enumerate}
 \end{document}
