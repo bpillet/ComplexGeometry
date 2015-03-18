@@ -1,5 +1,7 @@
-\documentclass[a4paper,10pt,draft]{article}
-\usepackage[thm,couleur,draft]{dipneuste}
+\documentclass[a4paper,10pt,draft,makeidx,twocolumn]{amsart}
+\usepackage[thm,couleur,draft]{amsdip}
+
+\setlength{\columnsep}{3em}
 
 \begin{document}
 Soit $L \subset Z$ une droite twistorielle de l'espace $Z$ des twisteurs d'une variété hyperkahlérienne $M$ de dimension $2n$. Soit $O \in L$.
@@ -7,7 +9,7 @@ Soit $L \subset Z$ une droite twistorielle de l'espace $Z$ des twisteurs d'une v
 \subsection{Le fibré normal}
 Le fibré normal de $L$ dans $Z$, noté $N$ s'identifie à $\Oo(1) \otimes \C^{2n}$, ses sections globales forment donc un $\C$-ev de dimension $4n$ qui s'identifie naturellement aux polynômes de degré $1$ à coefficients dans $\C^{2n}$.
 \begin{equation}
-H^0(L,N) \simeq H^0(\Pro^1, \Oo(1)) \otimes \C^{2n} \simeq \C[\zeta]_1 \otimes \C^{2n}
+H^0(L,N) \simeq H^0(\Pro^1, \Oo(1)) \otimes \C^{2n} \simeq \C[\zeta]^1 \otimes \C^{2n}
 \end{equation}
 Modulo cette identification, une section globale $s$ de cet espace est donc donnée par
 \begin{equation}
@@ -31,7 +33,7 @@ Si une fonction $h_i$ est définie sur $W_i$ (resp. $U_i$, $V_i$) on note $h_i(z
 
 \subsection{But}
 On cherche à construire $\varphi_i(z,t)$ telle que
-\begin{enumerate}[(\itshape i\, \normalshape)]
+\begin{enumerate}[(i)]
 \item convergence $\Vert \cdot \Vert_\infty$ \label{CVinfty}
 \item $[\varphi_i(z,t)]_1 = \sum_s t_s \beta_s(z_i)$\label{Initialisation}
 \item Respecte les changements de carte (ou se recolle)\label{Recollement}
@@ -40,22 +42,20 @@ On cherche à construire $\varphi_i(z,t)$ telle que
 \end{equation}
 \item Condition de domination\label{Domination}
 \item Conditions ponctuelle et angulaire\label{Pt-Ang}
-\begin{equation}
-[\varphi_0(0,t)]^m = [\varphi_0(0,t)]^1  = \sum_{s=1}^{2n} \tau_s \alpha_s(0) = \tau
-\end{equation}
-\begin{equation}
-\left[\dpp{\varphi_0}{z}(0,t)\right]^m = \left[\dpp{\varphi_0}{z}(0,t)\right]^1  = \sum_{s=1}^{2n} \tau'_s \dpp{\alpha'_s}{z}(0) = \tau'
-\end{equation}
+\begin{subequations}\begin{gather}
+	[\varphi_0(0,t)]^m = [\varphi_0(0,t)]^1  = \sum_{s=1}^{2n} \tau_s \alpha_s(0) = \tau\label{E:Pt}\\
+	\left[\dpp{\varphi_0}{z}(0,t)\right]^m = \left[\dpp{\varphi_0}{z}(0,t)\right]^1  = \sum_{s=1}^{2n} \tau'_s \dpp{\alpha'_s}{z}(0) = \tau'\label{E:Ang}
+  \end{gather}\end{subequations}
 \end{enumerate}
 
-Des fonctions $\varphi_i(z,t)$ satisfaisant \eqref{Initialisation}, \eqref{Recollement},et \eqref{Pt-Ang} sont appelées solutions formelles. Elles seront définies comme série formelle en $t$ à coefficients holomorphes en $z$. Sous les hypothèses supplémentaires \eqref{CVinfty}, et \eqref{Domination}, ces séries convergent sur un petit polydisque en $t$ et donnent lieu à une famille de déformations de $L$ dans $Z$.
+Des fonctions $\varphi_i(z,t)$ satisfaisant \eqref{Initialisation}, \eqref{Recollement},et \eqref{Pt-Ang} sont appelées \emph{solutions formelles}. Elles seront définies comme série formelle en $t$ à coefficients holomorphes en $z$. Sous les hypothèses supplémentaires \eqref{CVinfty}, et \eqref{Domination}, ces séries convergent sur un petit polydisque en $t$ et donnent lieu à une famille de déformations de $L$ dans $Z$.
 
 Pour obtenir la propriété \eqref{Recollement} on essayera de l'obtenir à tous les ordres
-\begin{equation}\label{Recollement_m}
+\begin{equation}\label{recollement_m}
 \left[\varphi_i(g_{ik}(z,\varphi),t)\right]_m = \left[f_{ik}(z, \varphi)\right]_m
 \end{equation}
-qui est équivalente à demander
-\begin{equation}\label{recollement_m}
+ce qui équivaut à demander
+\begin{equation}\label{Recollement_m}
 \left[\varphi^m_i(g_{ik}(z,\varphi^m),t)\right]_m = \left[f_{ik}(z, \varphi^m)\right]_m
 \end{equation}
 Ainsi il semble possible d'obtenir $\varphi$ par récurrence sur $m$.
@@ -64,4 +64,59 @@ Ainsi il semble possible d'obtenir $\varphi$ par récurrence sur $m$.
 On raisonne par récurrence : on définit $\varphi^1$ par l'équation \eqref{Initialisation}, il est clair par définition que $\varphi_1$ satisfait \eqref{Recollement_m} pour $m=1$.
 
 Supposons que l'on ait construit $\varphi^m$ satisfaisant les conditions formelles \eqref{Initialisation}, et \eqref{Recollement_m},et \eqref{Pt-Ang} à l'ordre $m$. Alors on souhaite ajouter à $\varphi^m$ un polynôme homogène $\Phi_{m+1}$ de degré $m+1$ pour que $\varphi^{m+1} = \varphi^m + \Phi_{m+1}$ satisfasse  \eqref{Recollement_m},et \eqref{Pt-Ang} à l'ordre $m+1$.
+
+Par hypothèse de récurrence, la relation de recollement \eqref{Recollement_m}, est satisfaite à l'ordre $m$, ainsi
+\begin{equation}
+\varphi^m_i(g_{ik}(z,\varphi^m),t) - f_{ik}(z, \varphi^m)
+\end{equation}
+est une série formelle en $t$ de valuation au moins $m+1$. Soit donc $\Psi_{m+1} (=\Psi_{ik, m+1})$ la partie homogène de degré $m+1$. Kodaira l'appelle \emph{Obstruction d'ordre} $m+1$.
+
+On a la relation suivante (à l'ordre $m+1$)~:
+\begin{equation}
+\Psi_{ik}(z_k) = \Psi_{ij}(z_j) + \dpp{f_{ij}}{w}(z_j)\Psi_{jk}(z_k)
+\end{equation}
+que l'on notera abusivement
+\begin{equation}
+\Psi_{ik} = \Psi_{ij} + \dpp{f_{ij}}{w}\Psi_{jk}
+\end{equation}
+ou $z \in U_i \cap U_j \cap U_k$ est considéré comme $z_i$, $z_j$ ou $z_k$ suivant le besoin. Et ils sont reliés par les changements de carte de $V$, c'est-à-dire~:
+\begin{equation}
+z_i = f_{ik}(z_k,0) \quad \dots
+\end{equation}
+
+Ainsi $\Psi$ est une section de $H^1(L,N)$ en $z$ à coefficients dans les polynômes homogènes de degré $m+1$ en $t$. Par hypothèse, $H^1 = 0$ dont $\Psi$ est le $1$-cobord  d'une $0$-cochaine $\tilde{\Phi} = (\tilde{\Phi}_{i,m+1}(z_i,t))_i$ à coefficients dans les polynômes homogènes de degré $m+1$ en $t$.
+\begin{equation}\label{Cobord}
+\Psi_{ik} = \dpp{f_{ik}}{w}\tilde{\Phi}_k - \tilde\Phi_i
+\end{equation}
+Deux telles cochaînes $\Psi$ diffèrent d'une section globale de $N$ à coefficients dans les polynômes homogènes en $t$ de degré $m+1$ : $H^0(L,N) \otimes \C[t]_{m+1}$.
+
+Que veut-on imposer à $\tilde\Phi_i$ ?
+On ne demande qu'à $\tilde\Phi_0$ de satisfaire certaines conditions (car toutes nos hypothèses sont dans la carte "$0$") : les conditions pour que $\varphi^{m+1}$ satisfasse \eqref{E:Pt} et \eqref{E:Ang}.
+
+On peut simplement imposer les mêmes contraintes à $\tilde\Phi_0$ que l'on peut imposer à une section de $H^0(L,N)$ : Fixons un choix de $\tilde\Phi_0$, alors
+\begin{itemize}
+ \item $\tilde\Phi_0(0,t)$ est un polynôme homogène en $t$ de degré $m+1$ à coefficients dans $\C^{2n}$ vu comme $N_0$ la fibre de $N$ au dessus de $z_0=0$.
+\item $\partial_z \tilde\Phi_0(0,t)$ est un un polynôme homogène en $t$ de degré $m+1$ à coefficients dans $\C^{2n}$ vu comme $T_0N_0$ le tangent en $0$ à la fibre de $N$ au dessus de $z_0=0$.
+ \end{itemize}
+Par les remarques du début, il existe une unique section $U_t$ globale de $N$ sur $L$ à coefficients homogènes de degré $m+1$ en $t$ telle que
+\begin{subequations}
+\begin{gather}
+	U_t(0) = \tilde\Phi_0(0,t)\\
+	\partial_z U_t (0) = \partial_z \tilde\Phi_0(0,t)
+\end{gather}
+\end{subequations}
+En prenant dès lors $\Phi := \tilde\Phi - U_t$; Le polynôme homogène de degré $m+1$ en $t$ à coefficient $0$-cochaines $\Phi$ satisfait toujours \eqref{Cobord}.
+
+Ainsi $\varphi^{m+1} = \varphi^m - \Phi$ est un polynôme de degré $m+1$ en $t$ à coefficients dans les fonctions holomorphes en $z$. Il satisfait toujours \eqref{Initialisation}, car il n'a été modifié qu'à l'ordre $m+1 \geq 2$ en $t$.
+De plus un calcul rapide permet de voir que
+\begin{multline}
+\varphi^{m+1}_i(g_{ik}(z,\varphi^{m+1}),t) - f_{ik}(z, \varphi^{m+1}) \\= 
+\varphi^{m}_i(g_{ik}(z,\varphi^{m}),t) - f_{ik}(z, \varphi^{m}) - \Phi_{ik,m+1}\\
++o(t^{m+1})
+\end{multline}
+qui est donc une série formelle en $t$ de valuation au moins $m+2$. Ainsi $\varphi^{m+1}$ satisfait \eqref{Recollement_m} à l'ordre $m+1$.
+
+Reste à vérifier la condition \eqref{Pt-Ang}.
+
+\subsection{Convergence}
 \end{document}
