@@ -46,3 +46,7 @@
 *.nav
 *.snm
 *.vrb
+
+# En-tetes personalisees a re-telecharger automatiquement
+*dipneuste.sty
+*amsdip.sty
