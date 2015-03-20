@@ -3,6 +3,7 @@
 
 \setlength{\columnsep}{3em}
 \DeclareMathOperator\uu{\underline{u}}
+\pagenumbering{gobble}
 
 \begin{document}
 
@@ -49,8 +50,10 @@ C'est-à-dire $\alpha'_i(\zeta) = \zeta a'_i = (\zeta \delta_i^j)_j \in \C^{2n}$
 
 On désignera par $t \in \C^{4n}$ une section de $H^0(L,N)$ vue dans la base $\beta$, au besoin on notera $t = (\tau, \tau') \in \C^{2n} \oplus \C^{2n}$ les composantes sur $\alpha$ et $\alpha'$.
 
+Remarque : on s’intéressera plutôt aux sections s'annulant en $\zeta = 0$ c'est-à-dire aux sections pour lesquelles $\tau = 0$.
+
 \subsection{But}
-On cherche à construire un $\varepsilon>0$ et pour tout $i$ des fonctions $\varphi_i(z,t)$ holomorphes sur $|z_i| < 1$, satisfaisant
+On cherche à construire un $\varepsilon>0$ et pour tout $i$ des fonctions $\varphi_i(z,t)$ holomorphes sur $|z_i| < 1$ et $|t|<\varepsilon$, satisfaisant
 \begin{enumerate}[(i)]
 \item \emph{convergence en norme infinie}\label{CVinfty}
 \[
@@ -172,5 +175,13 @@ Supposons dès lors que pour un certain $m \geq 1$, on ait $\varphi^m \ll A(t)$.
 \Psi_{ik}(z,t) \ll c_3 A(t)
 \end{equation}
 où $\Psi =\Psi_{m+1}$ est la $m$-ième obstruction et $c_3$ ne dépend pas de $m$
+
+
+On veut vraiment connaître $b$. Il va falloir déterminer
+\begin{itemize}
+\item La constante $c_4$ de Kodaira qui assure la continuité de $\delta^{-1}$ et dont l'existence est un argument non-constructif.
+\item La norme sup des $\alpha'_s$ (remarque aucune hypothèse sur les $\alpha_s$)
+\item La dépendance de $b$ vis à vis du recouvrement. On peut espérer avoir un recouvrement d'un voisinage de $L$ par $2$ ouverts de carte, mais ce ne seront sans doute pas des boules unités...
+\end{itemize}
 
 \end{document}
