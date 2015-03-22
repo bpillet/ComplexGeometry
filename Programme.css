@@ -1,0 +1,28 @@
+vymmap{}
+
+mapcenter{
+	display: block;
+	margin: auto;
+	width : 40em;
+}
+mapcenter heading{
+	color: #ffffee;
+	font-size: 3em;
+}
+branch{
+	display: block;
+	margin-left: 2em;
+}
+branch heading{
+	display: inline;
+	font-size: 2em;
+	font-weight: bold;
+}
+branch branch{	
+	margin-left: 2em;
+}
+branch branch heading{
+	display: inline;
+	font-size: 1.5em;
+	font-weight: bold;
+}
