@@ -1,5 +1,7 @@
-vymmap{}
-
+vymmap{
+	font-family: arial, serif;
+	color: black;
+}
 mapcenter{
 	display: block;
 	margin: auto;
