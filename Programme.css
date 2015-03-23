@@ -8,23 +8,35 @@ mapcenter{
 	width : 40em;
 }
 mapcenter heading{
-	color: #ffffee;
+	display: block;
+	background-color: #A1B5E2;
 	font-size: 3em;
+	margin: auto;
 }
 branch{
 	display: block;
+	margin: auto;
 	margin-left: 2em;
 }
 branch heading{
-	display: inline;
+	background-color: #B9C9ED;
+	display: block;
 	font-size: 2em;
 	font-weight: bold;
+	margin: auto;
 }
 branch branch{	
 	margin-left: 2em;
 }
 branch branch heading{
-	display: inline;
+	background-color: #D0DBF5;
+	display: block;
 	font-size: 1.5em;
+	font-weight: bold;
+}
+branch branch branch heading{
+	background-color: #E5ECFB;
+	display: inline;
+	font-size: 1em;
 	font-weight: bold;
 }
