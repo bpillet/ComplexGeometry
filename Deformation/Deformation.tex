@@ -1,22 +1,48 @@
-\documentclass[a4paper,10pt,draft,makeidx,twocolumn]{amsart}
+\documentclass[a4paper,11pt,draft,makeidx,twocolumn]{amsart}
 \usepackage[thm,couleur,draft]{amsdip}
 
-\setlength{\columnsep}{3em}
+\setlength{\columnsep}{3.5em}
 \DeclareMathOperator\uu{\underline{u}}
 \pagenumbering{gobble}
 
 \begin{document}
 
 \subsection{Notations}
-Soit $L \subset Z$ une droite twistorielle de l'espace $Z$ des twisteurs d'une variété hyperkahlérienne $M$ de dimension $2n$. Soit $O \in L$. On se fixe un recouvrement de $L$ par une famille finie d'ouverts $W_i$ de $Z$. On notera $U_i$ leurs traces sur $L$ ($U_i = L \cap W_i$ ouvert de $L$). Et $i,j,k$ désigneront toujours des indices variant dans l'ensemble fini du recouvrement.
+Soit $L \subset Z$ une droite twistorielle de l'espace $Z$ des twisteurs d'une variété hyperkahlérienne $M$ de dimension $2n$. Soit $O \in L$. 
+\subsubsection{Ouverts et cartes}
+On se fixe un recouvrement de $L$ par une famille finie d'ouverts $W_i$ de $Z$. On notera $U_i$ leurs traces sur $L$ ($U_i = L \cap W_i$ ouvert de $L$). Et $i,j,k$ désigneront toujours des indices variant dans l'ensemble fini du recouvrement.
+
+On supposera que les $W_i$ sont des polydisques de rayon $1$ dans $\C^{2n+1}$ et de même pour les $U_i$ dans $\C$.
+On notera sur $\C^d$, $\vert \cdot \vert$ pour la norme infinie sur toutes les coordonnées complexes. Ainsi
+\begin{subequations}
+\begin{gather}
+W_i = \ens{ (z_i,w_i) \in \C \times \C^{2n}}{|w_i| < 1 \text{ et } |z_i|<1}\\
+U_i = \ens{(z_i,w_i) \in \C \times \C^{2n}}{w_i = 0 \text{ et } |z_i|<1}
+\end{gather}
+\end{subequations}
+
 
 Un ouvert particulier $W_0$ contient le point $\zeta = 0$ de $L$.
 
+Si une fonction $h_i$ est définie sur $W_i$ (resp. $U_i$) on note $h_i(z,w)$ au lieu de $h_i(z_i,w_i)$ (resp. $h_i(z)$ au lieu de $h_i(z_i)$ )
+
+
+Les changements de carte sont donnés par des fonctions $f_{ik},g_{ik}$ holomorphes sur $W_k$ satisfaisant
+\begin{subequations}
+\begin{gather}
+w_i = f_{ik}(z,w)\\
+z_i = g_{ik}(z,w)
+\end{gather}
+\end{subequations}
+\paragraph{Remarques}
+\begin{itemize}
+\item $f(z,0)$ donne les changements de carte de la sous-variété $L$
+\item Faire le lien avec la connaissance approchée de $f$ à "l'ordre $2$" \excl
+\end{itemize}
+
+\subsubsection{Polynômes et autres notations}
 On notera en majuscule les polynômes homogènes en $t$.
 
-Si une fonction $h_i$ est définie sur $W_i$ (resp. $U_i$, $V_i$) on note $h_i(z,w)$ au lieu de $h_i(z_i,w_i)$ (resp. $h_i(z)$ au lieu de $h_i(z_i)$ et $h_i(w)$ au lieu de $h_i(w_i)$)
-
-On notera sur $\C^d$, $\vert \cdot \vert$ pour la norme infinie sur toutes les coordonnées complexes.
 
 
 \begin{equation}
@@ -40,20 +66,20 @@ Modulo cette identification, une section globale $s$ de cet espace est donc donn
 s(\zeta) = a + \zeta a' \qquad  a,a' \in \C^{2n}
 \end{equation}
 
-On construit une base $\beta = (\alpha_i, \alpha'_i)$ de cet espace de la manière suivante~:
+On construit une base $\beta = (\alpha_s, \alpha'_s)_s$ de cet espace de la manière suivante~:
 \begin{itemize}
 \item $\alpha_1, \cdots, \alpha_{2n}$ des sections globales qui évalués en $O$ forment la base canonique de $\C^{2n}$.
-C'est-à-dire $\alpha_i(\zeta) = a_i = (\delta_i^j)_j \in \C^{2n}$. 
+C'est-à-dire $\alpha_s(\zeta) = a_s = (\delta_s^r)_r \in \C^{2n}$. 
 \item $\alpha'_1, \cdots, \alpha'_{2n}$ des sections globales qui s'annulent en $O$ tandis que leurs dérivées forment la base canonique de $\C^{2n}$.
-C'est-à-dire $\alpha'_i(\zeta) = \zeta a'_i = (\zeta \delta_i^j)_j \in \C^{2n}$. 
+C'est-à-dire $\alpha'_s(\zeta) = \zeta a'_s = (\zeta \delta_s^r)_r \in \C^{2n}$. 
 \end{itemize}
 
-On désignera par $t \in \C^{4n}$ une section de $H^0(L,N)$ vue dans la base $\beta$, au besoin on notera $t = (\tau, \tau') \in \C^{2n} \oplus \C^{2n}$ les composantes sur $\alpha$ et $\alpha'$.
+On désignera par $t \in \C^{4n}$ une section de $H^0(L,N)$ vue dans la base $\beta$, au besoin on notera $t = (\tau, \tau') \in \C^{2n} \oplus \C^{2n}$ les composantes sur $\alpha$ et $\alpha'$. Réécrire tout ça dans les cartes $U_i$\excl
 
 Remarque : on s’intéressera plutôt aux sections s'annulant en $\zeta = 0$ c'est-à-dire aux sections pour lesquelles $\tau = 0$.
 
 \subsection{But}
-On cherche à construire un $\varepsilon>0$ et pour tout $i$ des fonctions $\varphi_i(z,t)$ holomorphes sur $|z_i| < 1$ et $|t|<\varepsilon$, satisfaisant
+On cherche à construire un $\varepsilon>0$ et pour tout $i$ des fonctions $\varphi_i(z,t)$ holomorphes sur $|z_i| < 1$ et $|t|<\varepsilon$, à valeur dans $\C^{2n}$, satisfaisant
 \begin{enumerate}[(i)]
 \item \emph{convergence en norme infinie}\label{CVinfty}
 \[
@@ -61,7 +87,7 @@ On cherche à construire un $\varepsilon>0$ et pour tout $i$ des fonctions $\var
 \]
 \item \emph{extension d'une section de fibré normal}\label{Initialisation}
 \[
-[\varphi_i(z,t)]_1 = \sum_{s=1}^{4n} t_s \beta_s(z_i)
+[\varphi_i(z,t)]^1 = \sum_{s=1}^{4n} t_s \beta_s(z_i)\text{pas de sens}\excl
 \]
 \item \emph{respect des changements de carte} (ou condition de \emph{recollement})\label{Recollement}
 \[
@@ -80,7 +106,7 @@ On cherche à construire un $\varepsilon>0$ et pour tout $i$ des fonctions $\var
 \end{subequations}
 \end{enumerate}
 
-Des fonctions $\varphi_i(z,t)$ satisfaisant \eqref{Initialisation}, \eqref{Recollement},et \eqref{Pt-Ang} sont appelées \emph{solutions formelles}. Elles seront définies comme série formelle en $t$ à coefficients holomorphes en $z$. Sous les hypothèses supplémentaires \eqref{CVinfty}, et \eqref{Domination}, ces séries convergent sur un petit polydisque en $t$ et donnent lieu à une famille de déformations de $L$ dans $Z$.
+Des fonctions $\varphi_i(z,t)$ satisfaisant \eqref{Initialisation}, \eqref{Recollement},et \eqref{Pt-Ang} sont appelées \emph{solutions formelles}. Elles seront définies comme série formelle en $t$ à coefficients holomorphes en $z$. Sous les hypothèses supplémentaires \eqref{CVinfty}, et \eqref{Domination}, ces séries convergent sur un petit polydisque en $t$ et donnent lieu à une famille de déformations de $L$ dans $Z$~: la courbe $L_t \subseteq Z$ d'équation $\{w_i = \varphi_i(z,t)\}$ est alors une déformation de $L$ d'équation $\{w_i = 0\}$.
 
 Pour obtenir la propriété \eqref{Recollement} on essayera de l'obtenir à tous les ordres
 \begin{equation}\label{recollement_m}
@@ -93,7 +119,7 @@ ce qui équivaut à demander
 Ainsi il semble possible de construire $\varphi$ par récurrence sur $m$.
 
 \subsection{Preuve d'existence de déformation}
-On raisonne par récurrence : on définit $\varphi^1$ par l'équation \eqref{Initialisation}, il est clair par définition que $\varphi_1$ satisfait \eqref{Recollement_m} pour $m=1$.
+On raisonne par récurrence : on définit $\varphi^1$ par l'équation \eqref{Initialisation}, il est clair par définition que $\varphi^1$ satisfait \eqref{Recollement_m} pour $m=1$.
 
 Supposons que l'on ait construit $\varphi^m$ satisfaisant les conditions formelles \eqref{Initialisation}, et \eqref{Recollement_m},et \eqref{Pt-Ang} à l'ordre $m$. Alors on souhaite ajouter à $\varphi^m$ un polynôme homogène $\Phi_{m+1}$ de degré $m+1$ pour que $\varphi^{m+1} = \varphi^m + \Phi_{m+1}$ satisfasse  \eqref{Recollement_m},et \eqref{Pt-Ang} à l'ordre $m+1$.
 
@@ -131,7 +157,7 @@ On peut simplement imposer les mêmes contraintes à $\tilde\Phi_0$ que l'on peu
 \item $\partial_z \tilde\Phi_0(0,t)$ est un un polynôme homogène en $t$ de degré $m+1$ à coefficients dans $\C^{2n}$ vu comme $T_0N_0$ le tangent en $0$ à la fibre de $N$ au dessus de $z_0=0$.
  \end{itemize}
 Par les remarques du début, il existe une unique section $U_t$ globale de $N$ sur $L$ à coefficients homogènes de degré $m+1$ en $t$ telle que
-\begin{subequations}
+\begin{subequations}\label{U}
 \begin{gather}
 	U_t(0) = \tilde\Phi_0(0,t)\\
 	\partial_z U_t (0) = \partial_z \tilde\Phi_0(0,t)
@@ -148,7 +174,7 @@ De plus un calcul rapide permet de voir que
 \end{multline}
 qui est donc une série formelle en $t$ de valuation au moins $m+2$. Ainsi $\varphi^{m+1}$ satisfait \eqref{Recollement_m} à l'ordre $m+1$.
 
-Reste à vérifier la condition \eqref{Pt-Ang}. \excl
+Reste à vérifier la condition \eqref{Pt-Ang}.  Par hypothèse, $\varphi^m$ la vérifiait à l'ordre $m$, ainsi c'est toujours le cas pour $\varphi^{m+1}$. Reste donc à vérifier que $\varphi_{0,m+1}(0,t) = 0$ et $\dpp{\varphi_{0,m+1}}{w}(0,t) = 0$. Or $\varphi_{m+1} = \tilde\Phi_{m+1} - U_t$ est construit pour vérifier ces propriétés : cf. \eqref{U}.
 
 \subsection{Convergence}
 On cherche à montrer que la solution formelle construite $\varphi$ satisfait \eqref{CVinfty} et \eqref{Domination} pour un certain $\varepsilon>0$.
@@ -183,5 +209,48 @@ On veut vraiment connaître $b$. Il va falloir déterminer
 \item La norme sup des $\alpha'_s$ (remarque aucune hypothèse sur les $\alpha_s$)
 \item La dépendance de $b$ vis à vis du recouvrement. On peut espérer avoir un recouvrement d'un voisinage de $L$ par $2$ ouverts de carte, mais ce ne seront sans doute pas des boules unités...
 \end{itemize}
+
+\subsection{Choix d'un bon cobord}
+On notera $E = N \otimes_\C \C[t]_{m+1}$ le fibré des directions normales à $L$ à coefficients dans les polynômes homogènes en $t$ de degré $m+1$. Il est de rang $2n \times {4n+m\choose m+1}$. Cependant ses changements de trivialisation ne sont que des matrices diagonales à valeur dans $\C[\zeta]^1$.
+
+On définit pour $f$ holomorphe sur $U_i$ à valeur dans $\C^d$, 
+\begin{subequations}\label{Ni}
+\begin{gather}
+ \vert f \vert_{i,\infty} = \sup_{p \in U_i} | f(p) |\label{Ni:inf}\\
+ \vert f \vert_{i,2} = \left(\int_{U_i} |f(p)|^2 \dd p\right)^{1/2}\label{Ni:2}
+\end{gather}
+\end{subequations}
+Et par suite pour $f$ section sur $L$ d'un fibré hermitien de dimension $d$ trivialisé par les $U_i$,
+\begin{subequations}\label{N}
+\begin{gather}
+\Vert f \Vert_{\infty} = \sup_i  \vert f \vert_{i,\infty}\label{N:inf}\\
+\Vert f \Vert_{2} = \sup_i  \vert f \vert_{i,2} \label{N:2}
+\end{gather}
+\end{subequations}
+Ces deux normes dépendent du recouvrement $\mathfrak{U}$ (au moins \eqref{N:2}).
+
+\begin{lem}
+Il existe une constante $\gamma_1>0$ telle que pour tout $\Psi \in \check{Z}^1(\mathfrak{U}, E)$, il existe $h$ une $1$-forme sur $L$, $\dbarre$-fermée à valeur dans $E$ satisfaisant
+\begin{enumerate}[(i)]
+\item $[\Psi]_{\check{H}^1} = [h]_{H^1_{Dol}}$ via l'isomorphisme du théorème de \textsc{Dolbeault}.
+\item $\Vert h \Vert_{Dol} \leq \gamma_1 \Vert \Psi \Vert_{\check{C}}$
+\end{enumerate}
+\end{lem}
+
+\begin{lem}[\textsc{Hörmander}]
+Il existe une constante $\gamma_2 >0$ telle que pour toute $1$-forme $\dbarre$-fermée $h$ à valeur dans $L$, il existe $g$ une section de $L$ satisfaisant
+\begin{enumerate}[(i)]
+\item $\dbarre g = h$
+\item $\Vert g \Vert_{Dol} \leq \gamma_2 \Vert h \Vert_{Dol}$
+\end{enumerate}
+\end{lem}
+
+\begin{lem}
+Il existe une constante $\gamma_3>0$ telle que pour toute section $g$ sur $L$ de $E$, il existe une cochaîne $\Phi$ sur $\mathfrak{U}$ à valeur dans $L$ satisfaisant
+\begin{enumerate}[(i)]
+\item $\Phi_i = g\vert_{U_i}$ en un certain sens
+\item $\Vert \Phi \Vert_{\check{C}} \leq \gamma_3 \Vert g \Vert_{Dol}$
+\end{enumerate}
+\end{lem}
 
 \end{document}
