@@ -1,0 +1,144 @@
+\documentclass[a4paper,11pt,draft,makeidx,twocolumn]{amsart}
+\usepackage[thm,couleur,draft]{amsdip}
+
+\geometry{hmargin=3em}
+\setlength{\columnsep}{2em}
+\DeclareMathOperator\uu{\underline{u}}
+\pagenumbering{gobble}
+
+\begin{document}
+\section{Notations}
+\subsection*{Données.}
+Soit $M$ une variété réelle lisse ou analytique de dimension $2n$ munie d'une structure complexe $I$ intégrable. On dispose au voisinage d'un point $O \in M$ de coordonnées réelles $x^i$ centrées en $O$. On notera $u^a = x^a + ix^{a+n}$	.
+
+On introduit les objets suivants~:
+\subsection{} Les différents faisceaux naturels, (on notera $\Gamma(U,\Ff)$ les sections de $\Ff$ sur l'ouvert $U$)~:
+\begin{itemize}
+\item Les faisceaux constants $\underline{\R}$, $\underline{\C}$. Dont les sections sont les fonctions localement constantes à valeurs dans $\R$, resp. $\C$.
+\item Le faisceau structural (lisse) $\Cc^\infty$ ou $\Cc^\infty_M$, dont les sections sont les fonctions lisses à valeurs complexes.
+\item Le faisceau structural analytique $\Cc^\omega$ ou $\Cc^\omega_M$, dont les sections sont les fonctions analytiques à valeurs complexes.
+\end{itemize}
+\subsection{} Le fibré tangent $T_\R M$ à $M$, ses sections lisses forment de manière naturelle un faisceau de $\R$-espaces vectoriels de dimensions $2n$ que l'on notera $\mathfrak{X}$. Une base locale des sections est donnée par la famille~:
+\[
+\dpp{}{x^1} , \dpp{}{x^2} , \cdots , \dpp{}{x^{2n}}
+\]
+On identifie les champs de vecteurs et les dérivations réelles sur l'anneau des fonctions réelles sur $M$.
+\subsection{} Son complexifié $T_\C M := T_\R M \otimes_\R \C$ dont le faisceau associé est $\mathfrak{X}_\C = \mathfrak{X} \otimes_{\underline{\R}} \underline{\C}$.
+Une base locale des sections est donnée par la famille précédente ou par~:
+\[
+\dpp{}{u^1} , \dpp{}{u^2} , \cdots , \dpp{}{u^{n}} , \dpp{}{\bar{u}^1} , \dpp{}{\bar{u}^2} , \cdots , \dpp{}{\bar{u}^{n}}
+\]
+On a la décomposition spectrale (fibre à fibres)
+\[
+T_\C M = T^{1,0}M \oplus T^{0,1}M
+\]
+qui s'écrit en terme de faisceaux
+\begin{equation}
+\mathfrak{X}_\C = \mathcal{X} \oplus \bar{\mathcal{X}}
+\end{equation}
+
+qui fait apparaître
+\begin{itemize}
+\item L'espace propre pour la valeur propre $i$ de l'opérateur $I$~: $T^{1,0}M$. Fibré vectoriel complexe de dimension $n$ dont les sections sont appelés \textit{champs de vecteurs $I$-holomorphes}.\\
+Il s'identifie naturellement au fibré tangent réel par l'application partie réelle $T^{1,0}M~\rightarrow~T_\R M$ ; on le notera par la suite $TM$.
+\item L'espace propre pour la valeur propre $-i$ de l'opérateur $I$~: $T^{0,1}M$. Fibré vectoriel complexe de dimension $n$ dont les sections sont appelés \textit{champs de vecteurs \mbox{($I$-)antiholomorphes}}.
+\item Une opération $X \mapsto \bar{X}$ sur $T_\C M = T_\R M \otimes_\R \C$ qui échange $T^{1,0}M$ et $T^{0,1}M$.
+\end{itemize}
+\subsection{} L'espace des $1$-formes réelles $\Omega_{\R,M} := \Hom_\R(T_\R M,\R)$.
+\subsection{} Son complexifié $\Omega_{\C,M} := \Hom_\C(T_\C M,\C) = \Hom_\R(T_\R M,\C)$. On a la décomposition obtenue par dualité~:
+\[
+\Omega_{\C,M} = \Omega^{0,1} \oplus \Omega^{1,0}
+\]
+\begin{itemize}
+\item $\Omega^{1,0} := (T^{0,1}M)^\bot$ faisceau des formes qui s'annulent sur les $(0,1)$-vecteurs. Fibré vectoriel complexe de dimension $n$.\\
+C'est également l'espace des formes propres de valeur propre $i$ pour l'operateur $I^*$.
+\item $\Omega^{0,1} := (T^{1,0}M)^\bot$ faisceau des formes qui s'annulent sur les $(1,0)$-vecteurs. Fibré vectoriel complexe de dimension $n$.\\
+C'est également l'espace des formes propres de valeur propre $-i$ pour l'operateur $I^*$.
+\end{itemize}
+\subsection{} On définit les $m$-formes à valeur complexes par~:
+\[
+\Omega^m := \bigwedge^m \Omega_{\C,M}
+\]
+C'est le faisceau des formes $m$-linéaires alternées sur $TM$ à valeurs complexes. On remarquera que $\Omega^0 = \Cc^\infty_M$ faisceau des fonctions complexes lisses.
+\subsection{ \label{forme_type}} Enfin, on définit les $(p,q)$-formes de la façon suivante~:
+\[
+\Omega^{p,q} : = \bigwedge^p \Omega^{1,0}  \wedge \bigwedge^q \Omega^{0,1} \; \subset \; \Omega^m
+\]
+Si on pose $m=p+q$. C'est également le faisceau des formes $m$-linéaires alternées sur $T_\C M$ qui s'annulent sur les $m$-uplets de vecteurs $(X_1,\cdots X_{m})$ dès lors que
+\begin{itemize}
+\item au moins $p+1$ des $X_i$ sont de type $(1,0)$
+\item ou au moins $q+1$ des $X_i$ sont de type $(0,1)$.
+\end{itemize}
+On a alors la décomposition
+\[
+\Omega^m = \bigoplus_{p+q = m} \Omega^{p,q}
+\]
+\subsection{} Les opérateurs $\dd : \Omega^k \rightarrow \Omega^{k+1}$ en définissant $(\dd \theta)(X)$ pour $\theta \in  \Omega^k$, $X=(X_1,X_2, \cdots , X_{k+1})$ où les $X_i \in TM$ par~:
+\[
+\sum_{1 \leq j \leq k} (−1)^j X_j\left(\theta\left(\check{X}^j\right)\right)+
+\sum_{1 \leq j < i \leq k} (−1)^{j+i} \theta\left([X_j,X_i ], \check{\check{X}}^{j,i} \right)
+\]
+\begin{itemize}
+\item Dans le cas $k=0$, la deuxième partie de la formule est vide, et on retrouve l’opération $f \mapsto X(f)$, ainsi $(\dd f)(X) = X(f)$.
+\item Cette définition intrinsèque coïncide dans des coordonnées avec
+\[
+\dd \theta = \dd \left(\theta_K \dd x^K\right) = \dpp{\theta_K}{x^i}\dd x^i \wedge \dd x^K
+\]
+\item L’opérateur $d$ sur $ \Omega^k$ satisfait la règle de \textsc{Leibnitz} : 
+\[
+\dd\,(\alpha \wedge \beta) = \dd \alpha \wedge \beta +(-1)^{\deg(\alpha)} \alpha \wedge \dd \beta
+\]
+\end{itemize}
+\subsection{} On dispose naturellement des projections
+\[
+\pi^{p,q} : \Omega^{p+q} \longrightarrow \Omega^{p,q}
+\]
+On peut dès lors définir les opérateurs $\partial$ et $\dbarre$ comme
+\begin{itemize}
+\item la partie de type $(p+1,q)$ de la différentielle d'une $(p,q)$-forme : $\partial = \pi^{p+1,q} \circ \dd_{\,\vert \Omega^{p,q}}$
+\item la partie de type $(p,q+1)$ de la différentielle d'une $(p,q)$-forme : $\dbarre = \pi^{p,q+1} \circ \dd_{\,\vert \Omega^{p,q}}$
+\end{itemize}
+\subsection{} On définit $\Oo_M$ (ou $\Oo_{(M,I)}$ si il y a ambiguïté) le faisceau des fonctions holomorphes sur $M$ à valeurs complexes comme le noyau de l’opérateur $\dbarre : \Cc^\infty_M \rightarrow \Omega^1$. C'est automatiquement un sous-faisceau de $\Cc^\omega_M$ (conséquence de la formule de \textsc{Cauchy}).\\
+De même on définit $\Oo_M(E)$ pour $E \rightarrow M$ fibré vectoriel holomorphe, comme le faisceau des sections holomorphes de $E$.
+\subsection{\label{integrabilité}} La structure presque complexe $I$ est dite \emph{intégrable} si l'une des conditions équivalentes est satisfaite~:
+\begin{enumerate}[($i$)]
+\item Le tenseur de \textsc{Nijenhuis} défini par~: $N_I(X,Y) := [ I X , I Y ] - I [ X , I Y ] - I [ I X , Y ] + I^2 [ X , Y ]$ est identiquement nul.
+\item Pour tout champ de vecteur complexes $X,Y$ sur $M$ satisfaisant $I X=iX$ et $I Y=iY$, le crochet de \textsc{Lie} $[X,Y]$ satisfait également $I[X,Y] = i[X,Y]$
+\item L'espace tangent $I$-holomorphe $TM = T^{1,0}M \subset T_\C$  est stable par crochet de Lie. C'est-à-dire $[TM,TM] \subseteq TM$
+\item Pour toute famille $(\omega^\alpha)_\alpha$ de $(1,0)_I$-formes sur $M$ de rang $n$, et pour tout $\alpha$, $\dd \omega^\alpha = \theta^\alpha_\beta \wedge \omega^\beta$ pour des $1$-formes $\theta^\alpha_\beta$.
+\item Le dual de l'espace tangent $I$-holomorphe $\Omega^{1,0} \subseteq \Omega^1$ satisfait $\dd \Omega^{1,0} \subseteq \Omega^1 \wedge \Omega^{1,0}_M$.
+\item $\dd = \partial + \dbarre$, ce qui signifie que la différentielle d'une $(p,q)$-forme est une somme de $(p+1,q)$ et $(p,q+1)$-formes.
+\item $\dd  = \partial + \dbarre$ sur $\Omega^1_M$.
+\item Le diagramme suivant commute~:
+\begin{center}\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=2em,
+column sep=2.5em, text height=1.5ex, text depth=0.25ex]
+{ \Omega^{0,1} & \Omega^1 & \Omega^{1,0} \\
+  \Omega^{0,2} & \Omega^2 & \Omega^{2,0} \\ };
+\path[->, font=\scriptsize]
+(m-1-2) edge node[auto] {$\pi^{0,1}$} (m-1-1)
+(m-1-2) edge node[auto] {$\pi^{1,0}$} (m-1-3)
+(m-2-2) edge node[auto] {$\pi^{0,2}$} (m-2-1)
+(m-2-2) edge node[auto] {$\pi^{2,0}$} (m-2-3)
+(m-1-1) edge node[auto] {$\dbarre$} (m-2-1)
+(m-1-2) edge node[auto] {$d$} (m-2-2)
+(m-1-3) edge node[auto] {$\partial$} (m-2-3);
+\end{tikzpicture}\end{center}
+Cette propriété d'intégrabilité est détaillé en appendice \autoref{preuveintegrabilite}.
+\item $\partial^2 f = 0$ pour tout $f \in\Gamma(M,\Cc^\infty)$.
+\end{enumerate}
+
+\subsection*{Todo}
+\begin{itemize}
+\item Anti-symétrisation
+\item Notation tensorielle
+\item $\dd$ (définition tensorielle)
+\end{itemize}
+
+\subsection*{Formulaire.}
+\begin{eqnarray*}
+\dd f & = & \dpp{f}{z}\ \dd z + \dpp{f}{\bar{z}}\ \overline{\dd z} \\
+\dbarre f & = & \dpp{f}{z}\ \dbarre z + \dpp{f}{\bar{z}}\ \overline{\partial z} \\
+\partial f & = & \dpp{f}{z}\ \partial z + \dpp{f}{\bar{z}}\ \overline{\dbarre z}
+\end{eqnarray*}
+\end{document}
