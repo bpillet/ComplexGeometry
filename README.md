@@ -1,4 +1,6 @@
 # ComplexGeometry
-* Géométrie complexe : Quelques notes de géométrie complexe
-* L'espace projectif et ses fibrés en droites
-* Quelques notes de théorie de la déformation à la Kodaira-Spencer
+* Géométrie complexe : Quelques notes de géométrie complexe.
+    * Cohomologie : Quelques notes sur les différentes théories cohomologiques avec un point de vue orienté vers les applications en géométrie complexe.
+    * Géométrie riemannienne et hermitienne.
+* L'espace projectif et ses fibrés en droites.
+* Déformation : Un théorème de complétude de théorie de la déformation à la Kodaira-Spencer.
