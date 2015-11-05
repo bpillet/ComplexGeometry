@@ -26,6 +26,10 @@
 *-blx.bib
 *.brf
 *.run.xml
+*.idx
+*.ist
+*.ilg
+*.ind
 
 ## Build tool auxiliary files:
 *.fdb_latexmk
@@ -50,3 +54,4 @@
 # En-tetes personalisees a re-telecharger automatiquement
 *dipneuste.sty
 *amsdip.sty
+*teaching.sty

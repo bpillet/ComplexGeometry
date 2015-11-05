@@ -1,0 +1,256 @@
+%% Informations générales
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{teaching}
+
+%% Chargement des extensions
+%CARACTERES
+\RequirePackage[utf8x]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{ucs}
+%GEOMETRY
+\RequirePackage{geometry}%\geometry{a4paper, hmargin=50pt, vmargin=75pt} % Régler les marges horizontales et verticales.
+%LANGUAGE
+\RequirePackage[english,francais]{babel}
+%SYMBOLS
+\RequirePackage{bm,amsmath,amssymb,amsthm}
+%GRAPHICS
+\RequirePackage{graphicx} % Permet de mettre des images
+%ENUMERATE
+\RequirePackage{enumerate} % Permet de faire des énumérations genre (i), (ii), (iii).
+%INDEX
+% Pas de makeindex, déjà pouvu par amsart
+%COULEURS PERSOS
+\RequirePackage{color}
+%FLECHES, SYMBOLES, GRAPHES, AUTOMATES
+\RequirePackage{tikz} % ajoute des symboles de flèches et autres.
+\usetikzlibrary{matrix,arrows,automata} % Permet de constuire des graphes.
+%ALGORITHMES
+\RequirePackage[ruled,vlined,french]{algorithm2e} % Permet d'écrire des algos.
+
+%LINKS
+\RequirePackage{hyperref} % toujours le mettre en dernier !
+\hypersetup{%
+colorlinks = true,%
+linkcolor = black,%
+urlcolor = blue,%
+citecolor = blue}
+
+
+
+%% Déclaration des booléens et des options
+\newif\if@draft\@draftfalse%
+
+\DeclareOption{draft}{\@drafttrue}
+
+\DeclareOption*{%
+\PackageWarning{dipneuste}{Option inconnue : ‘\CurrentOption’}%
+}
+
+
+\ProcessOptions\relax
+
+
+%% Définition des commandes
+%MATHBB
+\newcommand\N{\mathbb{N}} % Entiers naturels
+\newcommand\Z{\mathbb{Z}} % Entiers relatifs
+\newcommand\Q{\mathbb{Q}} % Rationnels
+\newcommand\R{\mathbb{R}} % Réels
+\newcommand\C{\mathbb{C}} % Complexes
+\newcommand\Ha{\mathbb{H}} % Quaternions (Ha__milton)
+\newcommand\K{\mathbb{K}} % Corps quelconque
+\newcommand\E{\mathbb{E}} % Espérance
+\newcommand\F{\mathbb{F}} % Corps fini
+\newcommand\Pro{\mathbb{P}} %  Proba
+\newcommand\B{\mathbb{B}} % aucune idée
+\newcommand\T{\mathbb{T}} % Tore
+\def\S{\mathbb{S}} % Sphère
+
+%MATHCAL
+\newcommand\Oo{\mathcal{O}}
+\newcommand\Uu{\mathcal{U}}
+\newcommand\Gg{\mathcal{G}}
+\newcommand\Ll{\mathcal{L}} % Applications linéaires 
+\newcommand\Cc{\mathcal{C}} % Fonctions continues
+\newcommand\Pp{\mathcal{P}} % Parties d'un ensemble
+\newcommand\Rr{\mathcal{R}} % Relation d'équivalence
+\newcommand\Ff{\mathcal{F}} % Tribu / Ensemble des fonctions …
+\newcommand\Bb{\mathcal{B}} % Boréliens
+\newcommand\Aa{\mathcal{A}} % Tribu
+\newcommand\Mm{\mathcal{M}} % Matrices
+\newcommand\Nn{\mathcal{N}} % …
+\newcommand\Tt{\mathcal{T}} % Topologie
+\newcommand\Hh{\mathcal{H}} % Espace de Hilbert
+\newcommand\Ee{\mathcal{E}} % Espace total d'un fibré
+
+\newcommand\Gl{\mathcal{G}\ell} % Gl_n (K)
+
+%MATHFRAC
+\DeclareMathOperator\Sf{\mathfrak{S}} % Groupe symétrique
+\DeclareMathOperator\Al{\mathfrak{A}} % Groupe alterné
+
+
+%DERIVATIONS
+\DeclareMathOperator{\dd}{d\!} 	% d d'intégration comme dans dµ ou dt
+\DeclareMathOperator{\dbarre}{\bar{\partial}}
+\newcommand\dpp[2]{\dfrac{\partial{#1}}{\partial{#2}}} %\dpp{f}{x} = df/dx
+\newcommand\dppp[3]{\dfrac{\partial^2{#1}}{\partial{#2}\partial{#3}}} %\dppp{f}{x}{y} = df/(dxdy)
+\newcommand\dpppp[4]{\dfrac{\partial^3{#1}}{\partial{#2}\partial{#3}\partial{#4}}} %\dppp{f}{x}{y}{z} = df/(dxdydz)
+\newcommand\dpppP[4]{\dfrac{\partial^3{#1}}{\partial{#2} {#3} {#4}}} %\dppp{f}{x}{y}{z} = df/(dxyz)
+\DeclareMathOperator{\Div}{div} % divergence
+
+\DeclareMathOperator{\demi}{\frac{1}{2}} % fraction 1/2
+
+\newcommand\ssi{\; \textbf{ssi} \;} % ssi
+
+\DeclareMathOperator{\Vv}{| \! | \! |} % Norme subordonnée ||| A |||
+\newcommand\NLd[1]{\left\Vert {#1} \right\Vert_{L^2}} % Norme 2 : \NLd{f} = || f ||_2
+
+\DeclareMathOperator{\sh}{sh} % sinus hyperbolique
+
+\DeclareMathOperator{\Id}{Id} % Identité
+
+% Interval d'entiers ou interprétation d'un terme en logique.
+\DeclareMathOperator{\llbracket}{[\![}
+\DeclareMathOperator{\rrbracket}{]\!]}
+
+\newcommand\name[2]{{#1}\textsc{ {#2}}} % utilisation : \name{Stefàn}{Banach}
+
+\newcommand\ens[2]{\left\lbrace {#1} \; \left| \; {#2} \right. \right\rbrace } 
+% utilisation : \ens{(x,y) \in \R^2}{x^2 + y^2 = 1}
+
+\DeclareMathOperator{\image}{Im} % Image
+\newcommand\End{\text{End}} % Endomorphismes
+\newcommand\Hom{\text{Hom}} % Hom-set
+
+\newcommand\quot[1]{\Z/{#1}\Z} % \quot{n} = Z/nZ
+
+\newcommand\Card{\text{Card}} % Cardinal
+
+\newcommand\Legendre[2]{\left(\dfrac{{#1}}{{#2}}\right)}  % Symbole de Legendre et Jacobi
+
+% INDICATRICE
+%\newcommand\1[1]{\mathbf{1}_{\{#1\}}} % Fonction indicatrice
+\newcommand\carac[1]{\mathbf{1}_{#1}} % Fonction indicatrice 2
+
+%LABEL ITEMS
+\AtBeginDocument{%
+\renewcommand{\labelitemi}{$\bullet$}%
+\renewcommand{\labelitemii}{$\blacktriangleright$}%
+\renewcommand{\labelitemiii}{$\circ$}%
+\renewcommand{\labelitemiv}{$\triangleright$}%
+}
+
+% COULEURS
+	\definecolor{DarkRed}{rgb}{0.55,0,0.1} 
+	\definecolor{DarkBlue}{rgb}{0.1,0,0.55}  
+	\definecolor{DarkGreen}{rgb}{0,0.55,0.1} 
+%Pour utiliser sur le texte "banane" écrire {\color{DarkRed} banane}
+%... peut s'utiliser sur de larges parties du texte.
+
+%DRAFT
+\if@draft
+	\newcommand{\todo}{%
+		\textbf{\large \color{DarkRed} To Do ! ! }%
+		\marginpar{ \color{DarkRed} To Do ! ! }%
+	}
+	\newcommand{\question}{%
+		\textbf{\large \color{DarkGreen} Question ?! }%
+		\marginpar{ \color{DarkGreen} Question ?! }%
+	}
+	\newcommand{\?}{%
+		\begin{tikzpicture}[remember picture,overlay,baseline=(0.base)]%
+			\node[] (0) {\bf ?};
+			\node[circle, draw, scale=3, fill=red, opacity=0.3, color=DarkGreen] {\bf ?};%
+		\end{tikzpicture}%
+	}
+	\newcommand{\excl}{%
+		\begin{tikzpicture}[remember picture,overlay,baseline=(0.base)]%
+			\node[] (0) {\bf !};
+			\node[circle, draw, scale=3, fill=red, opacity=0.3, color=DarkBlue] {\bf !};%
+		\end{tikzpicture}%
+	}
+	\geometry{a4paper, hmargin=60pt, vmargin=75pt}
+\fi
+
+\def\exercice#1{%
+  \ifhmode\par\fi
+  \removelastskip
+  \vskip 2ex\goodbreak
+  \refstepcounter{subsection}%
+  \begingroup
+  \noindent
+  \leavevmode\large\bfseries\raggedright
+  Exercice \thesubsection\ifx$#1$\else~: #1\fi\par\nobreak
+  \vskip -1ex\nobreak
+  \endgroup
+  \noindent\hrulefill\nobreak
+  \vskip 1ex\nobreak
+  \addcontentsline{toc}{subsection}{%
+    \protect\numberline{\thesubsection}%
+    }%
+  }%
+
+\setcounter{secnumdepth}{1}%
+\renewcommand\thesection{\hfill\Roman{section}.}%
+\renewcommand\thesubsection{\arabic{subsection}}%
+
+%Exemple \dochead{licence1}{VAR}{TD 3}
+\newcommand*{\dochead}[3]{%
+	\noindent\makebox[\textwidth]{\tiny #1\hspace{\fill}\the\year}\par%
+	\noindent\makebox[\textwidth]{%
+		\includegraphics[scale=0.4,viewport=0.5cm 3.5cm 9.5cm 6.5cm]{logo_rennes1.pdf}%
+		\parbox[b]{11cm}{%
+			\begin{center}%
+			\colorbox[gray]{0.9}{\textbf{#2}}\par%
+			\medskip%
+			\textit{#3}\par%
+			\end{center}%
+		}%
+	}%
+}
+
+%Exemple \interrohead{Une heure}
+\newcommand*{\interrohead}[1]{%
+	\vspace*{2em}%
+	\vbox{%
+		\hrule%
+		\vspace*{3pt}%
+		\begin{raggedright}%
+			\emph{\small Documents, notes de cours ou de TD, téléphones portables, 
+			calculatrices sont interdits. Justifiez toutes vos réponses.}\\%
+			\smallskip%
+			Dur\'ee : {#1}\\%
+			\smallskip%
+		\end{raggedright}%
+		\vspace*{3pt}%
+		\hrule%
+	}%
+	\vspace*{2em}%
+	}
+
+%Exemple \interroheadonsheat{Une heure}
+\newcommand*{\interroheadonsheat}[1]{%
+	\vspace*{2em}%
+	\vbox{%
+		\hrule%
+		\vspace*{3pt}%
+		\begin{raggedright}%
+			\emph{\small Documents, notes de cours ou de TD, téléphones portables, 
+			calculatrices sont interdits. Justifiez toutes vos réponses.}\\%
+			\smallskip%
+			Dur\'ee : {#1}\\%
+			\smallskip%
+			\textbf{NOM :}\\%
+			\textbf{PRÉNOM :}\\%
+			\smallskip%
+		\end{raggedright}%
+		\vspace*{3pt}%
+		\hrule%
+	}%
+	\vspace*{2em}%
+	}
+
+%% Fin du package
+
+\endinput

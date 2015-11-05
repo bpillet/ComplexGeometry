@@ -1,0 +1,108 @@
+\documentclass[12pt,makeidx]{amsart}
+\usepackage[couleur,draft]{amsdip}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\geometry{papersize={150mm,243mm},left=2em,right=2em,top=3em,bottom=3em}
+\geometry{a4paper,left=2em,right=2em,top=3em,bottom=3em}
+%\setlength{\columnsep}{3.5em}
+\pagenumbering{gobble}
+\usepackage[charter]{mathdesign}
+%\usepackage[normalmargins]{savetrees}
+\sloppy
+\pagestyle{empty}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\makeindex
+\begin{document}
+
+\section{Notations universelles}
+\medskip
+\begin{center}
+\fbox{$\tau = 2\pi$}
+\end{center}
+\medskip
+
+\section{Volume et métriques}
+\subsection{Cas riemannien}
+Soit $(M,g)$ une variété riemannienne orienté. Alors dans \textit{n'importe quelle carte} (orientée) $(x^i)_i$
+on peut écrire
+\begin{equation}\label{MetriqueRiemann}\index{MetriqueRiemann@Métrique riemannienne}
+g_x = \sum_{i,j} g_{ij}(x) \dd x^i \otimes \dd x^j
+\end{equation}
+Le tenseur $g_{ij}$ est
+\begin{itemize}
+\item Symétrique : $g_{ij} = g_{ji}$
+\item Positif : $\sum g_{ij}x^ix^j \geq 0$
+\item Défini : $\left(\sum g_{ij}x^ix^j = 0 \right)\Rightarrow \left(x = 0\right)$
+\end{itemize}
+
+On définit la forme de volume riemannienne 
+\begin{equation}\label{VolumeRiemann}\index{VolumeRiemann@Volume riemannien}
+\dd Vol = \sqrt{\det(g)} \dd x^1 \wedge \cdots \wedge \dd x^n
+\end{equation}
+Elle ne dépend pas du choix de la carte !
+
+On peut remarquer que \begin{equation}
+\dd Vol = E^*_1 \wedge \cdots  \wedge E^*_n
+\end{equation}
+où $(E_i)_i$ base orthonormée orientée de $TM$ et $(E_i^*)$ la base duale.
+
+\subsection{Cas hermitien}
+Soit $X$ une variété complexe. Alors une métrique hermitienne $h$ sur $X$ peut s'écrire dans \textit{n'importe quelle carte} holomorphe $(z^i)_i$ comme
+\begin{equation}\label{MetriqueHermit}\index{MetriqueHermit@Métrique hermitienne}
+h_x = \sum_{i,j} h_{ij}(z) \dd z^i \otimes \dd \bar{z}^j
+\end{equation}
+Rq : Une métrique hermitienne est antiholomorphe à droite
+
+On lui associe~:
+\begin{itemize}
+\item $\omega = - Im(h)$ la forme fondamentale \cite{Demailly}
+\item $g = Re(h)$ la métrique riemannienne sous-jacente
+\end{itemize}
+Dès lors
+\begin{equation}
+h = g - i \omega
+\end{equation}
+d'où
+\begin{equation}
+g(I\_,\_) = \omega
+\end{equation}
+et
+\begin{equation}
+\omega(I\_,\_) = -g
+\end{equation}
+
+On pose $\dd V_\omega = \omega^n/n!$ forme volume hermitienne \cite{Demailly}
+
+On a la relation
+\begin{equation}\label{VolumeRiemannHermit}
+\dd V_{\omega} = 2^n \dd Vol
+\end{equation}
+
+\subsection{Sur $\Pro^1$}
+\[
+\omega_{FS} = i\ddbarre \log (1+\zeta\bar\zeta) = \dfrac{i\dd \zeta \wedge \dd \bar\zeta}{\left(1+\zeta\bar\zeta\right)^2}
+\]
+En posant $\zeta = re^{i\theta}$ on a 
+\[
+i\dd \zeta \wedge \dd \bar\zeta = 2r \dd r \wedge \dd \theta
+\]
+et donc on en déduit que
+\[
+\int_{\Pro^1} \omega_{FS} = \int_0^\tau \int_0^\infty \dfrac{2r \dd r \dd \theta}{(1+r^2)^2}
+= \tau
+\]
+Et $Vol(\Pro^1) = \demi\int_{\Pro^1} \omega = \pi$ : La sphère de rayon $\demi$.
+
+\subsubsection{Courbure} Une section locale du tangent de $\Pro^1$ est un champ de vecteur local. Prenons $X = \partial_\zeta$ alors sa norme relativement à la métrique $\omega_{FS}$ est 
+\[
+\vert \partial_\zeta \vert^2 = \dfrac{1}{\left(1+\zeta\bar\zeta\right)^2}
+\]
+D'où la courbure de $\Pro^1$ est donnée dans cette carte par
+\[
+\Theta(T\Pro^1) = -i\ddbarre \log \left(\dfrac{1}{\left(1+\zeta\bar\zeta\right)^2}\right) = 2 \omega_{FS}
+\]
+
+\appendix
+\printindex
+\end{document}
