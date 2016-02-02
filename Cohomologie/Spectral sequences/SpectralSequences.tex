@@ -1,0 +1,127 @@
+\documentclass[11pt,draft,makeidx]{amsart}
+
+\usepackage[]{amsdip} % Options : ct, thm, couleur, draft, minimal
+
+\pagenumbering{gobble}
+\title{}
+
+\begin{document}
+\section{Complexes et suites exactes}
+\subsection{Filtration}
+si on a une suite d'ev $F^a$ avec des morphismes $f^a : F^a \to F^{a+1}$, de graphe $\phi^a = \Gamma(f^a) \in F^a \oplus F^{a+1}$.
+
+On pose
+\[
+F = \bigoplus_{a \in \mathbb{Z}} F^a
+\]
+\[
+\Phi = \bigoplus_{a \in \mathbb{Z}} \phi^a \quad \subseteq \bigoplus_{a \in \mathbb{Z}} \left(F^a\oplus F^{a+1}\right)
+\]
+
+Alors si $F^\bullet$ est un complexe, $\Phi$ induit une graduation $B$ sur $F$ donnée par
+\[
+B^k = \left(\bigoplus_{a<k} F^a\right) \oplus \phi^a
+\]
+Mais de façon évidente, il y a une autre graduation $A$ de $F$ : celle donnée par
+\[
+A^k = \bigoplus_{a \leq k} F^a \subseteq F
+\]
+
+On a alors
+\[
+A^k \cap B^k = ?
+\]
+
+\vfill
+\newpage
+\subsection{Complexe Gradué}
+On peut supposer que chaque $F^a$ vient avec un graduation
+\[
+F^a \supset \cdots \supset G^pF^a \supset G^{p+1}F^a \supset \cdots 0
+\]
+qui est préservé par le complexe au sens suivant
+\[
+f^a\left(G^pF^a\right) \subseteq G^pF^{a+1}
+\]
+
+\subsubsection{Cas le plus simple : Un sous-complexe avec la dérivation induite}
+Soit $G^\bullet \subseteq F^\bullet$ un sous-complexe stable par $f^\bullet$.
+
+\paragraph{\textbf{Page 0}}
+\begin{center}
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=2em,
+column sep=2.5em, text height=1.5ex, text depth=0.25ex]
+{ \cdots & G^a & G^{a+1} & G^{a+2} & \cdots \\
+  \cdots & F^{a-1}/G^{a-1} & F^a/G^a & F^{a+1}/G^{a+1} & \cdots \\ };
+\path[->, font=\scriptsize]
+(m-1-1) edge node[auto] {} (m-1-2)
+(m-1-2) edge node[auto] {} (m-1-3)
+(m-1-3) edge node[auto] {} (m-1-4)
+(m-1-4) edge node[auto] {} (m-1-5)
+(m-2-1) edge node[auto] {} (m-2-2)
+(m-2-2) edge node[auto] {} (m-2-3)
+(m-2-3) edge node[auto] {} (m-2-4)
+(m-2-4) edge node[auto] {} (m-2-5);
+\end{tikzpicture}
+\end{center}
+
+On calcule alors les $E_1^{p,q}$ comme la cohomologie des complexes suivants
+\[
+ F^{a-1}/G^{a-1} \longrightarrow \underset{E^{0,a}_1}{F^a/G^a} \longrightarrow F^{a+1}/G^{a+1}
+\]
+et
+\[
+G^a \longrightarrow \underset{E^{1,a}_1}{G^{a+1}} \longrightarrow G^{a+2}
+\]
+
+\paragraph{\textbf{Page 1}}
+\begin{center}
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=2em,
+column sep=2.5em, text height=1.5ex, text depth=0.25ex]
+{ \cdots & E^{1,a-1} & E^{1,a} & E^{1,a+1} & \cdots \\
+  \cdots & E^{0,a-1} & E^{0,a} & E^{0,a+1} & \cdots \\ };
+\path[->, font=\scriptsize]
+(m-2-2) edge node[auto] {} (m-1-2)
+(m-2-3) edge node[auto] {} (m-1-3)
+(m-2-4) edge node[auto] {} (m-1-4);
+\end{tikzpicture}
+\end{center}
+
+
+
+On calcule alors les $E_2^{p,q}$ comme la cohomologie du complexe suivant
+\[
+\cdots \to 0 \to 0 \to  \underset{E_2^{0,a}}{E_1^{0,a}} \to \underset{E_2^{1,a}}{E_1^{1,a}} \to 0 \to 0 \to \cdots
+\]
+ce qui donne en fait la suite exacte
+\[
+0 \to E^{0,a}_2 \to  E_1^{0,a} \to E_1^{1,a} \to E^{1,a}_2 \to 0
+\]
+
+
+\paragraph{\textbf{Page 2}}
+\begin{center}
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=2em,
+column sep=2.5em, text height=1.5ex, text depth=0.25ex]
+{ \cdots & E^{1,a-1} & E^{1,a} & E^{1,a+1} & \cdots \\
+  \cdots & E^{0,a-1} & E^{0,a} & E^{0,a+1} & \cdots \\ };
+\end{tikzpicture}
+\end{center}
+
+
+\subsection{Interprétation à 1 object}
+La mise en commun de tous les $f^a$ donne un endomorphisme $f$ de $F$. Si $F^\bullet$ est un complexe, alors $f^2 = 0$. Soit
+\[
+G = \dfrac{\text{ker }f}{\text{Im }f}
+\]
+
+\begin{itemize}
+\item
+$f^2$ mesure l'obstruction à ce que $F^\bullet$ soit un complexe
+\item
+Si $F^\bullet$ est un complexe, $G$ mesure l'obstruction à ce que $F^\bullet$ soit exacte.
+\end{itemize}
+\end{document}
