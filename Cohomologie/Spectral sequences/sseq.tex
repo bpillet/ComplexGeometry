@@ -1,0 +1,217 @@
+\documentclass[12pt,makeidx, draft]{amsart}
+\usepackage[couleur,thm]{amsdip}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{sseq}
+
+\usepackage{mathtools,amsthm}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\DeclareMathOperator\Conf{\Cc\text{\tiny onf}}
+\DeclareMathOperator{\dual}{\star}
+\DeclareMathOperator{\Mhk}{M_{\text{\tiny HK}}}
+\DeclareMathOperator{\Ii}{\mathcal{I}}
+\DeclareMathOperator{\Iio}{\mathcal{J}}
+\DeclareMathOperator{\dbi}{\dbarre\!\Ii}
+\DeclareMathOperator{\ONinf}{\Oo^N_{(\infty)}}
+
+\def\presuper#1#2%
+  {\mathop{}%
+   \mathopen{\vphantom{#2}}^{#1}%
+   \kern-\scriptspace%
+   #2}
+
+%\newtheorem{prop}{Proposition}
+%\newtheorem{cor}{Corollaire}
+%\newtheorem{thm}{Theorem}
+
+
+% BROUILLON
+%\usepackage[inline]{showlabels}
+\pagenumbering{gobble}
+\sloppy
+%\pagestyle{empty}
+\definecolor{Grey}{rgb}{0.3,0.3,0.3} 
+\newenvironment{douteux}{%
+  \color{Grey}\tiny
+  \vspace{.3em}
+  \hrule
+  \begin{center}{\small ce qui suit est douteux}\end{center}
+  \hrule
+  \vspace{.4em}
+}{%
+\vspace{.4em}
+\hrule
+  \vspace{.3em}
+}
+
+%% LECTURE SUR ECRAN %%
+%\usepackage[charter]{mathdesign}
+%%%% SAGECLOUD %%%%
+%\geometry{papersize={150mm,243mm},left=2em,right=2em,top=3em,bottom=3em}
+%%%% AUTRE %%%%
+\geometry{a4paper,left=4em,right=4em,top=3em,bottom=3em}
+%% IMPRESSION %%
+
+
+\DeclareMathOperator\zzb{\zeta\bar\zeta}
+\DeclareMathOperator\unp{\left(1+\zeta\bar\zeta\right)}
+
+
+
+\begin{document}
+\begin{sseq}[grid=dots, labels=none,entrysize=10mm]{-1...10}
+{-10...1}
+\newcount\cnti
+\newcount\cntp
+\def\drawarrows#1#2#3{
+\ifnum#3>0
+\cnti=#3
+\ssarrow{#1}{#2}
+\ssdropbull{}
+\advance \cnti by -1
+\drawarrows{#1}{#2}{\the\cnti}
+\fi
+}
+\def\page0#1{
+\ifnum\the\cntp<#1
+\ssmove 1 {-1}
+\ssdropbull{}
+\drawarrows{0}{1}{\the\cntp}
+\ssmove{0}{-\the\cntp}
+\advance \cntp by 1
+\page0{#1}
+\fi
+}
+\ssdropbull%{0}{0}
+\ssname{O}
+%\ssmove 0 0
+\ssline {11} {0}
+\ssdrop{}
+\ssgoto O
+\ssline {0} {-9}
+\ssdrop{}
+\ssline {0} {-2}
+\ssdrop{}
+\ssgoto O
+\cntp=1
+\page0{11}
+\end{sseq}
+\bigskip
+\begin{sseq}[grid=dots, labels=none,entrysize=10mm]{-1...10}
+{-10...1}
+\newcount\cnti
+\newcount\cntp
+\def\drawarrows#1#2#3{
+\ifnum#3>0
+\cnti=#3
+\ssarrow{#1}{#2}
+\ssdropbull{}
+\advance \cnti by -1
+\drawarrows{#1}{#2}{\the\cnti}
+\fi
+}
+\def\page1#1{
+\ifnum\the\cntp>#1
+\drawarrows{1}{0}{\the\cntp}
+\ssmove{-\the\cntp}{0}
+\ssmove 1 {-1}
+\ssdropbull{}
+\advance \cntp by -1
+\page1{#1}
+\fi
+}
+\ssdropbull%{0}{0}
+\ssname{O}
+%\ssmove 0 0
+\ssline {11} {0}
+\ssdrop{}
+\ssgoto O
+\ssline {0} {-9}
+\ssdrop{}
+\ssline {0} {-2}
+\ssdrop{}
+\ssgoto O
+\cntp=11
+\page1{0}
+\end{sseq}
+
+\newpage
+\begin{sseq}[grid=dots, labels=none,entrysize=10mm]{-1...10}
+{-10...1}
+\newcount\cnti
+\newcount\cntp
+\def\avance#1#2#3{
+\ifnum#3>0
+\cnti=#3
+\ssmove{#1}{#2}
+\ssdropbull{}
+\advance \cnti by -1
+\avance{#1}{#2}{\the\cnti}
+\fi
+}
+\def\page#1{
+\ifnum\the\cntp>#1
+\avance{1}{0}{\the\cntp}
+\ssmove{-\the\cntp}{0}
+\ssmove 1 {-1}
+\ssdropbull{}
+\advance \cntp by -1
+\page{#1}
+\fi
+}
+\ssdropbull%{0}{0}
+\ssname{O}
+%\ssmove 0 0
+\ssline {11} {0}
+\ssdrop{}
+\ssgoto O
+\ssline {0} {-9}
+\ssdrop{}
+\ssline {0} {-2}
+\ssdrop{}
+\ssgoto O
+\cntp=11
+\page{0}
+\end{sseq}
+\bigskip
+\begin{sseq}[grid=dots, labels=none,entrysize=10mm]{-1...10}
+{-10...1}
+\newcount\cnti
+\newcount\cntp
+\def\avance#1#2#3{
+\ifnum#3>0
+\cnti=#3
+\ssmove{#1}{#2}
+\ssdropbull{}
+\advance \cnti by -1
+\avance{#1}{#2}{\the\cnti}
+\fi
+}
+\def\page#1{
+\ifnum\the\cntp>#1
+\avance{1}{0}{\the\cntp}
+\ssmove{-\the\cntp}{0}
+\ssmove 1 {-1}
+\ssdropbull{}
+\advance \cntp by -1
+\page{#1}
+\fi
+}
+\ssdropbull%{0}{0}
+\ssname{O}
+%\ssmove 0 0
+\ssline {11} {0}
+\ssdrop{}
+\ssgoto O
+\ssline {0} {-9}
+\ssdrop{}
+\ssline {0} {-2}
+\ssdrop{}
+\ssgoto O
+\cntp=11
+\page{0}
+\end{sseq}
+\end{document}
+%sagemathcloud={"lang":"francais"}
