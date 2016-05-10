@@ -1,0 +1,41 @@
+* Géométrie
+algébrique
+** Espaces annelés
+*** ELA
+**** Scheme
+***** Over a ring
+****** Over $C$
+***** Irreductible
+***** Reduced
+***** Separated
+***** Noetherian
+****** Finite type
+** Programme
+* Variety
+over $\C$
+** Affine
+** Integral
+
+
+Smooth => Irred ?
+
+It seems smooth => reduced.
+** Normal
+*** Regular
+**** smooth
+Locally an affine variety $U$ over $\C$ given by equations $g_1,\cdots g_k$ in $\AA^n$.
+
+The $U$ is smooth if the family of $\dpp{g_i}{x_j}$ has rank at least $n-m$ where $m = dim(U)$.
+***** Smooth complete
+
+=> Projective en dim $<3$
+                        
+                        
+
+
+** complete
+*** Projective
+**** $\Pro^n$
+***** Classification des fibrés vectoriels
+***** Règle de Bott
+*** Fano

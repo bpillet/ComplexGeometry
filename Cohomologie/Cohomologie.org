@@ -1,0 +1,275 @@
+* Cohomologie
+** Notations
+%\input{Notation}
+*** Faisceaux classiques
+**** Fonctions localement constantes
+$\underline{R}$ faisceau des fonctions localement constantes à valeur dans $R$
+***** Structurels
+Fonction, par défaut, signifie à valeur dans $\C$
+\begin{itemize}
+\item $\Cc$ : continues
+\item $\Cc^k$ : $k$-fois dérivables à dérivées continue
+\item $\Epsilon$ : lisses
+\item $\Cc^\omega$ : analytiques
+\item $\Oo$ : holomorphes
+\item $\underline{o}$ : polynômiales
+\end{itemize}
+
+Fonctions à valeur dans $\R \cup \{+\infty\}$
+\begin{itemize}
+\item $\Hh$ : harmoniques
+\item $PSh$ : plurisousharmoniques
+\end{itemize}
+**** formes et vecteurs
+
+$\mathcal{A}^p = \Epsilon^p$ : $p$-formes différentielles
+$\mathcal{A}^{p,q} = \Epsilon^{p,q}$ : $p+q$-formes différentielles de type $(p,q)$ relativement à une structure presque-complexe
+$\Omega^p$ : $p$-formes holomorphes
+$\Omega^{p,q}$ : $p+q$ formes holomorphes de type $(p,q)$
+
+$\mathfrak{X}$ : champs de vecteurs lisses
+$\mathcal{X}$ : champs de vecteurs holomorphes
+
+Cas particuliers
+\[
+\mathcal{A}^0 = \C^\infty
+\]
+\[
+\Omega^0 = \Oo
+\]
+***** Courants
+\cite{Demailly}
+**** Faisceau gratte-ciel
+*** Pousser et tirer
+**** !
+**** -1
+exact
+***** ^*
+**** _*
+exact à gauche
+***** Higher pushforwar $R^qf_*$
+**** ^!
+**** $\otimes$
+Exact si plat
+** Algebrique
+*** Cohomologie d'un complexe
+\cite{Demailly} Chap IV.
+\cite{Voisin}
+
+Dans une catégorie abélienne $\Aa$, un complexe est la donnée du couple $(M^\bullet, d^\bullet)$ tel que $d^i : M^i \to M^{i+1}$ et $d^{i+1} \circ d^i = 0$ pour tout $i \in \Z$.
+
+La cohomologie en degré $i$ d'un complexe $(M,d)$ est l'objet de la catégorie $\Aa$
+\[
+H^i(M^\bullet) := \text{Coker}\left( d^{i-1}: M^{i-1} \to \ker d^i\right)
+\]
+
+
+**** Hypercohomologie d'un complexe de faisceaux
+\cite{Voisin}
+
+Soit $\Ff^\bullet$ un complexe de faisceaux de groupes abéliens sur un espace topologique $X$. Alors on définit \textit{l'hypercohomologie} du complexe comme étant
+\[
+\H^k(X,\Ff^\bullet) : = R^k\Gamma(\Ff^\bullet)
+\]
+
+Si $\Gg^\bullet$ est un complexe de faisceaux $\Gamma$-acycliques et quasi-isomorphe à $\Ff^\bullet$ alors
+les $G^\bullet = \Gg^\bullet(X)$ forment un complexe de groupes abéliens
+et on a
+\[
+\H^k(X,\Ff^\bullet) = H^k(G^\bullet)
+\]
+*** Cohomologie des Faisceaux
+**** Faisceau flasques et résolution flasque
+\cite{Demailly} Chap. IV
+
+
+\cite{Voisin}
+Un complexe $(M^i,d^i)$ pour $i\geq 0$ est une \textit{résolution}  de $N$ si 
+\begin{itemize}
+\item $M^\bullet$ est exacte en $M^i$ pour $i>0$
+\item on a une suite exacte
+\[
+0 \to N \to M^0 \to M^1
+\]
+\end{itemize}
+**** Cohomologie des faisceaux
+**** Suite exacte longue
+**** Suite de Mayer-Vietoris
+*** Cech
+*** Théorème de Leray des faisceaux acycliques
+\begin{defi}
+Un recouvrement $\mathfrak{U}$ de $X$ est acyclique pour $\Ff$ si $\Ff$ n'as pas de cohomologie supérieure sur les intersections d'ouverts de $\mathfrak{U}$. C'est-à-dire~:
+\[
+\forall p>0, \forall k>0, \forall J \subseteq I, \vert J \vert = k \quad
+\check{H}^p(U_J,\Ff) = 0
+\]
+\end{defi}
+
+\begin{thm}[leray]\label{Thm_Leray}
+Si $\mathfrak{U}$ est un recouvrement acyclique pour $\Ff$, alors
+\begin{equation}
+\forall p, \quad H^p(X,\Ff) = \check{H}^p(\mathfrak{U},\Ff)
+\end{equation}
+\end{thm}
+morale : Coh de Cech sur un recouvrement acyclique = Coh des Faisceaux
+
+\cite{Demailly} Chap IV
+par. 5. Cech Cohomologie
+
+\begin{cor}
+Si $\mathfrak{U}$ est un recouvrement acyclique pour $\Ff$, alors
+\begin{equation}
+\forall p, \quad \check{H}^p(X,\Ff) = \check{H}^p(\mathfrak{U},\Ff)
+\end{equation}
+\end{cor}
+**** Lemme d'acyclicité
+Sur une variété paracompacte, les faisceaux de $C^\infty$-modules sont acycliques sur les recouvrements localement finis.
+
+En particulier pour de tels recouvrements, les faisceaux de $C^\infty$-modules n'ont pas de cohomologie supérieure non nulle : 
+\begin{equation}
+\forall q>0 , \quad \check{H}^q(X,\Ff) = 0
+\end{equation}
+**** Sur un espace paracompact,
+Cech=Faisc.
+Si $X$ est paracompacte et $\Ff$ un faisceau sur $X$ alors
+\begin{equation}
+\forall q \geq 0, \quad \cech{H}^q(X,\Ff) = H^q(X,\Ff)
+\end{equation}
+*** Isomorphisme de Leray
+** Geometrique
+*** Betti
+*** De Rham
+Par le lemme de Poincaré le complexe
+\begin{equation}\label{ExSeq_DR}
+0 \rightarrow  C^\infty \rightarrow_d
+\mathcal{A}^1 \rightarrow_d \mathcal{A}^2 \cdots
+\end{equation}
+ est exacte en $A^k$ pour tout $k>0$.
+
+C'est une résolution du faisceau $\underline{C}$
+[Voisin].
+**** Lemme de Poincaré
+\begin{lem}[Poincaré]
+Soit $U$ ouvert simplement connexe de $\R^n$ et soit $\omega$ une $k$-forme $\dd$-fermée sur $U$ alors il existe $\theta$ une $k-1$-forme sur $U$ telle que $\omega = \dd theta$
+\end{lem}
+
+
+*** Dolbeault
+**** Lemme de Dolbeault-Poincaré
+\begin{lem}[]
+Soit $U$ ouvert simplement connexe de $\C^n$ et soit $\omega$ une $(p,q)$-forme $\dbarre$-fermée sur $U$ alors il existe $\theta$ une $(p,q-1)$-forme sur $U$ telle que $\omega = \dbarre theta$
+\end{lem}
+
+\begin{lem}[Griffiths-Harris]
+Soit $\Delta$ polydisque de $\C^n$, alors
+\begin{equation}
+H^{p,q}_{Dol}(\Delta,\underline{C}) = 0 \quad \text{ pour } q \geq 1
+\end{equation}
+\end{lem}
+*** Bott-Chern
+\[
+\dfrac{\ker \partial \cap \ker \bar\partial}{\Im \partial\bar\partial}
+\]
+*** Aeppli
+\[
+\dfrac{\ker \partial\bar\partial}{\Im \partial + \Im\bar\partial}
+\]
+** Relations
+*** Vanishing Thm
+**** Grothendieck
+\begin{theorem}[Grothendieck vanishing]
+Let $X$ be a noetherian topological space.
+
+For all $i > dim X$ and all sheaves of abelian groups $\Ff$ on $X$, we have $H^i(X, \Ff ) = 0$.
+\end{theorem}
+**** Kodaira
+\begin{theorem}[Kodaira Vanishing]
+$M$ is a compact Kähler manifold of complex dimension $n$, $L$ any holomorphic line bundle on $M$ that is positive (ample), and $K_M$ is the canonical line bundle, then
+\[H^q(M,K_M \otimes L\]
+for $q>0$.
+\end{theorem}
+***** Kodaira_Nakano
+*** Dualités
+**** Poincaré
+Variété compacte sans bord, orientée de dimension $n$, alors
+\[
+H^k(M,\C) = H^{n-k}(M,\C)^*
+\]
+**** Serres
+*** Künneth formula
+[Formule de Künneth pour l'homologie, \cite{GH} I.4 p. 58]
+\begin{equation}\label{Kunneth}
+H_{k}(X\times Y,\Q) \simeq \bigoplus_{p+q=k} H_p(X,\Q) \otimes_\C H_q(Y,\Q)
+\end{equation}
+
+Si $X$, $Y$ variétés complexes dont l'une au moins est compacte. $\Ff$ et $\Gg$ des faisceaux de $\C$-ev.
+[Formule de Künneth pour la cohomologie, \cite{Demailly} Chap IV par. 15 p.278]
+\begin{equation}\label{CoKunneth}
+H_{k}(X \times Y,\Ff \sqtimes \Gg) \simeq \bigoplus_{p+q=k} H_p(X,\Ff) \otimes_\C H_q(Y,\Gg)
+\end{equation}
+** Théorie de Hodge
+*** Théorème de Hodge
+Métrique hermitienne
+->
+Notion de forme harmonique (et dimension finie des espaces de formes harmoniques)
+->
+Représentant harmonique des classes de Cohomologies
+**** Le cas Kahler
+** Non-Classé
+*** Interpretation du H^1 en terme d'extensions
+$H^1(X,\Ff)$ classifie les suites exactes
+\begin{equation}
+0 \rightarrow \Ff \rightarrow \Gg \rightarrow \Oo_X \rightarrow 0
+\end{equation}
+
+Ah bon ?
+
+Dans le cas $X$ compact, $H^0(X,\Oo_X) = \Cc$ et donc la suite exacte longue de cohomologie associée à une telle extension $\Gg$ nous donne
+\begin{equation}
+\cdots \rightarrow H^0(X,\Oo_X) \rightarrow H^1(X,\Ff) \rightarrow \cdots
+\end{equation}
+et donc un élément de $H^1(X,\Ff)$ obtenue comme l'image de $1 \in \Cc \cong H^0(X,\Oo_X)$.
+
+Réciproquement ?
+
+*** Propriétés des faisceaux
+**** Flasque (flabby)
+Toute section locale peut être étendue en une section globale.
+
+Ex: Si $X$ n'est pas discret, même $C_X$ n'est pas flasque.
+***** Les faisceaux flasques sont acycliques
+**** Mou (Soft)
+Toute section sur un fermé $S$ de $X$ peut-être étendue en une section globale
+
+Ex : $C_X$ (théorème de Tietze-Urysohn) et $C_X^\infty$
+
+Si $R$ est un faisceau d'anneaux doux, alors tous les faisceaux de $R$-modules sont doux.
+**** Acyclique
+\begin{defi}[Faisceau acyclique \label{acyclique}\index{faisceau acyclique}]
+Un faisceau acyclique $F$ sur  $X$ est un faisceau dont tous les groupes de cohomologie supérieure sont nuls.
+\end{defi}
+***** $C^\infty$-modules
+Les faisceaux de $C^\infty$-modules sont acycliques
+
+Bilan : 
+\begin{prop}
+Toute suite exacte de faisceaux de $\Cc^\infty$-modules est $C^\infty$ scindée.
+\end{prop}
+
+\[
+0 \rightarrow E \rightarrow F \rightarrow G \rightarrow 0
+\]
+
+Alors en prenant le produit tensoriel au dessus de $\Cc^\infty$ par $G^*$, on obtient la suite exacte~:
+
+\[
+0 \rightarrow \Hom(G,E) \rightarrow \Hom(G,F) \rightarrow \End(G) \rightarrow \Ext^1(G,E) \rightarrow \cdots
+\]
+Or $\Hom(G,E)$ est un faisceau acyclique donc n'a pas de cohomologie supérieure.
+
+Ainsi il existe un antécédent dans $\Hom(G,F)$ à l'identité dans $\Hom(G,G)$, c'est-à-dire une section de $F \rightarrow G$. Donc la suite est scindée.
+**** Fin (Fine)
+*** Suite spectrale de Frölisher
+**** Le cas Kahler
+Dégénère en page 1
+** Programme

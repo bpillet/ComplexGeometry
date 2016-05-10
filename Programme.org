@@ -1,0 +1,177 @@
+* 0
+** Géométrie
+Complexe
+*** Géométrie
+Hermitienne
+**** Forme hermitienne
+***** Connection de Chern
+****** Courbure
+***** Volume hermitien
+****** Inégalité de Wirtinger
+Si $\omega$ forme hermitienne sur $X$
+alors
+pour toute sous-variété réelle de dimension $2k$ $V \subseteq X$, on a
+\[
+\int_{V} \omega^k \leq  k! Vol(V)
+\]
+et avec égalité ssi $V$ est une sous-variété complexe.
+
+\cite{Huybrechts}
+**** Géométrie Kahlérienne
+**** Laplace-Beltrami
+***** Théorie de Hodge
+*** Fonctions
+**** Fonctions 
+holomorphes
+***** Definition
+***** Formule de Cauchy-Pompeiu
+***** Formule de Cauchy en dimension $n$
+***** Hartog-Riemann
+***** Wierstrass
+**** Sousharmoniques
+$Sh(U)$
+
+N'est un faisceau que sur une variété riemannienne.
+***** Harmoniques
+****** Théorème 
+de l'application
+conforme
+
+\begin{thm}[Théorème de l'application conforme (Riemann Mapping Thm)]
+Tout ouvert de $\C$
+\begin{itemize}
+\item non vide
+\item différent de $\C$
+\item simplement connexe
+\end{itemize}
+ est biholomorphe au disque unité de $\C$.
+\end{thm}
+
+******* Théorème 
+d'uniformisation 
+de Riemann
+\begin{thm}
+Les surfaces de Riemann simplement connexe sont, à biholomorphismes près :
+\begin{itemize}
+\item $\C$
+\item $\D$ la boule unité de $\C$ (ou le demi-plan de Poincaré)
+\item $\Pro^1$
+\end{itemize}
+\end{thm}
+***** Plurisousharmoniques
+$PSh(U)$
+Faisceau sur une variété complexe.
+
+équivalent à 
+\begin{equation}
+\forall X \in T_\R M, \quad i(\partial\dbarre f)(X,IX) \geq 0
+\end{equation}
+(on dit que $i\partial\dbarre f$ est une $(1,1)$-forme positive)
+(on voit bien que c'est local ! ?)
+
+****** Pluriharmoniques
+
+$f$ et $-f$ sont plurisousharmoniques
+
+
+
+
+Si $H^1(X,\R) = 0$, alors
+
+$f \in Ph(X)$ \ssi $f$ partie réelle d'une fonction holomorphe
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                            
+
+
+****** Exemples
+$z\mapsto \log |z|$ est sousharmonique sur $\C$
+donc pour toute fonction holomorphe $f$ sur $X$, $\log |f| \in PSh(X)$
+
+Plus généralement soient $f_i \in \Oo(X)$ et $\alpha_i \geq 0$ pour $1 \leq i \leq n$ alors
+\[
+\log \left(
+|f_1|^{\alpha_1} + \cdots + |f_n|^{\alpha_n}
+\right) \in Psh(X)
+\]
+
+*** Variétés
+complexes
+**** Holomorphiquement
+convexe
+L'enveloppe holomorphe de chaque compacte est compacte
+
+où l'enveloppe holomorphe de $K$ c'est l'ensemble des points $x$ de la variétés qui sont qui pour toute fonction holo $f$ sur $X$, $|f(x)|$ est borné par le sup de $f$ sur $K$.
+***** Surfaces de Riemann
+****** Théorème de Riemann-Roch
+***** Stein
+Enough functions to separate points
+****** Ouvert simplement connexe de $\C$
+****** Domaine 
+d'Holomorphie
+
+<=> Holomorphiquement convexe
+pour les ouverts de $\C^n$
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+
+
+***** Compactes
+Not enough functions to separate points.
+****** Moishezon
+Enough meromorphic functions :
+
+Le degré de transcendance sur $\C$ du corps des fonctions méromorphes de $X$ est égal à la dimension complexe de $X$.
+******* Projectives (algébriques)
+Une variété Moishezon $X$ vérifie~:
+$X$ algébrique ssi $X$ est Kahler
+******** $\Pro^n$
+** Géométrie 
+Riemannienne
+*** Connection de 
+Levi-Civitta
+**** Courbure
+***** Ricci
+***** Gauss
+***** Sectionelle
+***** Riemann
+*** Surfaces
+**** Formule de Gauss-Bonnet
+*** Volume riemannien
+** Cohomologie
+\input{./Cohomologie/Cohomologie}
+** Références
+*** Demailly
+\cite{Demailly}
+*** Morrow-Kodaira
+*** Griffith - Harris
+*** Claire Voisin
+*** Huybrechts
+\cite{Huybrechts}
+** Kahler
+*** Compacte
+**** Projective
+***** Algebraic
+\begin{thm}[Thm de Chow]\label{TheoremChow}\index{theoreme de Chow}
+Projective = Algébrique
+\end{thm}
+**** Hodge
+Metric with kahler form integral in $H^{1,1}$
+***** Kodaira embedding thm
+Hodge = Projective
+** Géométrie
+algébrique
+\input{./Algebrique/Algebrique}
