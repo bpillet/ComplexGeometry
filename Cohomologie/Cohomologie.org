@@ -1,3 +1,7 @@
+#+STARTUP: indent
+
+Retour au [[../Programme.org][fichier général]]
+
 * Cohomologie
 ** Notations
 %\input{Notation}
@@ -50,7 +54,7 @@ exact à gauche
 ***** Higher pushforwar $R^qf_*$
 **** ^!
 **** $\otimes$
-Exact si plat
+     Exact si plat
 ** Algebrique
 *** Cohomologie d'un complexe
 \cite{Demailly} Chap IV.
@@ -147,20 +151,20 @@ Par le lemme de Poincaré le complexe
  est exacte en $A^k$ pour tout $k>0$.
 
 C'est une résolution du faisceau $\underline{C}$
-[Voisin].
-**** Lemme de Poincaré
-\begin{lem}[Poincaré]
+\cite{Voisin}.
+**** Lemme de Poincaré						   :Poincare:
+\begin{lem}[Poincaré\label{LemmePoincare}]
 Soit $U$ ouvert simplement connexe de $\R^n$ et soit $\omega$ une $k$-forme $\dd$-fermée sur $U$ alors il existe $\theta$ une $k-1$-forme sur $U$ telle que $\omega = \dd theta$
 \end{lem}
 
 
 *** Dolbeault
-**** Lemme de Dolbeault-Poincaré
+**** Lemme de Dolbeault-Poincaré				   :Poincare:
 \begin{lem}[]
 Soit $U$ ouvert simplement connexe de $\C^n$ et soit $\omega$ une $(p,q)$-forme $\dbarre$-fermée sur $U$ alors il existe $\theta$ une $(p,q-1)$-forme sur $U$ telle que $\omega = \dbarre theta$
 \end{lem}
 
-\begin{lem}[Griffiths-Harris]
+\begin{lem}[\cite{Griffiths-Harris}]
 Soit $\Delta$ polydisque de $\C^n$, alors
 \begin{equation}
 H^{p,q}_{Dol}(\Delta,\underline{C}) = 0 \quad \text{ pour } q \geq 1
@@ -177,6 +181,7 @@ H^{p,q}_{Dol}(\Delta,\underline{C}) = 0 \quad \text{ pour } q \geq 1
 ** Relations
 *** Vanishing Thm
 **** Grothendieck
+Pas de cohomologie des faisceaux en degré supérieur à la dimension. Dans tout le cadre le plus général possible.
 \begin{theorem}[Grothendieck vanishing]
 Let $X$ be a noetherian topological space.
 
@@ -272,4 +277,3 @@ Ainsi il existe un antécédent dans $\Hom(G,F)$ à l'identité dans $\Hom(G,G)$
 *** Suite spectrale de Frölisher
 **** Le cas Kahler
 Dégénère en page 1
-** Programme

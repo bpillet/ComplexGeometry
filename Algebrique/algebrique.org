@@ -1,5 +1,8 @@
-* Géométrie
-algébrique
+#+STARTUP: indent
+
+Retour au [[../Programme.org][fichier général]]
+
+* Géométrie algébrique
 ** Espaces annelés
 *** ELA
 **** Scheme
@@ -10,9 +13,7 @@ algébrique
 ***** Separated
 ***** Noetherian
 ****** Finite type
-** Programme
-* Variety
-over $\C$
+* Variety over $\C$
 ** Affine
 ** Integral
 

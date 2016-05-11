@@ -1,8 +1,18 @@
+#+STARTUP: indent
+
 * 0
-** Géométrie
-Complexe
-*** Géométrie
-Hermitienne
+** Géométrie Riemannienne                                           :metric:
+*** Connection de Levi-Civitta
+**** Courbure
+***** Ricci
+***** Gauss
+***** Sectionelle
+***** Riemann
+*** Surfaces
+**** Formule de Gauss-Bonnet
+*** Volume riemannien
+** Géométrie Complexe
+*** Géométrie Hermitienne                                          :metric:
 **** Forme hermitienne
 ***** Connection de Chern
 ****** Courbure
@@ -21,8 +31,7 @@ et avec égalité ssi $V$ est une sous-variété complexe.
 **** Laplace-Beltrami
 ***** Théorie de Hodge
 *** Fonctions
-**** Fonctions 
-holomorphes
+**** Fonctions holomorphes
 ***** Definition
 ***** Formule de Cauchy-Pompeiu
 ***** Formule de Cauchy en dimension $n$
@@ -33,9 +42,7 @@ $Sh(U)$
 
 N'est un faisceau que sur une variété riemannienne.
 ***** Harmoniques
-****** Théorème 
-de l'application
-conforme
+****** Théorème de l'application conforme               :RiemannMapping:
 
 \begin{thm}[Théorème de l'application conforme (Riemann Mapping Thm)]
 Tout ouvert de $\C$
@@ -47,9 +54,7 @@ Tout ouvert de $\C$
  est biholomorphe au disque unité de $\C$.
 \end{thm}
 
-******* Théorème 
-d'uniformisation 
-de Riemann
+******* Théorème d'uniformisation de Riemann
 \begin{thm}
 Les surfaces de Riemann simplement connexe sont, à biholomorphismes près :
 \begin{itemize}
@@ -102,10 +107,8 @@ Plus généralement soient $f_i \in \Oo(X)$ et $\alpha_i \geq 0$ pour $1 \leq i 
 \right) \in Psh(X)
 \]
 
-*** Variétés
-complexes
-**** Holomorphiquement
-convexe
+*** Variétés complexes
+**** Holomorphiquement convexe
 L'enveloppe holomorphe de chaque compacte est compacte
 
 où l'enveloppe holomorphe de $K$ c'est l'ensemble des points $x$ de la variétés qui sont qui pour toute fonction holo $f$ sur $X$, $|f(x)|$ est borné par le sup de $f$ sur $K$.
@@ -139,19 +142,7 @@ Le degré de transcendance sur $\C$ du corps des fonctions méromorphes de $X$ e
 Une variété Moishezon $X$ vérifie~:
 $X$ algébrique ssi $X$ est Kahler
 ******** $\Pro^n$
-** Géométrie 
-Riemannienne
-*** Connection de 
-Levi-Civitta
-**** Courbure
-***** Ricci
-***** Gauss
-***** Sectionelle
-***** Riemann
-*** Surfaces
-**** Formule de Gauss-Bonnet
-*** Volume riemannien
-** Cohomologie
+** [[./Cohomologie/Cohomologie.org][Cohomologie]]
 \input{./Cohomologie/Cohomologie}
 ** Références
 *** Demailly
@@ -164,14 +155,13 @@ Levi-Civitta
 ** Kahler
 *** Compacte
 **** Projective
-***** Algebraic
-\begin{thm}[Thm de Chow]\label{TheoremChow}\index{theoreme de Chow}
+***** Théorème de Chow                                   :Chow:algebraic:
+\begin{thm}[Thm de Chow\label{TheoremChow}\index{theoreme de Chow}]
 Projective = Algébrique
 \end{thm}
 **** Hodge
 Metric with kahler form integral in $H^{1,1}$
 ***** Kodaira embedding thm
 Hodge = Projective
-** Géométrie
-algébrique
+** [[./Algebrique/algebrique.org][Géométrie algébrique]]
 \input{./Algebrique/Algebrique}
