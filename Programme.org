@@ -16,7 +16,7 @@
 **** Forme hermitienne
 ***** Connection de Chern
 ****** Courbure
-***** Volume hermitien
+***** Volume hermitien                                     :CoursDeSerge:
 ****** Inégalité de Wirtinger
 Si $\omega$ forme hermitienne sur $X$
 alors
@@ -27,6 +27,9 @@ pour toute sous-variété réelle de dimension $2k$ $V \subseteq X$, on a
 et avec égalité ssi $V$ est une sous-variété complexe.
 
 \cite{Huybrechts}
+****** Théorème Bishop                         :Montel:Wirtinger:Bishop:
+cf Cours doctoral Serge.
+Utilise inégalité de Wirtinger et théorème de Montel.
 **** Géométrie Kahlérienne
 **** Laplace-Beltrami
 ***** Théorie de Hodge
@@ -75,27 +78,11 @@ Faisceau sur une variété complexe.
 (on voit bien que c'est local ! ?)
 
 ****** Pluriharmoniques
-
 $f$ et $-f$ sont plurisousharmoniques
-
-
-
 
 Si $H^1(X,\R) = 0$, alors
 
 $f \in Ph(X)$ \ssi $f$ partie réelle d'une fonction holomorphe
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                            
-                            
-
-
 ****** Exemples
 $z\mapsto \log |z|$ est sousharmonique sur $\C$
 donc pour toute fonction holomorphe $f$ sur $X$, $\log |f| \in PSh(X)$
@@ -117,21 +104,10 @@ où l'enveloppe holomorphe de $K$ c'est l'ensemble des points $x$ de la variét�
 ***** Stein
 Enough functions to separate points
 ****** Ouvert simplement connexe de $\C$
-****** Domaine 
-d'Holomorphie
+****** Domaine d'Holomorphie
 
 <=> Holomorphiquement convexe
 pour les ouverts de $\C^n$
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                            
-
-
 ***** Compactes
 Not enough functions to separate points.
 ****** Moishezon
@@ -142,6 +118,9 @@ Le degré de transcendance sur $\C$ du corps des fonctions méromorphes de $X$ e
 Une variété Moishezon $X$ vérifie~:
 $X$ algébrique ssi $X$ est Kahler
 ******** $\Pro^n$
+**** Sous-variétés
+***** Espace des cycles                                    :CoursDeSerge:
+cf Cours de serge
 ** [[./Cohomologie/Cohomologie.org][Cohomologie]]
 \input{./Cohomologie/Cohomologie}
 ** Références
