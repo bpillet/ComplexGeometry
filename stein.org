@@ -1,0 +1,74 @@
+#+STARTUP: indent
+
+
+
+* Variétés de Stein
+** Définition
+Une variété complexe $X$ (lisse) est Stein si
+- $X$ est holomorphiquement convexe
+- $X$ is holomorphically separable, i.e. if $x \neq y$ are two points in $X$, then there is a holomorphic function
+\[
+        f \in \mathcal O(X)
+\]
+such that $f(x) \neq f(y)$.
+ 
+** Exemples
+- $\C^n$ est Stein pour tout $n$.
+- $\C^2 \setminus \{(0,0)\}$ n'est pas Stein : par Hartogs, elle n'est pas holomorphiquement convexe.
+
+*** Ouvert simplement connexe de $\C$
+
+*** Sous-variété fermée d'une variété Stein
+$C^*$ est Stein, en effet c'est $\ens{(x,y) \in \C^2}{xy = 1}$ un fermé dans $\C^2$.
+
+*** Surface de Riemann non-compacte
+
+*** Domaine d'Holomorphie
+
+** Propriétés
+- Non compact (assez de fonctions pour séparer les points).
+- $X$ est Stein ssi il existe un $n$ et une immersion propre holomorphe
+\[
+X \hookrightarrow \C^n
+\]
+- Maximalité \cite{Demailly}
+
+*** Théorème B de Cartan
+\begin{thm}[Cartan Thm B\label{CartanB}]
+On a Stein manifold $\Sigma$ and for $\Aa$ an analytic coherent sheaf on $Σ\Sigma$ then all the positive-degree abelian sheaf cohomology groups of $Σ\Sigma$ with coefficients in $\Aa$ vanish:
+\[
+H^{•≥1}(Σ,\Aa)=0
+\]
+\end{thm}
+
+*** Principe d'Oka-Grauert
+The Oka-Grauert principle states that for any Stein manifold $X$ the holomorphic and the topological classification of complex vector bundles on $X$ coincide.
+
+** Extension holomorphes
+*** Définition
+Une extension holomorphe $Y$ de $X$ est une variété complexe telle que 
+-$X$ est une sous-variété ouverte de $Y$
+-La restriction $\Oo(Y) \to  \Oo(X)$ est surjective
+
+*** Théorème
+"Maximalité" des variétés Stein.
+\cite{Hormander}
+\begin{thm}[Hormander thm 5.4.2]
+Si $X$ est Stein alors toute extension holomorphe $Y$ de $X$ est triviale : $Y=X$.
+\end{thm}
+
+
+** A Trier
+Enough functions to separate points
+
+<=> Holomorphiquement convexe
+pour les ouverts de $\C^n$
+
+*** Higher
+https://ncatlab.org/nlab/show/Structured+Spaces
+
+
+* Références
+-https://en.wikipedia.org/wiki/Stein_manifold
+-https://ncatlab.org/nlab/show/Stein+manifold
+-Demailly \cite{Demailly}

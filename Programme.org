@@ -101,13 +101,7 @@ L'enveloppe holomorphe de chaque compacte est compacte
 où l'enveloppe holomorphe de $K$ c'est l'ensemble des points $x$ de la variétés qui sont qui pour toute fonction holo $f$ sur $X$, $|f(x)|$ est borné par le sup de $f$ sur $K$.
 ***** Surfaces de Riemann
 ****** Théorème de Riemann-Roch
-***** Stein
-Enough functions to separate points
-****** Ouvert simplement connexe de $\C$
-****** Domaine d'Holomorphie
-
-<=> Holomorphiquement convexe
-pour les ouverts de $\C^n$
+***** [[stein.org][Stein]]
 ***** Compactes
 Not enough functions to separate points.
 ****** Moishezon
