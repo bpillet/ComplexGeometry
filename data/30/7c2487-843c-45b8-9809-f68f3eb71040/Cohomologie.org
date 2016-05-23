@@ -1,10 +1,6 @@
 #+STARTUP: indent
 
-* Retour au [[../Programme.org][fichier général]]                                          :ATTACH:
-:PROPERTIES:
-:Attachments: Programme.org
-:ID:       3b1178f4-2aa4-47fd-a352-59ca87545ad6
-:END:
+Retour au [[../Programme.org][fichier général]]
 
 * Cohomologie
 ** Notations
@@ -225,7 +221,7 @@ Notion de forme harmonique (et dimension finie des espaces de formes harmoniques
 Représentant harmonique des classes de Cohomologies
 **** Le cas Kahler
 ** Non-Classé
-*** Hirzebruch-Riemann-Roch                                   :HRR:GRR:Thm:
+*** Hirzebruch-Riemann-Roch
 Soit $E$ un fibré vectoriel holomorphe sur $X$ une variété complexe compacte
 \begin{equation}\label{HRR}
 \Chi(X,E) = \int_X \text{Ch}(E)\text{Td}(X)

@@ -1,10 +1,5 @@
 #+STARTUP: indent
 
-* Retour au [[./Programme.org][Fichier principal]]                                        :ATTACH:
-:PROPERTIES:
-:Attachments: Programme.org
-:ID:       917d891b-e1ec-48a7-81d0-fe24c14e18ab
-:END:
 
 
 * Variétés de Stein

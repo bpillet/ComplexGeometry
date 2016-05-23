@@ -1,10 +1,6 @@
 #+STARTUP: indent
 
-* Retour au [[../Programme.org][fichier général]]                                          :ATTACH:
-:PROPERTIES:
-:Attachments: Programme.org
-:ID:       30feac9e-9d90-4598-a347-270e1f4947c8
-:END:
+Retour au [[../Programme.org][fichier général]]
 
 * Géométrie algébrique
 ** Espaces annelés
