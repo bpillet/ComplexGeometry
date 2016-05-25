@@ -1,0 +1,145 @@
+% Created 2016-05-25 mer. 16:51
+\documentclass[a4paper]{amsart}
+                 \usepackage[couleur,draft]{/home/basile/Git/Latex/Headfiles/amsdip}
+                 \usepackage[utf8x]{inputenc}
+                 \usepackage[T1]{fontenc}
+                          \DeclareMathOperator\Ii{\mathcal{I}}
+\geometry{a4paper,left=9em,right=9em,top=8em,bottom=7em}
+
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Epaississements}
+\author{}
+\date{}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.9.3f}}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+
+Epaississements de fibrés en suivant Buchdahl \cite{Buchdahl}
+\section{Definitions}
+\label{sec-1}
+
+Soit $L^\infty = (L,\Oo)$ un espace analytique non-necessairement réduit.
+On note $\Ii$ l'ideal des fonctions nilpotentes de $\Oo$.
+
+Et on note $L^{(k)} := (L, \Oo/\Ii^{k+1}) = (L,\Oo^{(k)})$ avec l'abus suivant :
+ $L$ désigne à la fois l'espace topologique sous-jacent et $L^{(0)}$.
+
+Soit $E^\infty$ un fibré vectoriel analytique sur $L^\infty$. C'est-à-dire, par définition, le faisceau $\Oo(E^\infty)$ des sections locales de $E^\infty$ est localement libre en tant que $\Oo$-module.
+\section{Propriété fondamentale}
+\label{sec-2}
+
+On a pour tout $n \geq 0$ la suite exacte suivante de $\Oo$-modules
+\begin{equation}\label{epaississementiteratif}
+0 \to \dfrac{\Ii^{n+1}}{\Ii^{n+2}} \to \Oo^{(n+1)} \to \Oo^{(n)} \to 0
+\end{equation}
+
+De plus \cite{LeBrun}, on peut écrire
+\begin{equation}\label{symmetricconormal}
+\dfrac{\Ii^{n+1}}{\Ii^{n+2}} = \Oo_L(\odot^{n+1}N^*)
+\end{equation}
+en tant que faisceaux de $\Oo$-modules.
+\section{Epaississements de fibrés}
+\label{sec-3}
+
+On notera $E^{(n)}$ le fibré sur $L^{(n)}$ définit par
+\[
+\Oo^{(n)}(E^{(n)}) = \Oo^{(n)} \otimes_{\Oo} \Oo(E^\infty)
+\]
+Il est clair qu'il est localement libre.
+\subsection{Propriétés}
+\label{sec-3-1}
+
+Les epaississements de fibrés satisfont plusieurs propriétés de ``fonctorialité'' (plutôt de naturalité)
+
+\begin{itemize}
+\item $E^{(n)} \oplus F^{(n)} \simeq (E \oplus F)^{(n)}$ avec comme convention que $E \oplus F$ désigne le fibré $E^\infty \oplus F^\infty$.
+\item $E^{(n)} \otimes F^{(n)} \simeq (E \otimes F)^{(n)}$ (idem)
+\item $\left(E^{(n)}\right)^* \simeq (E^*)^{(n)}$ (idem)
+\end{itemize}
+
+Enfin si $k < n$ alors
+\begin{equation}
+\Oo^{(k)}(E^{(n)}) = \Oo^{(k)}(E^{(k)})
+\end{equation}
+car en effet, 
+\begin{align*}
+\Oo^{(k)}(E^{(n)}) &= \Oo^{(k)}\otimes_{\Oo^{(n)}}\Oo^{(n)}(E^{(n)}) \\
+                   &= \Oo^{(k)}\otimes_{\Oo^{(n)}}\Oo^{(n)} \otimes_{\Oo} \Oo(E^\infty)\\
+                   &= \Oo^{(k)}\otimes_{\Oo}\Oo(E^\infty)
+\end{align*}
+\subsection{Classes d'extensions de fibrés}
+\label{sec-3-2}
+
+Soit $E^{(n)}$ un fibré sur $L^{(n)}$ et soient $E^{(n+1)}$ et $F^{(n+1)}$ deux fibrés sur $L^{(n+1)}$ qui étendent $E^{(n)}$ au sens suivant
+\[
+\Oo^{(n)}(E^{(n+1)}) = \Oo^{(n)}(F^{(n+1)}) = \Oo^{(n)}(E^{(n)})
+\]
+
+Alors en tensorisant la suite exacte \eqref{epaississementiteratif} par le fibré $\Hom(E^{(n+1)}, F^{(n+1)})$ sur $L^{(n+1)}$, on trouve
+\begin{equation*}
+0 \to \Oo_L(\End(E) \otimes \odot^{n+1}N^*)
+  \to \Oo^{(n+1)}(\Hom(E^{(n+1)},F^{(n+1)}))
+  \to \Oo^{(n)}(\End(E^{(n)}))
+  \to 0
+\end{equation*}
+
+Passons à la cohomologie et interprétons
+\begin{align*}
+0 &\to H^0(L,\Oo_L(\End(E) \otimes \odot^{n+1}N^*))\\
+  &\to H^0(L,\Oo^{(n+1)}(\Hom(E^{(n+1)},F^{(n+1)})))\\
+  &\to H^0(L,\Oo^{(n)}(\End(E^{(n)})))\\
+  &\to H¹(L,\Oo_L(\End(E) \otimes \odot^{n+1}N^*))
+\end{align*}
+
+L'image de $1 \in H^0(L,\Oo^{(n)}(\End(E^{(n)})))$ dans $H¹(L,\Oo_L(\End(E) \otimes \odot^{n+1}N^*))$ que l'on peux noter $c$ est une obstruction à ce que $1$ soit l'image d'un $\phi \in H^0(L,\Oo^{(n+1)}(\Hom(E^{(n+1)},F^{(n+1)})))$. Or un tel $\phi$ est un morphisme $\Oo^{(n+1)}$-linéaire entre $E^{(n+1)}$ et $F^{(n+1)}$ qui se restreint en l'identité à l'ordre $(n)$.
+
+Nécessairement un tel $\phi$ est un isomorphisme et alors l'ensemble de ces isomorphismes est un espace homogène sous l'action de $H^0(L,\Oo_L(\End(E) \otimes \odot^{n+1}N^*))$.
+
+On peut donc à deux extensions $E^{(n+1)}$ et $F^{(n+1)}$ de $E^{(n)}$ associer un $c \in H¹(L,\Oo_L(\End(E) \otimes \odot^{n+1}N^*))$ canonique que l'on notera $[F-E]$ quand le contexte le permettra.
+\subsection{Application à $V_-$}
+\label{sec-3-3}
+
+On prend $L \subseteq Z$ une droite twistorielle dans $Z$ et $\Oo = \Oo_Z \vert_L$.
+Soit $E^\infty = T_f(-1)$. Sa restriction (analytique) à $L$ est triviale au moins à l'ordre $0$. Qu'en est-il à l'ordre supérieur ?
+
+On peut vérifier que pour $n=1$, on a $\Oo_L(\End(E) \otimes \odot^{n+1}N^*)$ qui s'écrit comme une somme de $\Oo(-2)$. Donc a priori deux extensions de $E^{(0)}$ à l'ordre $1$ peuvent différer.
+
+Or on a deux extensions canoniques de $E^{(0)}$ :
+\begin{itemize}
+\item la première est simplement $E^{(1)}$ qui est la restriction de $E \to Z$ à $L^{(1)}$.
+\item la seconde est le prolongement trivial que l'on notera $E_N^{(1)}$. Il est définit en tant qu'espace comme $E \oplus N^* \otimes E$ au dessus de $L$ et la structure de $\Oo^{(1)}$-module est la suivante\~{}:
+\end{itemize}
+Soit $\hat{f} = f + \beta$ et soit $\hat{e} = e + \alpha \otimes e'$ une section locale de $E \oplus N^* \otimes E$, alors
+\[
+\hat{f}\hat{e} = fe + f\alpha \otimes e' + \beta \otimes e
+\]
+C'est également l'extension triviale de la suite \eqref{epaississementiteratif} tensorisée par $E^{(1)}$.
+\[
+0 \to \Oo_L(N^* \otimes E) \to \Oo^{(1)}(E^{(1)}) \to \Oo_L(E) \to 0
+\]
+en tant que suite de $\Oo^{(1)}$-modules.
+
+On a donc une classe $[E_Z-E_N]$ dans $H¹(L,\Oo_L(\End(E) \otimes \odot^{2}N^*))$
+\subsection{Il doit y avoir une erreur}
+\label{sec-3-4}
+
+L'espace qui classifie les extensions de la suite ci-dessus est 
+$H¹(\Oo_L(\End(E)\otimes N^*)) = 0$. On retrouve ce qu'on voudrait que l'extension à l'ordre 1 est triviale.
+
+ 
+
+
+\bibliographystyle{amsalpha}
+\bibliography{~/Git/Bibliography/full}
+
+\end{document}

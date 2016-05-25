@@ -1,9 +1,6 @@
 #+STARTUP: indent
 
 * 0
-:PROPERTIES:
-:ID:       5ea17f44-adfb-4697-b098-c79f9879518d
-:END:
 ** Géométrie Riemannienne                                           :metric:
 *** Connection de Levi-Civitta
 **** Courbure
@@ -104,11 +101,7 @@ L'enveloppe holomorphe de chaque compacte est compacte
 où l'enveloppe holomorphe de $K$ c'est l'ensemble des points $x$ de la variétés qui sont qui pour toute fonction holo $f$ sur $X$, $|f(x)|$ est borné par le sup de $f$ sur $K$.
 ***** Surfaces de Riemann
 ****** Théorème de Riemann-Roch
-***** [[./stein.org][Stein]]                                                          :ATTACH:
-:PROPERTIES:
-:Attachments: stein.org
-:ID:       51b17ad0-5ef2-4317-aed0-d2e617759ca8
-:END:
+***** [[stein.org][Stein]]
 ***** Compactes
 Not enough functions to separate points.
 ****** Moishezon
@@ -122,11 +115,7 @@ $X$ algébrique ssi $X$ est Kahler
 **** Sous-variétés
 ***** Espace des cycles                                    :CoursDeSerge:
 cf Cours de serge
-** [[./Cohomologie/Cohomologie.org][Cohomologie]]                                                       :ATTACH:
-:PROPERTIES:
-:Attachments: Cohomologie.org
-:ID:       307c2487-843c-45b8-9809-f68f3eb71040
-:END:
+** [[./Cohomologie/Cohomologie.org][Cohomologie]]
 \input{./Cohomologie/Cohomologie}
 ** Références
 *** Demailly
@@ -147,9 +136,5 @@ Projective = Algébrique
 Metric with kahler form integral in $H^{1,1}$
 ***** Kodaira embedding thm
 Hodge = Projective
-** [[./Algebrique/algebrique.org][Géométrie alébrique]]                                               :ATTACH:
-:PROPERTIES:
-:Attachments: algebrique.org
-:ID:       f50c7a16-7566-44c7-8bb8-f40f9b7550e9
-:END:
+** [[./Algebrique/algebrique.org][Géométrie algébrique]]
 \input{./Algebrique/Algebrique}
