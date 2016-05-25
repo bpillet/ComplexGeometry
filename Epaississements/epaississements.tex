@@ -1,9 +1,9 @@
-% Created 2016-05-25 mer. 16:51
+% Created 2016-05-25 mer. 21:31
 \documentclass[a4paper]{amsart}
-                 \usepackage[couleur,draft]{/home/basile/Git/Latex/Headfiles/amsdip}
-                 \usepackage[utf8x]{inputenc}
-                 \usepackage[T1]{fontenc}
-                          \DeclareMathOperator\Ii{\mathcal{I}}
+          \usepackage[couleur,draft]{/home/basile/Latex/Headfiles/amsdip}
+          \usepackage[utf8x]{inputenc}
+          \usepackage[T1]{fontenc}
+                  \DeclareMathOperator\Ii{\mathcal{I}}
 \geometry{a4paper,left=9em,right=9em,top=8em,bottom=7em}
 
 \providecommand{\alert}[1]{\textbf{#1}}
@@ -111,14 +111,12 @@ On peut donc à deux extensions $E^{(n+1)}$ et $F^{(n+1)}$ de $E^{(n)}$ associer
 
 On prend $L \subseteq Z$ une droite twistorielle dans $Z$ et $\Oo = \Oo_Z \vert_L$.
 Soit $E^\infty = T_f(-1)$. Sa restriction (analytique) à $L$ est triviale au moins à l'ordre $0$. Qu'en est-il à l'ordre supérieur ?
+\subsubsection{À l'ordre 1}
+\label{sec-3-3-1}
 
-On peut vérifier que pour $n=1$, on a $\Oo_L(\End(E) \otimes \odot^{n+1}N^*)$ qui s'écrit comme une somme de $\Oo(-2)$. Donc a priori deux extensions de $E^{(0)}$ à l'ordre $1$ peuvent différer.
+On peut vérifier que pour $n=0$, on a $\Oo_L(\End(E) \otimes \odot^{n+1}N^*)$ qui s'écrit comme une somme de $\Oo(-1)$. Donc il n'a ni $H¹$ ni $H^0$. En conséquence il existe une unique extension à unique isomorphisme près !
 
-Or on a deux extensions canoniques de $E^{(0)}$ :
-\begin{itemize}
-\item la première est simplement $E^{(1)}$ qui est la restriction de $E \to Z$ à $L^{(1)}$.
-\item la seconde est le prolongement trivial que l'on notera $E_N^{(1)}$. Il est définit en tant qu'espace comme $E \oplus N^* \otimes E$ au dessus de $L$ et la structure de $\Oo^{(1)}$-module est la suivante\~{}:
-\end{itemize}
+ Il est définit en tant qu'espace comme $E \oplus N^* \otimes E$ au dessus de $L$ et la structure de $\Oo^{(1)}$-module est la suivante\~{}:
 Soit $\hat{f} = f + \beta$ et soit $\hat{e} = e + \alpha \otimes e'$ une section locale de $E \oplus N^* \otimes E$, alors
 \[
 \hat{f}\hat{e} = fe + f\alpha \otimes e' + \beta \otimes e
@@ -128,16 +126,53 @@ C'est également l'extension triviale de la suite \eqref{epaississementiteratif}
 0 \to \Oo_L(N^* \otimes E) \to \Oo^{(1)}(E^{(1)}) \to \Oo_L(E) \to 0
 \]
 en tant que suite de $\Oo^{(1)}$-modules.
+\subsubsection{À l'ordre 2}
+\label{sec-3-3-2}
 
-On a donc une classe $[E_Z-E_N]$ dans $H¹(L,\Oo_L(\End(E) \otimes \odot^{2}N^*))$
-\subsection{Il doit y avoir une erreur}
-\label{sec-3-4}
+Or on a deux extensions canoniques de $E^{(1)}$ :
+\begin{itemize}
+\item la première est simplement $E^{(2)}$ qui est la restriction de $E \to Z$ à $L^{(2)}$.
+\item la seconde est le prolongement trivial que l'on notera $E_N^{(2)}$.
+\end{itemize}
+C'est l'extension triviale de la suite \eqref{epaississementiteratif} tensorisée par $E^{(2)}$.
+\[
+0 \to \Oo_L(N^* \otimes E) \to \Oo^{(1)}(E^{(1)}) \to \Oo_L(E) \to 0
+\]
+en tant que suite de $\Oo^{(2)}$-modules. Il s'identifie à 
+\[
+E \otimes \left(\C \oplus N^* \oplus \odot^2 N^*\right)
+\]
+avec la stucture de $\Oo^{(2)}$-modules intuitive.
 
-L'espace qui classifie les extensions de la suite ci-dessus est 
-$H¹(\Oo_L(\End(E)\otimes N^*)) = 0$. On retrouve ce qu'on voudrait que l'extension à l'ordre 1 est triviale.
+On a donc une classe $[E_Z-E_N]$ dans $H¹(L,\Oo_L(\End(E) \otimes \odot^{2}N^*))$.
 
- 
+À nouveau le $H^0$ est trivial et donc il ne peut y avoir qu'un unique isomorphisme entre deux extensions.
+\begin{itemize}
 
+\item Cocycles\\
+\label{sec-3-3-2-1}%
+Essayon d'écrire cette classe avec la cohomologie de Cech. On se donne un recouvrement classique $U_0,U_\infty$ de $L$, d'intersection $U_{0\infty} \simeq \C^*$.
+
+Le cocycle correspondant à $[E_Z-E_N]$ est donc représenté par section $f_{0\infty} = f$ sur $\C^*$ du fibré $\End(E) \otimes \odot^{2}N^*$.
+
+En prennant une base de $E$, et une base de $N$ qui induit des coordonnées $x_0, \cdots , x_{2n}$ sur $N$, on peut écrire $f$ comme une série 
+\[
+f(z) = \sum_{k \in \Z} a_k z^k
+\]
+où chaque $a_k$ est une matrice de taille $2n = \dim E$ à coefficients dans les polynômes homogènes de degré $2$ en les $x_i$.
+
+L'image de $1 \in H^0(L,\Oo^{(2)}(\End(E^{(2)})))$ par l'application de cobord se comprend ainsi\~{}:
+\begin{itemize}
+\item Sur chaque ouvert $U_\alpha$, on construit un morphisme (isomorphisme) entre $E_N^{(2)}$ et $E_Z^{(2)}$ qui se restreint à l'ordre $1$ en l'identité de $E^{(1)}$.
+\item La différence sur $U_{0\infty}$ entre ces deux morphismes $\varphi_0$ et $\ varphi_1$ a son image nulle dans $\End(E^{(1)})$ donc provient du cocycle $f$ dans $\End(E) \otimes \odot² N^*$.
+\end{itemize}
+
+\end{itemize} % ends low level
+\section{Appendices}
+\label{sec-4}
+
+\appendix
+\newpage
 
 \bibliographystyle{amsalpha}
 \bibliography{~/Git/Bibliography/full}
