@@ -211,11 +211,14 @@ H^k(M,\C) = H^{n-k}(M,\C)^*
 H_{k}(X\times Y,\Q) \simeq \bigoplus_{p+q=k} H_p(X,\Q) \otimes_\C H_q(Y,\Q)
 \end{equation}
 
-Si $X$, $Y$ variétés complexes dont l'une au moins est compacte. $\Ff$ et $\Gg$ des faisceaux de $\C$-ev.
-[Formule de Künneth pour la cohomologie, \cite{Demailly} Chap IV par. 15 p.278]
+Si $X$, $Y$ variétés complexes dont l'une au moins est compacte. $\Ff$ et $\Gg$ des faisceaux cohérents sur $X$ et $Y$ respectivement.
+[Formule de Künneth pour la cohomologie, \cite{Demailly} Chap IV par. 15 et Chap IX par. 5.B, 5.23]
 \begin{equation}\label{CoKunneth}
 H_{k}(X \times Y,\Ff \sqtimes \Gg) \simeq \bigoplus_{p+q=k} H_p(X,\Ff) \otimes_\C H_q(Y,\Gg)
 \end{equation}
+
+**** Autre référence http://mathoverflow.net/questions/34673/kunneth-formula-for-sheaf-cohomology-of-varieties
+
 ** Théorie de Hodge
 *** Théorème de Hodge
 Métrique hermitienne
