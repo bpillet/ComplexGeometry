@@ -153,3 +153,31 @@ Hodge = Projective
 :ID:       f50c7a16-7566-44c7-8bb8-f40f9b7550e9
 :END:
 \input{./Algebrique/Algebrique}
+* COMMENT A ajouter
+
+** TODO Note mathématique [2016-05-20 ven. 09:23]	    :GEOCOM:NoteMath:
+  Liens entre
+- Groupe de Chow
+- Espace des cycles
+En relation avec
+- Schema de Hilbert
+- Espace de Douady
+
+-Structure de groupe sur l'espace des cycles ?
+
+** TODO Cauchy-Grousat					    :NoteMath:GEOCOM:
+:PROPERTIES:
+:commit_message: Cauchy-Goursat
+:END:
+Note mathématique du [2016-05-31 mar. 09:00]
+
+*** Ajouter les notes sur Cauchy-Goursat à Geocom
+*** Expliquer la formule de Cauchy et ses applications
+sous forme de graphe ?
+
+
+** TODO Note mathématique du [2016-05-26 jeu. 14:12]	    :GEOCOM:NoteMath:
+:PROPERTIES:
+:commit_message: changements de trivial. O(k)
+:END:
+Faire une fiche dans GEOCOM sur les changements de trivialisation de O(k)
