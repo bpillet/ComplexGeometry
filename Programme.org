@@ -181,3 +181,30 @@ sous forme de graphe ?
 :commit_message: changements de trivial. O(k)
 :END:
 Faire une fiche dans GEOCOM sur les changements de trivialisation de O(k)
+** TODO Connexions Hermite-Einstein, correspondance avec les fibrés vectoriels semi-stables :NoteMath:GEOCOM:
+:PROPERTIES:
+:commit_message: Hermitian and Hermite-Einstein connections
+:END:
+Note mathématique du [2016-06-14 mar. 11:14]
+
+*** Hermitian connexion
+:SOURCE: From Wikipedia, the free encyclopedia
+See also: Holomorphic vector bundle § Hermitian metrics on a holomorphic vector bundle 
+:END:      
+
+In mathematics, a Hermitian connection ∇ {\displaystyle \nabla } , is a connection on a Hermitian vector bundle over a smooth manifold which is compatible with the Hermitian metric. If the base manifold is a complex manifold, and the Hermitian vector bundle admits a holomorphic structure, then there is a canonical Hermitian connection, which is called the Chern connection which satisfies the following conditions
+
+    Its (0, 1)-part coincides with the Cauchy-Riemann operator associated to the holomorphic structure.
+    Its curvature form is a (1, 1)-form.
+
+In particular, if the base manifold is Kähler and the vector bundle is its tangent bundle, then the Chern connection coincides with the Levi-Civita connection of the associated Riemannian metric
+
+*** QUOTE from nLab
+The Kobayashi-Hitchin correspondence states that over suitable complex manifolds the moduli space of semi-stable vector bundles and that of Hermite-Einstein connections are essentially the same.
+
+For the special case over Kähler manifolds this is the Donaldson-Uhlenbeck-Yau theorem. For the special case over Riemann surfaces it is the Narasimhan-Seshadri theorem. See also Deligne’s characterization of intermediate Jacobians (in particular there at Examples – Picard variety).
+
+-
+- see [[https://ncatlab.org/nlab/show/Kobayashi-Hitchin+correspondence][Kobayashi-Hitchin correspondance]]
+- à relier avec l'article de Verbitsky
+
