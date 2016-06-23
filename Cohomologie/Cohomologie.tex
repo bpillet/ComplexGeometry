@@ -1,91 +1,200 @@
-Cohomologie
+% Created 2016-06-22 mer. 10:34
+\documentclass[12pt,makeidx]{amsart}
+                 \usepackage[couleur,draft]{/home/basile/Git/Latex/Headfiles/amsdip}
+                 \usepackage[utf8x]{inputenc}
+                 \usepackage[T1]{fontenc}
+                          \newtheorem{prop}{Proposition}
+\newtheorem{cor}{Corollaire}
+\newtheorem{lem}{Lemme}
+\newtheorem{thm}{Théoreme}
+\newtheorem{theorem}{Theorem}
+\newtheorem{defi}{Définition}
+\DeclareMathOperator{\Ext}{Ext}
 
-\chapter{Notations}
-%\input{Notation}
+\providecommand{\alert}[1]{\textbf{#1}}
 
-\section{Faisceaux classiques}
+\title{Cohomologie}
+\author{}
+\date{}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.9.3f}}
 
-\subsection{Fonctions localement constantes}
-$\underline{R}$ faisceau des fonctions localement constantes à valeur dans $R$
+\begin{document}
 
-\subsubsection{Structurels}
-Fonction, par défaut, signifie à valeur dans $\C$
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+
+Retour au \href{file:///home/basile/Git/Geometrie Complexe/Programme.org}{fichier général}                                          :ATTACH:
+
+\section{Cohomologie}
+\label{sec-1}
+\subsection{Notations}
+\label{sec-1-1}
+\subsubsection{Faisceaux classiques}
+\label{sec-1-1-1}
 \begin{itemize}
-\item $C$ : continues
-\item $C^k$ : $k$-fois dérivables à dérivées continue
-\item $\Epsilon$ : lisses
-\item $C^\omega$ : analytiques
-\item $\Oo$ : holomorphes
-\item $\underline{o}$ : polynômiales
-\end{itemize}
+
+\item Fonctions localement constantes\\
+\label{sec-1-1-1-1}%
+$\underline{R}$ faisceau des fonctions localement constantes à valeur dans $R$
+\begin{itemize}
+
+\item Structurels\\
+\label{sec-1-1-1-1-1}%
+Fonction, par défaut, signifie à valeur dans $\C$
+
+\begin{description}
+\item[$\Cc$] continues
+\item[$\Cc^k$] $k$-fois dérivables à dérivées continue
+\item[$\Ee$] lisses
+\item[$\Cc^\omega$] analytiques
+\item[$\Oo$] holomorphes
+\item[$\underline{o}$] polynômiales
+\end{description}
+
 
 Fonctions à valeur dans $\R \cup \{+\infty\}$
-\begin{itemize}
-\item $\Hh$ : harmoniques
-\item $PSh$ : plurisousharmoniques
-\end{itemize}
 
-\subsection{formes et vecteurs}
+\begin{description}
+\item[$\Hh$] harmoniques
+\item[$PSh$] plurisousharmoniques
+\end{description}
 
-$\mathcal{A}^p = \Epsilon^p$ : $p$-formes différentielles
-$\mathcal{A}^{p,q} = \Epsilon^{p,q}$ : $p+q$-formes différentielles de type $(p,q)$ relativement à une structure presque-complexe
-$\Omega^p$ : $p$-formes holomorphes
-$\Omega^{p,q}$ : $p+q$ formes holomorphes de type $(p,q)$
+\end{itemize} % ends low level
 
-$\mathfrak{X}$ : champs de vecteurs lisses
-$\mathcal{X}$ : champs de vecteurs holomorphes
+\item formes et vecteurs\\
+\label{sec-1-1-1-2}%
+\begin{description}
+\item[$\mathcal{A}^p = \Ee^p$] $p$-formes différentielles
+\item[$\mathcal{A}^{p,q} = \Ee^{p,q}$] $p+q$-formes différentielles de type $(p,q)$ relativement à une structure presque-complexe
+\item[$\Omega^p$] $p$-formes holomorphes
+\item[$\Omega^{p,q}$] $p+q$ formes holomorphes de type $(p,q)$
+\item[$\mathfrak{X}$] champs de vecteurs lisses
+\item[$\mathcal{X}$] champs de vecteurs holomorphes
+\end{description}
 
 Cas particuliers
 \[
-\mathcal{A}^0 = \C^\infty
+\mathcal{A}^0 = \Cc^\infty
 \]
 \[
 \Omega^0 = \Oo
 \]
+\begin{itemize}
 
-\subsubsection{Courants}
+\item Courants\\
+\label{sec-1-1-1-2-1}%
 \cite{Demailly}
+\end{itemize} % ends low level
 
-\subsection{Faisceau gratte-ciel}
+\item Faisceau gratte-ciel
+\label{sec-1-1-1-3}%
+\end{itemize} % ends low level
+\subsubsection{Pousser et tirer}
+\label{sec-1-1-2}
 
-\section{Pousser et tirer}
+\cite{Virk}
+\begin{itemize}
 
-\subsection{!}
+\item $f_!$
+\label{sec-1-1-2-1}%
 
-\subsection{-1}
+\item $f^{-1}$\\
+\label{sec-1-1-2-2}%
 exact
+\begin{itemize}
 
-\subsubsection{\^*}
+\item $f^*$
+\label{sec-1-1-2-2-1}%
+\end{itemize} % ends low level
 
-\subsection{\_*}
+\item $f_*$\\
+\label{sec-1-1-2-3}%
 exact à gauche
+\begin{itemize}
 
-\subsubsection{Higher pushforwar \$R\^qf\_*\$}
+\item Higher pushforwar $R^qf_*$
+\label{sec-1-1-2-3-1}%
+\end{itemize} % ends low level
 
-\subsection{\^!}
+\item $f^!$
+\label{sec-1-1-2-4}%
 
-\subsection{\$\otimes\$}
+\item $f \otimes$\\
+\label{sec-1-1-2-5}%
 Exact si plat
+\end{itemize} % ends low level
+\subsection{Algebrique}
+\label{sec-1-2}
+\subsubsection{Cohomologie d'un complexe}
+\label{sec-1-2-1}
 
-\chapter{Algebrique}
+\cite{Demailly} Chap IV.
+\cite{Voisin}
 
-\section{Cohomologie d'un complexe}
-Demailly Chap IV.
+Dans une catégorie abélienne $\Aa$, un complexe est la donnée du couple $(M^\bullet, d^\bullet)$ tel que $d^i : M^i \to M^{i+1}$ et $d^{i+1} \circ d^i = 0$ pour tout $i \in \Z$.
 
-\section{Cohomologie des Faisceaux}
+La cohomologie en degré $i$ d'un complexe $(M,d)$ est l'objet de la catégorie $\Aa$
+\[
+H^i(M^\bullet) := \text{Coker}\left( d^{i-1}: M^{i-1} \to \ker d^i\right)
+\]
+\begin{itemize}
 
-\subsection{Faisceau flasques et résolution flasque}
-Demailly Chap. IV
+\item Hypercohomologie d'un complexe de faisceaux\\
+\label{sec-1-2-1-1}%
+\cite{Voisin}
 
-\subsection{Cohomologie des faisceaux}
+Soit $\Ff^\bullet$ un complexe de faisceaux de groupes abéliens sur un espace topologique $X$. Alors on définit \textit{l'hypercohomologie} du complexe comme étant
+\[
+\Ha^{k}(X,\Ff^\bullet) := R^k\Gamma(\Ff^\bullet)
+\]
 
-\subsection{Suite exacte longue}
+Si $\Gg^\bullet$ est un complexe de faisceaux $\Gamma$-acycliques et quasi-isomorphe à $\Ff^\bullet$ alors
+les $G^\bullet = \Gg^\bullet(X)$ forment un complexe de groupes abéliens
+et on a
+\[
+\Ha^k(X,\Ff^\bullet) = H^k(G^\bullet)
+\]
+\end{itemize} % ends low level
+\subsubsection{Cohomologie des Faisceaux}
+\label{sec-1-2-2}
+\begin{itemize}
 
-\subsection{Suite de Mayer-Vietoris}
+\item Faisceau flasques et résolution flasque\\
+\label{sec-1-2-2-1}%
+\cite{Demailly} Chap. IV
 
-\section{Cech}
 
-\section{Théorème de Leray des faisceaux acycliques}
+\cite{Voisin}
+Un complexe $(M^i,d^i)$ pour $i\geq 0$ est une \textit{résolution}  de $N$ si 
+\begin{itemize}
+\item $M^\bullet$ est exacte en $M^i$ pour $i>0$
+\item on a une suite exacte
+  \[
+  0 \to N \to M^0 \to M^1
+  \]
+\end{itemize}
+
+
+\item Cohomologie des faisceaux
+\label{sec-1-2-2-2}%
+
+\item Suite exacte longue
+\label{sec-1-2-2-3}%
+
+\item Suite de Mayer-Vietoris
+\label{sec-1-2-2-4}%
+\end{itemize} % ends low level
+\subsubsection{Cech}
+\label{sec-1-2-3}
+\subsubsection{Théorème de Leray des faisceaux acycliques}
+\label{sec-1-2-4}
+
 \begin{defi}
 Un recouvrement $\mathfrak{U}$ de $X$ est acyclique pour $\Ff$ si $\Ff$ n'as pas de cohomologie supérieure sur les intersections d'ouverts de $\mathfrak{U}$. C'est-à-dire~:
 \[
@@ -111,8 +220,10 @@ Si $\mathfrak{U}$ est un recouvrement acyclique pour $\Ff$, alors
 \forall p, \quad \check{H}^p(X,\Ff) = \check{H}^p(\mathfrak{U},\Ff)
 \end{equation}
 \end{cor}
+\begin{itemize}
 
-\subsection{Lemme d'acyclicité}
+\item Lemme d'acyclicité\\
+\label{sec-1-2-4-1}%
 Sur une variété paracompacte, les faisceaux de $C^\infty$-modules sont acycliques sur les recouvrements localement finis.
 
 En particulier pour de tels recouvrements, les faisceaux de $C^\infty$-modules n'ont pas de cohomologie supérieure non nulle : 
@@ -120,98 +231,165 @@ En particulier pour de tels recouvrements, les faisceaux de $C^\infty$-modules n
 \forall q>0 , \quad \check{H}^q(X,\Ff) = 0
 \end{equation}
 
-\subsection{Sur un espace paracompact,
-Cech=Faisc.}
+\item Sur un espace paracompact,\\
+\label{sec-1-2-4-2}%
+Cech=Faisc.
 Si $X$ est paracompacte et $\Ff$ un faisceau sur $X$ alors
 \begin{equation}
-\forall q \geq 0, \quad \cech{H}^q(X,\Ff) = H^q(X,\Ff)
+\forall q \geq 0, \quad \check{H}^q(X,\Ff) = H^q(X,\Ff)
 \end{equation}
+\end{itemize} % ends low level
+\subsubsection{Isomorphisme de Leray}
+\label{sec-1-2-5}
+\subsection{Geometrique}
+\label{sec-1-3}
+\subsubsection{Betti}
+\label{sec-1-3-1}
+\subsubsection{De Rham}
+\label{sec-1-3-2}
 
-\section{Isomorphisme de Leray}
-
-\chapter{Geometrique}
-
-\section{Betti}
-
-\section{De Rham}
-Par le lemme de Poincaré la suite
+Par le lemme de Poincaré le complexe
 \begin{equation}\label{ExSeq_DR}
-0 \rightarrow \underline{\C} \rightarrow C^\infty \rightarrow_d
+0 \rightarrow  C^\infty \rightarrow_d
 \mathcal{A}^1 \rightarrow_d \mathcal{A}^2 \cdots
 \end{equation}
- est exacte.
+ est exacte en $A^k$ pour tout $k>0$.
 
-C'est une résolution injective du faisceau $\underline{C}$ (référence ?).
+C'est une résolution du faisceau $\underline{C}$
+\cite{Voisin}.
+\begin{itemize}
 
-\subsection{Lemme de Poincaré}
-\begin{lem}[Poincaré]
+\item Lemme de Poincaré \textbf{:Poincare:}
+\label{sec-1-3-2-1}%
+\begin{lem}[Poincaré\label{LemmePoincare}]
 Soit $U$ ouvert simplement connexe de $\R^n$ et soit $\omega$ une $k$-forme $\dd$-fermée sur $U$ alors il existe $\theta$ une $k-1$-forme sur $U$ telle que $\omega = \dd theta$
 \end{lem}
 
 
+\end{itemize} % ends low level
+\subsubsection{Dolbeault}
+\label{sec-1-3-3}
+\begin{itemize}
 
-\section{Dolbeault}
-
-\subsection{Lemme de Dolbeault-Poincaré}
+\item Lemme de Dolbeault-Poincaré \textbf{:Poincare:}
+\label{sec-1-3-3-1}%
 \begin{lem}[]
 Soit $U$ ouvert simplement connexe de $\C^n$ et soit $\omega$ une $(p,q)$-forme $\dbarre$-fermée sur $U$ alors il existe $\theta$ une $(p,q-1)$-forme sur $U$ telle que $\omega = \dbarre theta$
 \end{lem}
 
-\begin{lem}[Griffiths-Harris]
+\begin{lem}[\cite{Griffiths-Harris}]
 Soit $\Delta$ polydisque de $\C^n$, alors
 \begin{equation}
 H^{p,q}_{Dol}(\Delta,\underline{C}) = 0 \quad \text{ pour } q \geq 1
 \end{equation}
 \end{lem}
+\end{itemize} % ends low level
+\subsubsection{Bott-Chern}
+\label{sec-1-3-4}
 
-\section{Bott-Chern}
 \[
 \dfrac{\ker \partial \cap \ker \bar\partial}{\Im \partial\bar\partial}
 \]
+\subsubsection{Aeppli}
+\label{sec-1-3-5}
 
-\section{Aeppli}
 \[
 \dfrac{\ker \partial\bar\partial}{\Im \partial + \Im\bar\partial}
 \]
+\subsection{Relations}
+\label{sec-1-4}
+\subsubsection{Vanishing Thm}
+\label{sec-1-4-1}
+\begin{itemize}
 
-\chapter{Relations}
+\item Grothendieck\\
+\label{sec-1-4-1-1}%
+Pas de cohomologie des faisceaux en degré supérieur à la dimension. Dans tout le cadre le plus général possible.
+\begin{theorem}[Grothendieck vanishing]
+Let $X$ be a noetherian topological space.
 
-\section{Vanishing Thm}
+For all $i > dim X$ and all sheaves of abelian groups $\Ff$ on $X$, we have $H^i(X, \Ff ) = 0$.
+\end{theorem}
 
-\subsection{Kodaira}
+\item Kodaira
+\label{sec-1-4-1-2}%
+\begin{theorem}[Kodaira Vanishing]
+$M$ is a compact Kähler manifold of complex dimension $n$, $L$ any holomorphic line bundle on $M$ that is positive (ample), and $K_M$ is the canonical line bundle, then
+\[H^q(M,K_M \otimes L\]
+for $q>0$.
+\end{theorem}
+\begin{itemize}
 
-\section{Dualités}
+\item Kodaira$_{\mathrm{Nakano}}$
+\label{sec-1-4-1-2-1}%
+\end{itemize} % ends low level
+\end{itemize} % ends low level
+\subsubsection{Dualités}
+\label{sec-1-4-2}
+\begin{itemize}
 
-\subsection{Poincaré}
+\item Poincaré\\
+\label{sec-1-4-2-1}%
+Variété compacte sans bord, orientée de dimension $n$, alors
+\[
+H^k(M,\C) = H^{n-k}(M,\C)^*
+\]
 
-\subsection{Serres}
+\item Serres
+\label{sec-1-4-2-2}%
+\end{itemize} % ends low level
+\subsubsection{Künneth formula}
+\label{sec-1-4-3}
 
-\section{Künneth formula}
 [Formule de Künneth pour l'homologie, \cite{GH} I.4 p. 58]
 \begin{equation}\label{Kunneth}
 H_{k}(X\times Y,\Q) \simeq \bigoplus_{p+q=k} H_p(X,\Q) \otimes_\C H_q(Y,\Q)
 \end{equation}
 
-Si $X$, $Y$ variétés complexes dont l'une au moins est compacte. $\Ff$ et $\Gg$ des faisceaux de $\C$-ev.
-[Formule de Künneth pour la cohomologie, \cite{Demailly} Chap IV par. 15 p.278]
+Si $X$, $Y$ variétés complexes dont l'une au moins est compacte. $\Ff$ et $\Gg$ des faisceaux cohérents sur $X$ et $Y$ respectivement.
+[Formule de Künneth pour la cohomologie, \cite{Demailly} Chap IV par. 15 et Chap IX par. 5.B, 5.23]
 \begin{equation}\label{CoKunneth}
-H_{k}(X \times Y,\Ff \sqtimes \Gg) \simeq \bigoplus_{p+q=k} H_p(X,\Ff) \otimes_\C H_q(Y,\Gg)
+H_{k}(X \times Y,\Ff \boxtimes \Gg) \simeq \bigoplus_{p+q=k} H_p(X,\Ff) \otimes_\C H_q(Y,\Gg)
 \end{equation}
+\begin{itemize}
 
-\chapter{Théorie de Hodge}
+\item Autre référence \href{http://mathoverflow.net/questions/34673/kunneth-formula-for-sheaf-cohomology-of-varieties}{http://mathoverflow.net/questions/34673/kunneth-formula-for-sheaf-cohomology-of-varieties}
+\label{sec-1-4-3-1}%
 
-\section{Théorème de Hodge}
+\end{itemize} % ends low level
+\subsection{Théorie de Hodge}
+\label{sec-1-5}
+\subsubsection{Théorème de Hodge}
+\label{sec-1-5-1}
+
 Métrique hermitienne
 ->
 Notion de forme harmonique (et dimension finie des espaces de formes harmoniques)
 ->
 Représentant harmonique des classes de Cohomologies
+\begin{itemize}
 
-\subsection{Le cas Kahler}
+\item Le cas Kahler
+\label{sec-1-5-1-1}%
+\end{itemize} % ends low level
+\subsection{Non-Classé}
+\label{sec-1-6}
+\subsubsection{Hirzebruch-Riemann-Roch \textbf{:HRR:GRR:Thm:}}
+\label{sec-1-6-1}
 
-\chapter{Non-Classé}
+Soit $E$ un fibré vectoriel holomorphe sur $X$ une variété complexe compacte
+\begin{equation}\label{HRR}
+\chi(X,E) = \int_X \text{Ch}(E)\text{Td}(X)
+\end{equation}
+\begin{itemize}
 
-\section{Interpretation du H\^1 en terme d'extensions}
+\item Grothendieck-Hirzebuch-Riemann-Roch\\
+\label{sec-1-6-1-1}%
+Version relative où $X \to \star$ est remplacé par $f: X \to Y$ propre entre des schémas quasi-projectifs lisses. Et $E$ remplacé par un complexe borné de faisceaux.
+\end{itemize} % ends low level
+\subsubsection{Interpretation du H$^1$ en terme d'extensions}
+\label{sec-1-6-2}
+
 $H^1(X,\Ff)$ classifie les suites exactes
 \begin{equation}
 0 \rightarrow \Ff \rightarrow \Gg \rightarrow \Oo_X \rightarrow 0
@@ -226,30 +404,38 @@ Dans le cas $X$ compact, $H^0(X,\Oo_X) = \Cc$ et donc la suite exacte longue de 
 et donc un élément de $H^1(X,\Ff)$ obtenue comme l'image de $1 \in \Cc \cong H^0(X,\Oo_X)$.
 
 Réciproquement ?
+\subsubsection{Propriétés des faisceaux}
+\label{sec-1-6-3}
+\begin{itemize}
 
-
-\section{Propriétés des faisceaux}
-
-\subsection{Flasque (flabby)}
+\item Flasque (flabby)\\
+\label{sec-1-6-3-1}%
 Toute section locale peut être étendue en une section globale.
 
 Ex: Si $X$ n'est pas discret, même $C_X$ n'est pas flasque.
+\begin{itemize}
 
-\subsubsection{Les faisceaux flasques sont acycliques}
+\item Les faisceaux flasques sont acycliques
+\label{sec-1-6-3-1-1}%
+\end{itemize} % ends low level
 
-\subsection{Mou (Soft)}
+\item Mou (Soft)\\
+\label{sec-1-6-3-2}%
 Toute section sur un fermé $S$ de $X$ peut-être étendue en une section globale
 
 Ex : $C_X$ (théorème de Tietze-Urysohn) et $C_X^\infty$
 
 Si $R$ est un faisceau d'anneaux doux, alors tous les faisceaux de $R$-modules sont doux.
 
-\subsection{Acyclique}
+\item Acyclique
+\label{sec-1-6-3-3}%
 \begin{defi}[Faisceau acyclique \label{acyclique}\index{faisceau acyclique}]
 Un faisceau acyclique $F$ sur  $X$ est un faisceau dont tous les groupes de cohomologie supérieure sont nuls.
 \end{defi}
+\begin{itemize}
 
-\subsubsection{\$C\^\infty\$-modules}
+\item $C^\infty$-modules\\
+\label{sec-1-6-3-3-1}%
 Les faisceaux de $C^\infty$-modules sont acycliques
 
 Bilan : 
@@ -261,7 +447,7 @@ Toute suite exacte de faisceaux de $\Cc^\infty$-modules est $C^\infty$ scindée.
 0 \rightarrow E \rightarrow F \rightarrow G \rightarrow 0
 \]
 
-Alors en prenant le produit tensoriel au dessus de $\Cc^\infty$ par $G^*$, on obtient la suite exacte~:
+Alors en prenant le produit tensoriel au dessus de $\Cc^\infty$ par $G^*$, on obtient la suite exacte\~{}:
 
 \[
 0 \rightarrow \Hom(G,E) \rightarrow \Hom(G,F) \rightarrow \End(G) \rightarrow \Ext^1(G,E) \rightarrow \cdots
@@ -269,12 +455,18 @@ Alors en prenant le produit tensoriel au dessus de $\Cc^\infty$ par $G^*$, on ob
 Or $\Hom(G,E)$ est un faisceau acyclique donc n'a pas de cohomologie supérieure.
 
 Ainsi il existe un antécédent dans $\Hom(G,F)$ à l'identité dans $\Hom(G,G)$, c'est-à-dire une section de $F \rightarrow G$. Donc la suite est scindée.
+\end{itemize} % ends low level
 
-\subsection{Fin (Fine)}
+\item Fin (Fine)
+\label{sec-1-6-3-4}%
+\end{itemize} % ends low level
+\subsubsection{Suite spectrale de Frölisher}
+\label{sec-1-6-4}
+\begin{itemize}
 
-\section{Suite spectrale de Frölisher}
-
-\subsection{Le cas Kahler}
+\item Le cas Kahler\\
+\label{sec-1-6-4-1}%
 Dégénère en page 1
+\end{itemize} % ends low level
 
-\chapter{Programme}
+\end{document}

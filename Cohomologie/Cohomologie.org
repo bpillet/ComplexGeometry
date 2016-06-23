@@ -1,6 +1,22 @@
+#+TITLE: Cohomologie
+#+AUTHOR: 
+#+DATE:
+# #+LATEX_CLASS: amsdip
+# #+LATEX_HEADER: \documentclass[12pt,makeidx]{amsart}
+#+LATEX_HEADER: \usepackage[couleur,draft]{/home/basile/Git/Latex/Headfiles/amsdip}
+#+LATEX_HEADER: \usepackage[utf8x]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \newtheorem{prop}{Proposition}
+#+LATEX_HEADER: \newtheorem{cor}{Corollaire}
+#+LATEX_HEADER: \newtheorem{lem}{Lemme}
+#+LATEX_HEADER: \newtheorem{thm}{Théoreme}
+#+LATEX_HEADER: \newtheorem{theorem}{Theorem}
+#+LATEX_HEADER: \newtheorem{defi}{Définition}
+#+LATEX_HEADER: \DeclareMathOperator{\Ext}{Ext}
 #+STARTUP: indent
+#+FILETAGS: Cohomologie
 
-* Retour au [[../Programme.org][fichier général]]                                          :ATTACH:
+Retour au [[../Programme.org][fichier général]]                                          :ATTACH:
 :PROPERTIES:
 :Attachments: Programme.org
 :ID:       3b1178f4-2aa4-47fd-a352-59ca87545ad6
@@ -8,39 +24,39 @@
 
 * Cohomologie
 ** Notations
-%\input{Notation}
+# \input{Notation}
 *** Faisceaux classiques
 **** Fonctions localement constantes
 $\underline{R}$ faisceau des fonctions localement constantes à valeur dans $R$
 ***** Structurels
 Fonction, par défaut, signifie à valeur dans $\C$
-\begin{itemize}
-\item $\Cc$ : continues
-\item $\Cc^k$ : $k$-fois dérivables à dérivées continue
-\item $\Epsilon$ : lisses
-\item $\Cc^\omega$ : analytiques
-\item $\Oo$ : holomorphes
-\item $\underline{o}$ : polynômiales
-\end{itemize}
+
+- $\Cc$ :: continues
+- $\Cc^k$ :: $k$-fois dérivables à dérivées continue
+- $\Ee$ :: lisses
+- $\Cc^\omega$ :: analytiques
+- $\Oo$ :: holomorphes
+- $\underline{o}$ :: polynômiales
+
 
 Fonctions à valeur dans $\R \cup \{+\infty\}$
-\begin{itemize}
-\item $\Hh$ : harmoniques
-\item $PSh$ : plurisousharmoniques
-\end{itemize}
+
+- $\Hh$ :: harmoniques
+- $PSh$ :: plurisousharmoniques
+
 **** formes et vecteurs
 
-$\mathcal{A}^p = \Epsilon^p$ : $p$-formes différentielles
-$\mathcal{A}^{p,q} = \Epsilon^{p,q}$ : $p+q$-formes différentielles de type $(p,q)$ relativement à une structure presque-complexe
-$\Omega^p$ : $p$-formes holomorphes
-$\Omega^{p,q}$ : $p+q$ formes holomorphes de type $(p,q)$
+- $\mathcal{A}^p = \Ee^p$ :: $p$-formes différentielles
+- $\mathcal{A}^{p,q} = \Ee^{p,q}$ :: $p+q$-formes différentielles de type $(p,q)$ relativement à une structure presque-complexe
+- $\Omega^p$ :: $p$-formes holomorphes
+- $\Omega^{p,q}$ :: $p+q$ formes holomorphes de type $(p,q)$
 
-$\mathfrak{X}$ : champs de vecteurs lisses
-$\mathcal{X}$ : champs de vecteurs holomorphes
+- $\mathfrak{X}$ :: champs de vecteurs lisses
+- $\mathcal{X}$ :: champs de vecteurs holomorphes
 
 Cas particuliers
 \[
-\mathcal{A}^0 = \C^\infty
+\mathcal{A}^0 = \Cc^\infty
 \]
 \[
 \Omega^0 = \Oo
@@ -49,15 +65,16 @@ Cas particuliers
 \cite{Demailly}
 **** Faisceau gratte-ciel
 *** Pousser et tirer
-**** !
-**** -1
+\cite{Virk}
+**** $f_!$
+**** $f^{-1}$
 exact
-***** ^*
-**** _*
+***** $f^*$
+**** $f_*$
 exact à gauche
 ***** Higher pushforwar $R^qf_*$
-**** ^!
-**** $\otimes$
+**** $f^!$
+**** $f \otimes$
      Exact si plat
 ** Algebrique
 *** Cohomologie d'un complexe
@@ -77,14 +94,14 @@ H^i(M^\bullet) := \text{Coker}\left( d^{i-1}: M^{i-1} \to \ker d^i\right)
 
 Soit $\Ff^\bullet$ un complexe de faisceaux de groupes abéliens sur un espace topologique $X$. Alors on définit \textit{l'hypercohomologie} du complexe comme étant
 \[
-\H^k(X,\Ff^\bullet) : = R^k\Gamma(\Ff^\bullet)
+\Ha^{k}(X,\Ff^\bullet) := R^k\Gamma(\Ff^\bullet)
 \]
 
 Si $\Gg^\bullet$ est un complexe de faisceaux $\Gamma$-acycliques et quasi-isomorphe à $\Ff^\bullet$ alors
 les $G^\bullet = \Gg^\bullet(X)$ forment un complexe de groupes abéliens
 et on a
 \[
-\H^k(X,\Ff^\bullet) = H^k(G^\bullet)
+\Ha^k(X,\Ff^\bullet) = H^k(G^\bullet)
 \]
 *** Cohomologie des Faisceaux
 **** Faisceau flasques et résolution flasque
@@ -92,20 +109,19 @@ et on a
 
 
 \cite{Voisin}
-Un complexe $(M^i,d^i)$ pour $i\geq 0$ est une \textit{résolution}  de $N$ si 
-\begin{itemize}
-\item $M^\bullet$ est exacte en $M^i$ pour $i>0$
-\item on a une suite exacte
-\[
-0 \to N \to M^0 \to M^1
-\]
-\end{itemize}
+Un complexe $(M^i,d^i)$ pour $i\geq 0$ est une \textit{<<<résolution>>>}  de $N$ si 
+- $M^\bullet$ est exacte en $M^i$ pour $i>0$
+- on a une suite exacte
+  \[
+  0 \to N \to M^0 \to M^1
+  \]
+
 **** Cohomologie des faisceaux
 **** Suite exacte longue
 **** Suite de Mayer-Vietoris
 *** Cech
 *** Théorème de Leray des faisceaux acycliques
-\begin{defi}
+\begin{defi}[<<<Recouvrement acyclique>>>]\label{def:acyclique_recouv}
 Un recouvrement $\mathfrak{U}$ de $X$ est acyclique pour $\Ff$ si $\Ff$ n'as pas de cohomologie supérieure sur les intersections d'ouverts de $\mathfrak{U}$. C'est-à-dire~:
 \[
 \forall p>0, \forall k>0, \forall J \subseteq I, \vert J \vert = k \quad
@@ -141,7 +157,13 @@ En particulier pour de tels recouvrements, les faisceaux de $C^\infty$-modules n
 Cech=Faisc.
 Si $X$ est paracompacte et $\Ff$ un faisceau sur $X$ alors
 \begin{equation}
-\forall q \geq 0, \quad \cech{H}^q(X,\Ff) = H^q(X,\Ff)
+\forall q \geq 0, \quad \check{H}^q(X,\Ff) = H^q(X,\Ff)
+\end{equation}
+*** Isomorphisme de De Rham-Weil
+Soit $\Ff$ un faisceau sur $X$ et $\Aa^\bullet$ une résolution de $\Ff$ par des faisceaux acycliques sur $X$, alors il y a un isomorphisme fonctoriel (relativement à la restriction)
+\begin{equation}
+\label{DeRham-Weil}
+H^k(\Gamma(X,\Aa^\bullet)) \overset{\sim}{\to} H^k(X,\Ff)
 \end{equation}
 *** Isomorphisme de Leray
 ** Geometrique
@@ -154,7 +176,7 @@ Par le lemme de Poincaré le complexe
 \end{equation}
  est exacte en $A^k$ pour tout $k>0$.
 
-C'est une résolution du faisceau $\underline{C}$
+C'est une résolution du faisceau $\underline{\C}$
 \cite{Voisin}.
 **** Lemme de Poincaré						   :Poincare:
 \begin{lem}[Poincaré\label{LemmePoincare}]
@@ -171,7 +193,7 @@ Soit $U$ ouvert simplement connexe de $\C^n$ et soit $\omega$ une $(p,q)$-forme 
 \begin{lem}[\cite{Griffiths-Harris}]
 Soit $\Delta$ polydisque de $\C^n$, alors
 \begin{equation}
-H^{p,q}_{Dol}(\Delta,\underline{C}) = 0 \quad \text{ pour } q \geq 1
+H^{p,q}_{Dol}(\Delta,\underline{\C}) = 0 \quad \text{ pour } q \geq 1
 \end{equation}
 \end{lem}
 *** Bott-Chern
@@ -214,7 +236,7 @@ H_{k}(X\times Y,\Q) \simeq \bigoplus_{p+q=k} H_p(X,\Q) \otimes_\C H_q(Y,\Q)
 Si $X$, $Y$ variétés complexes dont l'une au moins est compacte. $\Ff$ et $\Gg$ des faisceaux cohérents sur $X$ et $Y$ respectivement.
 [Formule de Künneth pour la cohomologie, \cite{Demailly} Chap IV par. 15 et Chap IX par. 5.B, 5.23]
 \begin{equation}\label{CoKunneth}
-H_{k}(X \times Y,\Ff \sqtimes \Gg) \simeq \bigoplus_{p+q=k} H_p(X,\Ff) \otimes_\C H_q(Y,\Gg)
+H_{k}(X \times Y,\Ff \boxtimes \Gg) \simeq \bigoplus_{p+q=k} H_p(X,\Ff) \otimes_\C H_q(Y,\Gg)
 \end{equation}
 
 **** Autre référence http://mathoverflow.net/questions/34673/kunneth-formula-for-sheaf-cohomology-of-varieties
@@ -231,7 +253,7 @@ Représentant harmonique des classes de Cohomologies
 *** Hirzebruch-Riemann-Roch                                   :HRR:GRR:Thm:
 Soit $E$ un fibré vectoriel holomorphe sur $X$ une variété complexe compacte
 \begin{equation}\label{HRR}
-\Chi(X,E) = \int_X \text{Ch}(E)\text{Td}(X)
+\chi(X,E) = \int_X \text{Ch}(E)\text{Td}(X)
 \end{equation}
 **** Grothendieck-Hirzebuch-Riemann-Roch
 Version relative où $X \to \star$ est remplacé par $f: X \to Y$ propre entre des schémas quasi-projectifs lisses. Et $E$ remplacé par un complexe borné de faisceaux.

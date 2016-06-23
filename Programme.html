@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Programme</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Programme"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2016-06-22T10:03+0200"/>
+<meta name="author" content="Pillet Basile"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
+/**
+ *
+ * @source: http://orgmode.org/mathjax/MathJax.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in http://orgmode.org/mathjax/MathJax.js.
+ *
+ * Copyright (C) 2012-2013  MathJax
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in http://orgmode.org/mathjax/MathJax.js.
+ *
+ */
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code below.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code below is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code below.
+*/
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Programme</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 0</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Géométrie Riemannienne</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1 Connection de Levi-Civitta</a></li>
+<li><a href="#sec-1-1-2">1.1.2 Surfaces</a></li>
+<li><a href="#sec-1-1-3">1.1.3 Volume riemannien</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2 Géométrie Complexe</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1 Géométrie Hermitienne</a></li>
+<li><a href="#sec-1-2-2">1.2.2 Fonctions</a></li>
+<li><a href="#sec-1-2-3">1.2.3 Variétés complexes</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3 Cohomologie</a></li>
+<li><a href="#sec-1-4">1.4 Références</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1 Demailly</a></li>
+<li><a href="#sec-1-4-2">1.4.2 Morrow-Kodaira</a></li>
+<li><a href="#sec-1-4-3">1.4.3 Griffith - Harris</a></li>
+<li><a href="#sec-1-4-4">1.4.4 Claire Voisin</a></li>
+<li><a href="#sec-1-4-5">1.4.5 Huybrechts</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">1.5 Kahler</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1 Compacte</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">1.6 Géométrie alébrique</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a name="ID-5ea17f44-adfb-4697-b098-c79f9879518d" id="ID-5ea17f44-adfb-4697-b098-c79f9879518d"></a><span class="section-number-2">1</span> 0</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Géométrie Riemannienne &nbsp;&nbsp;&nbsp;<span class="tag"><span class="metric">metric</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Connection de Levi-Civitta</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<ul>
+<li id="sec-1-1-1-1">Courbure<br/>
+<ul>
+<li id="sec-1-1-1-1-1">Ricci<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-2">Gauss<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-3">Sectionelle<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-4">Riemann<br/>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Surfaces</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+<ul>
+<li id="sec-1-1-2-1">Formule de Gauss-Bonnet<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Volume riemannien</h4>
+<div class="outline-text-4" id="text-1-1-3">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Géométrie Complexe</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Géométrie Hermitienne &nbsp;&nbsp;&nbsp;<span class="tag"><span class="metric">metric</span></span></h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<ul>
+<li id="sec-1-2-1-1">Forme hermitienne<br/>
+<ul>
+<li id="sec-1-2-1-1-1">Connection de Chern<br/>
+<ul>
+<li id="sec-1-2-1-1-1-1">Courbure<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-1-2">Volume hermitien &nbsp;&nbsp;&nbsp;<span class="tag"><span class="CoursDeSerge">CoursDeSerge</span></span><br/>
+<ul>
+<li id="sec-1-2-1-1-2-1">Inégalité de Wirtinger<br/>
+Si \(\omega\) forme hermitienne sur \(X\)
+alors
+pour toute sous-variété réelle de dimension \(2k\) $V \subseteq X$, on a
+\[
+\int_{V} \omega^k \leq  k! Vol(V)
+\]
+et avec égalité ssi \(V\) est une sous-variété complexe.
+
+<p>
+\cite{Huybrechts}
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-2-1-1-2-2">Théorème Bishop &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Montel">Montel</span>&nbsp;<span class="Wirtinger">Wirtinger</span>&nbsp;<span class="Bishop">Bishop</span></span><br/>
+cf Cours doctoral Serge.
+Utilise inégalité de Wirtinger et théorème de Montel.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-2">Géométrie Kahlérienne<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-3">Laplace-Beltrami<br/>
+<ul>
+<li id="sec-1-2-1-3-1">Théorie de Hodge<br/>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Fonctions</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<ul>
+<li id="sec-1-2-2-1">Fonctions holomorphes<br/>
+<ul>
+<li id="sec-1-2-2-1-1">Definition<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-2">Formule de Cauchy-Pompeiu<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-3">Formule de Cauchy en dimension \(n\)<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-4">Hartog-Riemann<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-5">Wierstrass<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-2">Sousharmoniques<br/>
+\(Sh(U)\)
+
+N'est un faisceau que sur une variété riemannienne.
+<ul>
+<li id="sec-1-2-2-2-1">Harmoniques<br/>
+<ul>
+<li id="sec-1-2-2-2-1-1">Théorème de l'application conforme &nbsp;&nbsp;&nbsp;<span class="tag"><span class="RiemannMapping">RiemannMapping</span></span><br/>
+
+
+
+\begin{thm}[Théorème de l'application conforme (Riemann Mapping Thm)]
+Tout ouvert de $\C$
+\begin{itemize}
+\item non vide
+\item différent de $\C$
+\item simplement connexe
+\end{itemize}
+ est biholomorphe au disque unité de $\C$.
+\end{thm}
+
+<ul>
+<li id="sec-1-2-2-2-1-1-1">Théorème d'uniformisation de Riemann<br/>
+\begin{thm}
+Les surfaces de Riemann simplement connexe sont, à biholomorphismes près :
+\begin{itemize}
+\item $\C$
+\item $\D$ la boule unité de $\C$ (ou le demi-plan de Poincaré)
+\item $\Pro^1$
+\end{itemize}
+\end{thm}
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-2-2">Plurisousharmoniques<br/>
+\(PSh(U)\)
+Faisceau sur une variété complexe.
+
+<p>
+équivalent à 
+\begin{equation}
+\forall X \in T_\R M, \quad i(\partial\dbarre f)(X,IX) \geq 0
+\end{equation}
+(on dit que \(i\partial\dbarre f\) est une \((1,1)\)-forme positive)
+(on voit bien que c'est local ! ?)
+</p>
+<ul>
+<li id="sec-1-2-2-2-2-1">Pluriharmoniques<br/>
+\(f\) et \(-f\) sont plurisousharmoniques
+
+<p>
+Si \(H^1(X,\R) = 0\), alors
+</p>
+<p>
+\(f \in Ph(X)\) \ssi \(f\) partie réelle d'une fonction holomorphe
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-2-2-2-2-2">Exemples<br/>
+\(z\mapsto \log |z|\) est sousharmonique sur \(\C\)
+donc pour toute fonction holomorphe \(f\) sur \(X\), \(\log |f| \in PSh(X)\)
+
+<p>
+Plus généralement soient \(f_i \in \Oo(X)\) et \(\alpha_i \geq 0\) pour \(1 \leq i \leq n\) alors
+\[
+\log \left(
+|f_1|^{\alpha_1} + \cdots + |f_n|^{\alpha_n}
+\right) \in Psh(X)
+\]
+
+</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Variétés complexes</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+<ul>
+<li id="sec-1-2-3-1">Holomorphiquement convexe<br/>
+L'enveloppe holomorphe de chaque compacte est compacte
+
+<p>
+où l'enveloppe holomorphe de \(K\) c'est l'ensemble des points \(x\) de la variétés qui sont qui pour toute fonction holo \(f\) sur \(X\), \(|f(x)|\) est borné par le sup de \(f\) sur \(K\).
+</p><ul>
+<li id="sec-1-2-3-1-1">Surfaces de Riemann<br/>
+<ul>
+<li id="sec-1-2-3-1-1-1">Théorème de Riemann-Roch<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-2"><a name="ID-51b17ad0-5ef2-4317-aed0-d2e617759ca8" id="ID-51b17ad0-5ef2-4317-aed0-d2e617759ca8"></a><a href="./stein.html">Stein</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="ATTACH">ATTACH</span></span><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-3">Compactes<br/>
+Not enough functions to separate points.
+<ul>
+<li id="sec-1-2-3-1-3-1">Moishezon<br/>
+Enough meromorphic functions :
+
+<p>
+Le degré de transcendance sur \(\C\) du corps des fonctions méromorphes de \(X\) est égal à la dimension complexe de \(X\).
+</p><ul>
+<li id="sec-1-2-3-1-3-1-1">Projectives (algébriques)<br/>
+Une variété Moishezon \(X\) vérifie~:
+\(X\) algébrique ssi \(X\) est Kahler
+<ul>
+<li id="sec-1-2-3-1-3-1-1-1">\(\Pro^n\)<br/>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-2">Sous-variétés<br/>
+<ul>
+<li id="sec-1-2-3-2-1">Espace des cycles &nbsp;&nbsp;&nbsp;<span class="tag"><span class="CoursDeSerge">CoursDeSerge</span></span><br/>
+cf Cours de serge
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><a name="ID-307c2487-843c-45b8-9809-f68f3eb71040" id="ID-307c2487-843c-45b8-9809-f68f3eb71040"></a><span class="section-number-3">1.3</span> <a href="./Cohomologie/Cohomologie.html">Cohomologie</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="ATTACH">ATTACH</span></span></h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>\input{./Cohomologie/Cohomologie}
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Références</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Demailly</h4>
+<div class="outline-text-4" id="text-1-4-1">
+
+<p>\cite{Demailly}
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Morrow-Kodaira</h4>
+<div class="outline-text-4" id="text-1-4-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-3" class="outline-4">
+<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> Griffith - Harris</h4>
+<div class="outline-text-4" id="text-1-4-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-4" class="outline-4">
+<h4 id="sec-1-4-4"><span class="section-number-4">1.4.4</span> Claire Voisin</h4>
+<div class="outline-text-4" id="text-1-4-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-5" class="outline-4">
+<h4 id="sec-1-4-5"><span class="section-number-4">1.4.5</span> Huybrechts</h4>
+<div class="outline-text-4" id="text-1-4-5">
+
+<p>\cite{Huybrechts}
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Kahler</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> Compacte</h4>
+<div class="outline-text-4" id="text-1-5-1">
+
+<ul>
+<li id="sec-1-5-1-1">Projective<br/>
+<ul>
+<li id="sec-1-5-1-1-1">Théorème de Chow &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Chow">Chow</span>&nbsp;<span class="algebraic">algebraic</span></span><br/>
+\begin{thm}[Thm de Chow\label{TheoremChow}\index{theoreme de Chow}]
+Projective = Algébrique
+\end{thm}
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-5-1-2">Hodge<br/>
+Metric with kahler form integral in \(H^{1,1}\)
+<ul>
+<li id="sec-1-5-1-2-1">Kodaira embedding thm<br/>
+Hodge = Projective
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6"><a name="ID-f50c7a16-7566-44c7-8bb8-f40f9b7550e9" id="ID-f50c7a16-7566-44c7-8bb8-f40f9b7550e9"></a><span class="section-number-3">1.6</span> <a href="./Algebrique/algebrique.html">Géométrie alébrique</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="ATTACH">ATTACH</span></span></h3>
+<div class="outline-text-3" id="text-1-6">
+
+<p>\input{./Algebrique/Algebrique}
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2016-06-22T10:03+0200</p>
+<p class="author">Author: Pillet Basile</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

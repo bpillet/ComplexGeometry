@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Cohomologie</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Cohomologie"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content=""/>
+<meta name="author" content=""/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
+/**
+ *
+ * @source: http://orgmode.org/mathjax/MathJax.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in http://orgmode.org/mathjax/MathJax.js.
+ *
+ * Copyright (C) 2012-2013  MathJax
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in http://orgmode.org/mathjax/MathJax.js.
+ *
+ */
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code below.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code below is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code below.
+*/
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Cohomologie</h1>
+
+<p>Retour au <a href="../Programme.html">fichier général</a>                                          :ATTACH:
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Cohomologie</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Notations</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1 Faisceaux classiques</a></li>
+<li><a href="#sec-1-1-2">1.1.2 Pousser et tirer</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2 Algebrique</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1 Cohomologie d'un complexe</a></li>
+<li><a href="#sec-1-2-2">1.2.2 Cohomologie des Faisceaux</a></li>
+<li><a href="#sec-1-2-3">1.2.3 Cech</a></li>
+<li><a href="#sec-1-2-4">1.2.4 Théorème de Leray des faisceaux acycliques</a></li>
+<li><a href="#sec-1-2-5">1.2.5 Isomorphisme de De Rham-Weil</a></li>
+<li><a href="#sec-1-2-6">1.2.6 Isomorphisme de Leray</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3 Geometrique</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1 Betti</a></li>
+<li><a href="#sec-1-3-2">1.3.2 De Rham</a></li>
+<li><a href="#sec-1-3-3">1.3.3 Dolbeault</a></li>
+<li><a href="#sec-1-3-4">1.3.4 Bott-Chern</a></li>
+<li><a href="#sec-1-3-5">1.3.5 Aeppli</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">1.4 Relations</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1 Vanishing Thm</a></li>
+<li><a href="#sec-1-4-2">1.4.2 Dualités</a></li>
+<li><a href="#sec-1-4-3">1.4.3 Künneth formula</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">1.5 Théorie de Hodge</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1 Théorème de Hodge</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">1.6 Non-Classé</a>
+<ul>
+<li><a href="#sec-1-6-1">1.6.1 Hirzebruch-Riemann-Roch</a></li>
+<li><a href="#sec-1-6-2">1.6.2 Interpretation du H<sup>1</sup> en terme d'extensions</a></li>
+<li><a href="#sec-1-6-3">1.6.3 Propriétés des faisceaux</a></li>
+<li><a href="#sec-1-6-4">1.6.4 Suite spectrale de Frölisher</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Cohomologie</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Notations</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Faisceaux classiques</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<ul>
+<li id="sec-1-1-1-1">Fonctions localement constantes<br/>
+\(\underline{R}\) faisceau des fonctions localement constantes à valeur dans \(R\)
+<ul>
+<li id="sec-1-1-1-1-1">Structurels<br/>
+Fonction, par défaut, signifie à valeur dans \(\C\)
+
+<dl>
+<dt>\(\Cc\)</dt><dd>continues
+</dd>
+<dt>\(\Cc^k\)</dt><dd>\(k\)-fois dérivables à dérivées continue
+</dd>
+<dt>\(\Ee\)</dt><dd>lisses
+</dd>
+<dt>\(\Cc^\omega\)</dt><dd>analytiques
+</dd>
+<dt>\(\Oo\)</dt><dd>holomorphes
+</dd>
+<dt>\(\underline{o}\)</dt><dd>polynômiales
+</dd>
+</dl>
+
+
+
+<p>
+Fonctions à valeur dans \(\R \cup \{+\infty\}\)
+</p>
+<dl>
+<dt>\(\Hh\)</dt><dd>harmoniques
+</dd>
+<dt>\(PSh\)</dt><dd>plurisousharmoniques
+</dd>
+</dl>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2">formes et vecteurs<br/>
+
+<dl>
+<dt>\(\mathcal{A}^p = \Ee^p\)</dt><dd>\(p\)-formes différentielles
+</dd>
+<dt>\(\mathcal{A}^{p,q} = \Ee^{p,q}\)</dt><dd>\(p+q\)-formes différentielles de type \((p,q)\) relativement à une structure presque-complexe
+</dd>
+<dt>\(\Omega^p\)</dt><dd>\(p\)-formes holomorphes
+</dd>
+<dt>\(\Omega^{p,q}\)</dt><dd>\(p+q\) formes holomorphes de type \((p,q)\)
+
+</dd>
+<dt>\(\mathfrak{X}\)</dt><dd>champs de vecteurs lisses
+</dd>
+<dt>\(\mathcal{X}\)</dt><dd>champs de vecteurs holomorphes
+</dd>
+</dl>
+
+
+<p>
+Cas particuliers
+\[
+\mathcal{A}^0 = \Cc^\infty
+\]
+\[
+\Omega^0 = \Oo
+\]
+</p><ul>
+<li id="sec-1-1-1-2-1">Courants<br/>
+\cite{Demailly}
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3">Faisceau gratte-ciel<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Pousser et tirer</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+<p>\cite{Virk}
+</p><ul>
+<li id="sec-1-1-2-1">\(f_!\)<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2">\(f^{-1}\)<br/>
+exact
+<ul>
+<li id="sec-1-1-2-2-1">\(f^*\)<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-3">\(f_*\)<br/>
+exact à gauche
+<ul>
+<li id="sec-1-1-2-3-1">Higher pushforwar \(R^qf_*\)<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-4">\(f^!\)<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-5">\(f \otimes\)<br/>
+     Exact si plat
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Algebrique</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Cohomologie d'un complexe</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<p>\cite{Demailly} Chap IV.
+\cite{Voisin}
+</p>
+<p>
+Dans une catégorie abélienne \(\Aa\), un complexe est la donnée du couple \((M^\bullet, d^\bullet)\) tel que \(d^i : M^i \to M^{i+1}\) et \(d^{i+1} \circ d^i = 0\) pour tout \(i \in \Z\).
+</p>
+<p>
+La cohomologie en degré \(i\) d'un complexe \((M,d)\) est l'objet de la catégorie \(\Aa\)
+\[
+H^i(M^\bullet) := \text{Coker}\left( d^{i-1}: M^{i-1} \to \ker d^i\right)
+\]
+
+
+</p><ul>
+<li id="sec-1-2-1-1">Hypercohomologie d'un complexe de faisceaux<br/>
+\cite{Voisin}
+
+<p>
+Soit \(\Ff^\bullet\) un complexe de faisceaux de groupes abéliens sur un espace topologique \(X\). Alors on définit \textit{l'hypercohomologie} du complexe comme étant
+\[
+\Ha^{k}(X,\Ff^\bullet) := R^k\Gamma(\Ff^\bullet)
+\]
+
+Si \(\Gg^\bullet\) est un complexe de faisceaux \(\Gamma\)-acycliques et quasi-isomorphe à \(\Ff^\bullet\) alors
+les \(G^\bullet = \Gg^\bullet(X)\) forment un complexe de groupes abéliens
+et on a
+\[
+\Ha^k(X,\Ff^\bullet) = H^k(G^\bullet)
+\]
+</p></li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Cohomologie des Faisceaux</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<ul>
+<li id="sec-1-2-2-1">Faisceau flasques et résolution flasque<br/>
+\cite{Demailly} Chap. IV
+
+
+<p>
+\cite{Voisin}
+Un complexe \((M^i,d^i)\) pour \(i\geq 0\) est une \textit{résolution}  de \(N\) si 
+</p><ul>
+<li>\(M^\bullet\) est exacte en \(M^i\) pour \(i&gt;0\)
+</li>
+<li>on a une suite exacte
+  \[
+  0 \to N \to M^0 \to M^1
+  \]
+</li>
+</ul>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-2">Cohomologie des faisceaux<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-3">Suite exacte longue<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-4">Suite de Mayer-Vietoris<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Cech</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> Théorème de Leray des faisceaux acycliques</h4>
+<div class="outline-text-4" id="text-1-2-4">
+
+
+\begin{defi}[<<<Recouvrement acyclique>>>]\label{def:acyclique_recouv}
+Un recouvrement $\mathfrak{U}$ de $X$ est acyclique pour $\Ff$ si $\Ff$ n'as pas de cohomologie supérieure sur les intersections d'ouverts de $\mathfrak{U}$. C'est-à-dire~:
+\[
+\forall p>0, \forall k>0, \forall J \subseteq I, \vert J \vert = k \quad
+\check{H}^p(U_J,\Ff) = 0
+\]
+\end{defi}
+
+\begin{thm}[leray]\label{Thm_Leray}
+Si $\mathfrak{U}$ est un [[recouvrement acyclique][recouvrement acyclique]] pour $\Ff$, alors
+\begin{equation}
+\forall p, \quad H^p(X,\Ff) = \check{H}^p(\mathfrak{U},\Ff)
+\end{equation}
+\end{thm}
+<p>
+morale : Coh de Cech sur un <a href="#recouvrement-acyclique">recouvrement acyclique</a> = Coh des Faisceaux
+</p>
+<p>
+\cite{Demailly} Chap IV
+par. 5. Cech Cohomologie
+</p>
+
+
+\begin{cor}
+Si $\mathfrak{U}$ est un [[recouvrement acyclique][recouvrement acyclique]] pour $\Ff$, alors
+\begin{equation}
+\forall p, \quad \check{H}^p(X,\Ff) = \check{H}^p(\mathfrak{U},\Ff)
+\end{equation}
+\end{cor}
+<ul>
+<li id="sec-1-2-4-1">Lemme d'acyclicité<br/>
+Sur une variété paracompacte, les faisceaux de \(C^\infty\)-modules sont acycliques sur les recouvrements localement finis.
+
+<p>
+En particulier pour de tels recouvrements, les faisceaux de \(C^\infty\)-modules n'ont pas de cohomologie supérieure non nulle : 
+\begin{equation}
+\forall q>0 , \quad \check{H}^q(X,\Ff) = 0
+\end{equation}
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-2-4-2">Sur un espace paracompact,<br/>
+Cech=Faisc.
+Si \(X\) est paracompacte et \(\Ff\) un faisceau sur \(X\) alors
+\begin{equation}
+\forall q \geq 0, \quad \check{H}^q(X,\Ff) = H^q(X,\Ff)
+\end{equation}
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Isomorphisme de De Rham-Weil</h4>
+<div class="outline-text-4" id="text-1-2-5">
+
+<p>Soit \(\Ff\) un faisceau sur \(X\) et \(\Aa^\bullet\) une résolution de \(\Ff\) par des faisceaux acycliques sur \(X\), alors il y a un isomorphisme fonctoriel (relativement à la restriction)
+\begin{equation}
+\label{DeRham-Weil}
+H^k(\Gamma(X,\Aa^\bullet)) \overset{\sim}{\to} H^k(X,\Ff)
+\end{equation}
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6"><span class="section-number-4">1.2.6</span> Isomorphisme de Leray</h4>
+<div class="outline-text-4" id="text-1-2-6">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Geometrique</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Betti</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> De Rham</h4>
+<div class="outline-text-4" id="text-1-3-2">
+
+<p>Par le lemme de Poincaré le complexe
+\begin{equation}\label{ExSeq_DR}
+0 \rightarrow  C^\infty \rightarrow_d
+\mathcal{A}^1 \rightarrow_d \mathcal{A}^2 \cdots
+\end{equation}
+ est exacte en \(A^k\) pour tout \(k&gt;0\).
+</p>
+<p>
+C'est une résolution du faisceau \(\underline{\C}\)
+\cite{Voisin}.
+</p><ul>
+<li id="sec-1-3-2-1">Lemme de Poincaré &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Poincare">Poincare</span></span><br/>
+\begin{lem}[Poincaré\label{LemmePoincare}]
+Soit $U$ ouvert simplement connexe de $\R^n$ et soit $\omega$ une $k$-forme $\dd$-fermée sur $U$ alors il existe $\theta$ une $k-1$-forme sur $U$ telle que $\omega = \dd theta$
+\end{lem}
+
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Dolbeault</h4>
+<div class="outline-text-4" id="text-1-3-3">
+
+<ul>
+<li id="sec-1-3-3-1">Lemme de Dolbeault-Poincaré &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Poincare">Poincare</span></span><br/>
+\begin{lem}[]
+Soit $U$ ouvert simplement connexe de $\C^n$ et soit $\omega$ une $(p,q)$-forme $\dbarre$-fermée sur $U$ alors il existe $\theta$ une $(p,q-1)$-forme sur $U$ telle que $\omega = \dbarre theta$
+\end{lem}
+
+\begin{lem}[\cite{Griffiths-Harris}]
+Soit $\Delta$ polydisque de $\C^n$, alors
+\begin{equation}
+H^{p,q}_{Dol}(\Delta,\underline{\C}) = 0 \quad \text{ pour } q \geq 1
+\end{equation}
+\end{lem}
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-4" class="outline-4">
+<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> Bott-Chern</h4>
+<div class="outline-text-4" id="text-1-3-4">
+
+
+\[
+\dfrac{\ker \partial \cap \ker \bar\partial}{\Im \partial\bar\partial}
+\]
+</div>
+
+</div>
+
+<div id="outline-container-1-3-5" class="outline-4">
+<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> Aeppli</h4>
+<div class="outline-text-4" id="text-1-3-5">
+
+
+\[
+\dfrac{\ker \partial\bar\partial}{\Im \partial + \Im\bar\partial}
+\]
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Relations</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Vanishing Thm</h4>
+<div class="outline-text-4" id="text-1-4-1">
+
+<ul>
+<li id="sec-1-4-1-1">Grothendieck<br/>
+Pas de cohomologie des faisceaux en degré supérieur à la dimension. Dans tout le cadre le plus général possible.
+\begin{theorem}[Grothendieck vanishing]
+Let $X$ be a noetherian topological space.
+
+For all $i > dim X$ and all sheaves of abelian groups $\Ff$ on $X$, we have $H^i(X, \Ff ) = 0$.
+\end{theorem}
+</li>
+</ul>
+<ul>
+<li id="sec-1-4-1-2">Kodaira<br/>
+\begin{theorem}[Kodaira Vanishing]
+$M$ is a compact Kähler manifold of complex dimension $n$, $L$ any holomorphic line bundle on $M$ that is positive (ample), and $K_M$ is the canonical line bundle, then
+\[H^q(M,K_M \otimes L\]
+for $q>0$.
+\end{theorem}
+<ul>
+<li id="sec-1-4-1-2-1">Kodaira<sub>Nakano</sub><br/>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Dualités</h4>
+<div class="outline-text-4" id="text-1-4-2">
+
+<ul>
+<li id="sec-1-4-2-1">Poincaré<br/>
+Variété compacte sans bord, orientée de dimension \(n\), alors
+\[
+H^k(M,\C) = H^{n-k}(M,\C)^*
+\]
+</li>
+</ul>
+<ul>
+<li id="sec-1-4-2-2">Serres<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-4-3" class="outline-4">
+<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> Künneth formula</h4>
+<div class="outline-text-4" id="text-1-4-3">
+
+<p>[Formule de Künneth pour l'homologie, \cite{GH} I.4 p. 58]
+\begin{equation}\label{Kunneth}
+H_{k}(X\times Y,\Q) \simeq \bigoplus_{p+q=k} H_p(X,\Q) \otimes_\C H_q(Y,\Q)
+\end{equation}
+
+Si \(X\), \(Y\) variétés complexes dont l'une au moins est compacte. \(\Ff\) et \(\Gg\) des faisceaux cohérents sur \(X\) et \(Y\) respectivement.
+[Formule de Künneth pour la cohomologie, \cite{Demailly} Chap IV par. 15 et Chap IX par. 5.B, 5.23]
+\begin{equation}\label{CoKunneth}
+H_{k}(X \times Y,\Ff \boxtimes \Gg) \simeq \bigoplus_{p+q=k} H_p(X,\Ff) \otimes_\C H_q(Y,\Gg)
+\end{equation}
+
+</p><ul>
+<li id="sec-1-4-3-1">Autre référence <a href="http://mathoverflow.net/questions/34673/kunneth-formula-for-sheaf-cohomology-of-varieties">http://mathoverflow.net/questions/34673/kunneth-formula-for-sheaf-cohomology-of-varieties</a><br/>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Théorie de Hodge</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> Théorème de Hodge</h4>
+<div class="outline-text-4" id="text-1-5-1">
+
+<p>Métrique hermitienne
+-&gt;
+Notion de forme harmonique (et dimension finie des espaces de formes harmoniques)
+-&gt;
+Représentant harmonique des classes de Cohomologies
+</p><ul>
+<li id="sec-1-5-1-1">Le cas Kahler<br/>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Non-Classé</h3>
+<div class="outline-text-3" id="text-1-6">
+
+
+</div>
+
+<div id="outline-container-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> Hirzebruch-Riemann-Roch &nbsp;&nbsp;&nbsp;<span class="tag"><span class="HRR">HRR</span>&nbsp;<span class="GRR">GRR</span>&nbsp;<span class="Thm">Thm</span></span></h4>
+<div class="outline-text-4" id="text-1-6-1">
+
+<p>Soit \(E\) un fibré vectoriel holomorphe sur \(X\) une variété complexe compacte
+\begin{equation}\label{HRR}
+\chi(X,E) = \int_X \text{Ch}(E)\text{Td}(X)
+\end{equation}
+</p><ul>
+<li id="sec-1-6-1-1">Grothendieck-Hirzebuch-Riemann-Roch<br/>
+Version relative où \(X \to \star\) est remplacé par \(f: X \to Y\) propre entre des schémas quasi-projectifs lisses. Et \(E\) remplacé par un complexe borné de faisceaux.
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-6-2" class="outline-4">
+<h4 id="sec-1-6-2"><span class="section-number-4">1.6.2</span> Interpretation du H<sup>1</sup> en terme d'extensions</h4>
+<div class="outline-text-4" id="text-1-6-2">
+
+<p>\(H^1(X,\Ff)\) classifie les suites exactes
+\begin{equation}
+0 \rightarrow \Ff \rightarrow \Gg \rightarrow \Oo_X \rightarrow 0
+\end{equation}
+
+Ah bon ?
+</p>
+<p>
+Dans le cas \(X\) compact, \(H^0(X,\Oo_X) = \Cc\) et donc la suite exacte longue de cohomologie associée à une telle extension \(\Gg\) nous donne
+\begin{equation}
+\cdots \rightarrow H^0(X,\Oo_X) \rightarrow H^1(X,\Ff) \rightarrow \cdots
+\end{equation}
+et donc un élément de \(H^1(X,\Ff)\) obtenue comme l'image de \(1 \in \Cc \cong H^0(X,\Oo_X)\).
+</p>
+<p>
+Réciproquement ?
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-6-3" class="outline-4">
+<h4 id="sec-1-6-3"><span class="section-number-4">1.6.3</span> Propriétés des faisceaux</h4>
+<div class="outline-text-4" id="text-1-6-3">
+
+<ul>
+<li id="sec-1-6-3-1">Flasque (flabby)<br/>
+Toute section locale peut être étendue en une section globale.
+
+<p>
+Ex: Si \(X\) n'est pas discret, même \(C_X\) n'est pas flasque.
+</p><ul>
+<li id="sec-1-6-3-1-1">Les faisceaux flasques sont acycliques<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-6-3-2">Mou (Soft)<br/>
+Toute section sur un fermé \(S\) de \(X\) peut-être étendue en une section globale
+
+<p>
+Ex : \(C_X\) (théorème de Tietze-Urysohn) et \(C_X^\infty\)
+</p>
+<p>
+Si \(R\) est un faisceau d'anneaux doux, alors tous les faisceaux de \(R\)-modules sont doux.
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-6-3-3">Acyclique<br/>
+\begin{defi}[Faisceau acyclique \label{acyclique}\index{faisceau acyclique}]
+Un faisceau acyclique $F$ sur  $X$ est un faisceau dont tous les groupes de cohomologie supérieure sont nuls.
+\end{defi}
+<ul>
+<li id="sec-1-6-3-3-1">\(C^\infty\)-modules<br/>
+Les faisceaux de \(C^\infty\)-modules sont acycliques
+
+<p>
+Bilan : 
+\begin{prop}
+Toute suite exacte de faisceaux de $\Cc^\infty$-modules est $C^\infty$ scindée.
+\end{prop}
+
+\[
+0 \rightarrow E \rightarrow F \rightarrow G \rightarrow 0
+\]
+
+Alors en prenant le produit tensoriel au dessus de \(\Cc^\infty\) par \(G^*\), on obtient la suite exacte~:
+</p>
+
+
+\[
+0 \rightarrow \Hom(G,E) \rightarrow \Hom(G,F) \rightarrow \End(G) \rightarrow \Ext^1(G,E) \rightarrow \cdots
+\]
+<p>
+Or \(\Hom(G,E)\) est un faisceau acyclique donc n'a pas de cohomologie supérieure.
+</p>
+<p>
+Ainsi il existe un antécédent dans \(\Hom(G,F)\) à l'identité dans \(\Hom(G,G)\), c'est-à-dire une section de \(F \rightarrow G\). Donc la suite est scindée.
+</p></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-6-3-4">Fin (Fine)<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-6-4" class="outline-4">
+<h4 id="sec-1-6-4"><span class="section-number-4">1.6.4</span> Suite spectrale de Frölisher</h4>
+<div class="outline-text-4" id="text-1-6-4">
+
+<ul>
+<li id="sec-1-6-4-1">Le cas Kahler<br/>
+Dégénère en page 1
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: </p>
+<p class="author">Author: </p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

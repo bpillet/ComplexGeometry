@@ -1,3 +1,11 @@
+#+TITLE: Géométrie Complexe
+#+AUTHOR: 
+#+DATE:
+#+LATEX_CLASS: amsdip
+#+LATEX_HEADER: \newtheorem{prop}{Proposition}
+#+LATEX_HEADER: \newtheorem{cor}{Corollaire}
+#+LATEX_HEADER: \newtheorem{thm}{Theoreme}
+#+LATEX_HEADER: \newtheorem{defi}{Définition}
 #+STARTUP: indent
 
 * 0
@@ -122,6 +130,8 @@ $X$ algébrique ssi $X$ est Kahler
 **** Sous-variétés
 ***** Espace des cycles                                    :CoursDeSerge:
 cf Cours de serge
+**** Exemples
+- [[./Exemples/K3.org][Surfaces K3]]
 ** [[./Cohomologie/Cohomologie.org][Cohomologie]]                                                       :ATTACH:
 :PROPERTIES:
 :Attachments: Cohomologie.org

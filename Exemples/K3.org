@@ -1,0 +1,52 @@
+#+TITLE: Surfaces K3
+#+AUTHOR: 
+#+DATE:
+# #+LATEX_CLASS: amsdip
+# #+LATEX_HEADER: \documentclass[12pt,makeidx]{amsart}
+#+LATEX_HEADER: \usepackage[couleur,draft]{/home/basile/Git/Latex/Headfiles/amsdip}
+#+LATEX_HEADER: \usepackage[utf8x]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \newtheorem{prop}{Proposition}
+#+LATEX_HEADER: \newtheorem{cor}{Corollaire}
+#+LATEX_HEADER: \newtheorem{lem}{Lemme}
+#+LATEX_HEADER: \newtheorem{thm}{Théoreme}
+#+LATEX_HEADER: \newtheorem{theorem}{Theorem}
+#+LATEX_HEADER: \newtheorem{defi}{Définition}
+#+LATEX_HEADER: \DeclareMathOperator{\Ext}{Ext}
+#+STARTUP: indent
+#+FILETAGS: K3
+
+
+Retour au [[../Programme.org][fichier général]]                                          :ATTACH:
+:PROPERTIES:
+:Attachments: Programme.org
+:ID:       3b1178f4-2aa4-47fd-a352-59ca87545ad6
+:END:
+
+* Surfaces K3
+** Définitions
+*** Définition de Huybrechts (GHJ)
+A K3 surface is a *compact*, *complex surface* $(X, J)$ with 
+- $h^{1,0}(X) = 0$ 
+- trivial canonical bundle. 
+
+** Propriétés
+- Toutes les surfaces K3 sont difféomorphes [Kunihiko Kodaira]
+  - Version plus précise \cite{Huybrechts} : 
+   - simplement connexe
+   - $b_2 = 22$
+   - $b_+ = 3$
+   - $b_- = 19$
+- Diamant de Hodge
+
+** Exemples
+- A double cover of the projective plane branched along a non-singular degree 6 curve is a genus 2 K3 surface.
+- A Kummer surface is the quotient of a two-dimensional abelian variety A by the action a → −a. This results in 16 singularities, at the 2-torsion points of A. The minimal resolution of this quotient is a genus 3 K3 surface.
+- A non-singular degree 4 surface in P3 is a genus 3 K3 surface.
+- The intersection of a quadric and a cubic in P4 gives genus 4 K3 surfaces.
+- The intersection of three quadrics in P5 gives genus 5 K3 surfaces.
+* Références
+- https://en.wikipedia.org/wiki/K3_surface
+
+** Base de donnée des K3 polarisées
+- A Database of Polarized K3 Surfaces (http://projecteuclid.org/euclid.em/1175789798)
