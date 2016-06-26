@@ -11,7 +11,7 @@
 * 0
 :PROPERTIES:
 :ID:       5ea17f44-adfb-4697-b098-c79f9879518d
-:END:
+:END:      
 ** Géométrie Riemannienne                                           :metric:
 *** Connection de Levi-Civitta
 **** Courbure
@@ -191,6 +191,20 @@ sous forme de graphe ?
 :commit_message: changements de trivial. O(k)
 :END:
 Faire une fiche dans GEOCOM sur les changements de trivialisation de O(k)
+
+*** Sur $\Pro^1$
+Recouvrement par des ouverts $U_0, U_\infty$ (isomorphes à $\C$) avec $U_{0\infty} \cong \C^*$. On a des coordonnées $\zeta$ et $\tilde{\zeta}$ sur $U_0$ et $U_\infty$.
+
+**** Avec des coordonnées sur les fibres
+Les fibres sur $U_0$ ont une coordonnée $\xi$ et sur $U_\infty$ une coordonnée $\tilde{\xi}$.
+
+Sur $U_{0\infty}$ on a la relation entre les coordonnées sur les fibres
+\[
+\tilde{\xi} = \zeta^{\pm k}\xi
+\]
+
+**** Avec des sections locales
+
 ** TODO Connexions Hermite-Einstein, correspondance avec les fibrés vectoriels semi-stables :NoteMath:GEOCOM:
 :PROPERTIES:
 :commit_message: Hermitian and Hermite-Einstein connections
