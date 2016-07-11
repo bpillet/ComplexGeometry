@@ -232,3 +232,17 @@ For the special case over Kähler manifolds this is the Donaldson-Uhlenbeck-Yau 
 - see [[https://ncatlab.org/nlab/show/Kobayashi-Hitchin+correspondence][Kobayashi-Hitchin correspondance]]
 - à relier avec l'article de Verbitsky
 
+** TODO Cohomologie de dimension infinie                          :NoteMath:
+:PROPERTIES:
+:commit_message: Cohomologie de dimension infinie
+:END:
+Note mathématique du [2016-06-21 mar. 15:36]
+
+Est-ce que $H^1(Z,\Oo_Z)$ peut être de dimension infinie même si $Z$ est compact ?
+
+Sur une variété Kahlérienne, on a la représentation de Hodge des espaces de Coh, et ça doit entraîner la compacité. D'autre part sur une variété Stein, les faisceaux de $\Oo$-modules n'ont pas de coh supérieure...
+
+*** Réponse de Christophe
+La théorie de Hodge marche pour n'importe quelle variété complexe compacte. Etant donnée une métrique hermitienne (il y en a plein), on peut construire un laplacien, qui est elliptique, les forme harmoniques sont donc en dimension finie. Cet espace de forme harmoniques représente les $H^p(\Omega^q)$
+
+Ce qui est mieux dans le cas Kahlérien, c'est que le laplacien métrique et le laplacien holomorphes sont liés par un facteur $2$, entre autre les formes harmoniques sont fermées et donc ces espaces de formes sont des sous-espaces de la coh de De Rham.
