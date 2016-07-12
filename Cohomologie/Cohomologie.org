@@ -206,6 +206,11 @@ H^{p,q}_{Dol}(\Delta,\underline{\C}) = 0 \quad \text{ pour } q \geq 1
 \]
 ** Relations
 *** Vanishing Thm
+**** TODO Cartan Thm A et B
+Pas de coh supérieure des faisceaux cohérents sur une variété Stein.
+
+https://en.wikipedia.org/wiki/Cartan%27s_theorems_A_and_B
+
 **** Grothendieck
 Pas de cohomologie des faisceaux en degré supérieur à la dimension. Dans tout le cadre le plus général possible.
 \begin{theorem}[Grothendieck vanishing]
@@ -222,6 +227,17 @@ for $q>0$.
 ***** Kodaira_Nakano
 *** Dualités
 **** Poincaré
+cd Demailly pour plus d'info (16.20)
+
+If $X$ is an oriented smooth manifold, the bilinear map
+\[
+H^{n-q}_c(X,\R) \times H^q(X,\R) \to \R \quad 
+([f],[g]) \mapsto \int_X f\wedge g
+\]
+is well defined and identifies $H^q(X,\R)$ to the dual of $H_c^{n-q}(X,\R)$.
+
+
+***** Version simple
 Variété compacte sans bord, orientée de dimension $n$, alors
 \[
 H^k(M,\C) = H^{n-k}(M,\C)^*
@@ -236,7 +252,7 @@ H_{k}(X\times Y,\Q) \simeq \bigoplus_{p+q=k} H_p(X,\Q) \otimes_\C H_q(Y,\Q)
 Si $X$, $Y$ variétés complexes dont l'une au moins est compacte. $\Ff$ et $\Gg$ des faisceaux cohérents sur $X$ et $Y$ respectivement.
 [Formule de Künneth pour la cohomologie, \cite{Demailly} Chap IV par. 15 et Chap IX par. 5.B, 5.23]
 \begin{equation}\label{CoKunneth}
-H_{k}(X \times Y,\Ff \boxtimes \Gg) \simeq \bigoplus_{p+q=k} H_p(X,\Ff) \otimes_\C H_q(Y,\Gg)
+H^{k}(X \times Y,\Ff \boxtimes \Gg) \simeq \bigoplus_{p+q=k} H^p(X,\Ff) \otimes_\C H^q0(Y,\Gg)
 \end{equation}
 
 **** Autre référence http://mathoverflow.net/questions/34673/kunneth-formula-for-sheaf-cohomology-of-varieties
