@@ -251,7 +251,9 @@ Ce qui est mieux dans le cas Kahlérien, c'est que le laplacien métrique et le 
 Serre (/Un théorème de dualité/) donne une référence pour tous les faisceaux cohérents sur une variété complexe compacte :
 - *H. Cartan* et *J.-P. Serre*, /Un théorème de finitude concernant les variétés analytiques compactes/. Comptes rendu de l'académie des sciences de Paris 237 (1953) p.128--130
 
-
+** Factorisation de Stein
+$f : X \to Y$ propre, alors il existe $X'$ tel que $f$ se factorise en
+$X \to X' \to Y$ avec $f : X' \to Y$ propre à fibres géométriquement connexe ($f_* \Oo_{X'} = \Oo_Y$) et $X \to X'$ revêtement fini.
 
 ** Dualité de Serre                                        :GEOCOM:NoteMath:
    :PROPERTIES:
