@@ -276,3 +276,15 @@ en tant qu'espaces de Fréchet.
 :gbv-ppn: GDZPPN002056453
 :ADBID: 210864
 
+** TODO Théorème de Leray-Hirsch       :GEOCOM:Kunneth:LerayHirsch:NoteMath:
+   :PROPERTIES:
+   :commit_message: TODO : Ajouter thm de Leray-Hirsch à GeoCom
+   :END:
+ Note mathématique du [2016-08-25 jeu. 17:29]
+
+- [ ] Ajouter dans la partie "formule de Kunneth".
+
+*** Références
+- https://en.wikipedia.org/wiki/Leray%E2%80%93Hirsch_theorem
+- Voisin : lemme 7.32 p.171
+
