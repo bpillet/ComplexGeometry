@@ -288,3 +288,13 @@ en tant qu'espaces de Fréchet.
 - https://en.wikipedia.org/wiki/Leray%E2%80%93Hirsch_theorem
 - Voisin : lemme 7.32 p.171
 
+** Références
+- Barlet : /How to .../
+
+** TODO Ajouter la n-complétude à Stein.org                   :GEOCOM:Stein:
+:PROPERTIES:
+:ASSIGNED: [2016-08-26 ven. 15:32]
+:commit_message: TODO : Ajout n-completeness
+:END:
+# C-c C-s : pour planifier
+
