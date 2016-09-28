@@ -298,3 +298,19 @@ en tant qu'espaces de Fréchet.
 :END:
 # C-c C-s : pour planifier
 
+** Jet bundles
+
+*** Définition
+#+Begin_defi
+Soit $\Ff$ un faisceau de \(\Oo\)-modules sur une variété $(M,\Oo)$, alors $J^r(\Ff)$ est le faisceau des \(r\)-jets des sections de $\Ff$...
+(( À préciser : Est ce qu'on doit supposer $\Ff$ fibré ? ))
+#+End_defi
+*** Opérateur différentiel
+
+*** Théorème de Peetre
+
+*** Références
+- Demailly
+- https://en.wikipedia.org/wiki/Jet_bundle
+- https://en.wikipedia.org/wiki/Differential_operator#Coordinate-independent_description
+- https://en.wikipedia.org/wiki/Peetre_theorem
