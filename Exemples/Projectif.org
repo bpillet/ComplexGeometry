@@ -70,17 +70,23 @@ dans la catégorie des variétés analytiques au dessus de $X$.
 
 *** ONGOING Fibré tautologiques et universels
 
-On définit le fibré en droites $\Oo_E(1)$ sur $\Pro(E)$ comme...?
+On définit le fibré en droites $\Oo_E(1) = \Oo_{\Pro(E)}(1)$ sur $\Pro(E)$ comme...?
 
 Remarque on dit que $E$ est ample sur $X$ si $\Oo_E(1)$ est ample sur $\Pro(E)$ (( ref : Hartshorne mais pas AG ))
 
 *** Sections globales
+On note $p : E \to X$ et $\Pro(p) : \Pro(E) \to X$
+
 \begin{equation}
-H^0(\Pro(E), \Oo_E(1)) \simeq E
+\Pro(p)_*\Oo_E(1) \simeq \Oo_X(E)
 \end{equation}
+et donc en particulier
+\begin{equation}
+H^0(\Pro(E),\Oo_E(1)) \simeq H^0(X,E)
+\end{equation}
+C'est une première indication de pourquoi l'/amplitude/ de $E$ peut être définie en terme de l'amplitude de $\Oo_E(1)$.
 
 ** Suite exacte d'Euler
-On note $p : E \to X$ et $\Pro(p) : \Pro(E) \to X$
 \begin{equation}
 0 \to \Omega_{\Pro(p)} \to \Pro(p)^* E \otimes \Oo_E(-1) \to \Oo_{\Pro(E)} \to 0
 \end{equation}
