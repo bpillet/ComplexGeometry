@@ -1,4 +1,6 @@
 #+STARTUP: indent
+#+TODO: TEXIFY |
+#+TODO: TODO TOFIDDLE
 
 * Retour au [[./Programme.org][Fichier principal]]                                        :ATTACH:
 :PROPERTIES:
@@ -8,7 +10,24 @@
 
 
 * Variétés de Stein
-** Définition
+
+** Espace de Stein
+issue de https://www.encyclopediaofmath.org/index.php/Stein_space
+
+
+A paracompact complex analytic space with the following properties:
+
+1) any compact analytic subset in is finite (cf. Analytic set 6));
+
+2) any compact set has an open neighbourhood in such that the holomorphically convex hull in that neighbourhood, is compact (weak holomorphic convexity). 
+
+
+[1] 	H. Grauert, R. Remmert, "Theory of Stein spaces" , Springer (1977) (Translated from German)
+[2] 	J.-P. Demailly, "Un example de fibré holomorphe non de Stein à fibre ayant pour base le disque ou le plan" Invent. Math. , 48 : 3 (1978) pp. 293–302
+[3a] 	A.L. Onishchik, "Stein spaces" J. Soviet Math. , 4 : 5 (1974) pp. 540–554 Itogi Nauk. i Tekhn. Algebra.Topol. Geom. , 11 (1974) pp. 125–151
+[3b] 	A.L. Onishchik, "Pseudoconvexity in the theory of complex spaces" J. Soviet Math. , 14 : 4 (1977) pp. 1363–1407 Itogi Nauk. i Tekhn. Algebra. Topol. Geom. , 15 (1977) pp. 93–171
+
+** Variété (manifold) de Stein
 Une variété complexe $X$ (lisse) est Stein si
 - $X$ est holomorphiquement convexe
 - $X$ is holomorphically separable, i.e. if $x \neq y$ are two points in $X$, then there is a holomorphic function
@@ -72,6 +91,21 @@ pour les ouverts de $\C^n$
 *** Higher
 https://ncatlab.org/nlab/show/Structured+Spaces
 
+*** TEXIFY about the Cartan-Serre theorem:
+issue de https://math.stackexchange.com/questions/780729/applications-of-stein-spaces-in-algebraic-geometry
+
+Theorem(Cartan-Serre): 
+    Let X be a compact holomorphic variety, and ℱ a coherent sheaf on X. Then, H^p(X,ℱ) is a finite dimensional space for all p⩾0.
+
+This is, undeniably, one of the most important theorems in any introduction to analytic geometry. The proof of this theorem makes huge use of Stein spaces.
+
+The guiding principle behind the use of Stein spaces in the proof is simple. Whenever we want to compute cohomology, we like to have a more concrete way of getting a handle on it.
+Usually this presents itself in the form of a Leray cover $\mathfrak{U}$ for the sheaf $\Ff$ (a cover where the restriction of the sheaf to every finite intersection is acyclic) on a space X. This is because Leray's theorem then tells us that the Čech cohomology \v{H}^i(\mathfrak{U},ℱ) coincides with the usual definition of cohomology as H^i(X,ℱ)=(\Rr^i\Gamma)(ℱ).
+
+In algebraic geometry, this principle manifests itself fairly aggressively. I am sure you have appealed to the fact that if X is a separated quasicompact scheme, and ℱ a coherent sheaf on X, then H^i(X,ℱ) can be computed as Hˇi(\mathfrak{U},ℱ), where \mathfrak{U} is any finite open cover of X. This is merely Leray's theorem, along with the observation that Serre's criterion for affiness implies that \mathfrak{U} is a Leray cover for ℱ on X.
+
+Stein spaces and Cartan's theorems play the exact same role in complex manifolds that affine varieties and Serre's criterion play in algebraic geometry. Namely, Cartan's theorems tell us that if X
+is an analytic space and ℱ a coherent sheaf, then any cover \mathfrak{U} by Stein manifolds will be a Leray cover. Thus, we may appeal to Leray's theorem to conclude that we can compute the sheaf cohomology as the Čech cohomology of this cover.
 
 * Références
 -https://en.wikipedia.org/wiki/Stein_manifold
