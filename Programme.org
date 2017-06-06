@@ -314,3 +314,75 @@ Soit $\Ff$ un faisceau de \(\Oo\)-modules sur une variété $(M,\Oo)$, alors $J^
 - https://en.wikipedia.org/wiki/Jet_bundle
 - https://en.wikipedia.org/wiki/Differential_operator#Coordinate-independent_description
 - https://en.wikipedia.org/wiki/Peetre_theorem
+
+** Hyperbolicité, MMP et Abondance
+Article de Voisin : https://webusers.imj-prg.fr/~claire.voisin/Articlesweb/harvard.pdf
+
+*** General setting
+
+| name /     | Kodaira   | curvature | canonical | hyperbolicity       |
+| example    | dimension | (vague)   | (vague)   | (conjectural)       |
+|------------+-----------+-----------+-----------+---------------------|
+| Fano       | $-\infty$ | positive  | negative  | [MMP, Abundance] :  |
+|            |           |           |           | Covered by          |
+|            |           |           |           | rational curves     |
+|------------+-----------+-----------+-----------+---------------------|
+| K3, HK     | $0$       | flat      | trivial   | [Kobayashi] :       |
+| Abelian    |           |           |           | Entire curves       |
+| CY         |           |           |           | through any         |
+|            |           |           |           | point in any        |
+|            |           |           |           | direction           |
+|------------+-----------+-----------+-----------+---------------------|
+| general    | maximal   | negative  | positive  | [Green-Griffiths] : |
+| type       |           |           |           | entire curves       |
+|            |           |           |           | constrained to      |
+|            |           |           |           | subvarieties        |
+
+*** Other dimensions                                    
+
+Other dimensions conjecturally reduce to the previous cases.
+
+**** Dimension de kodaira et additivité
+https://en.wikipedia.org/wiki/Kodaira_dimension
+
+    Let $\pi: V \to W$ be an analytic fiber bundle of compact complex manifolds, meaning that $\pi$ is locally a product (and so all fibers are isomorphic as complex manifolds). Suppose that the fiber $F$ is a Moishezon manifold. Then
+    \[
+    \kappa (V)=\kappa (F)+\kappa (W).
+    \]
+
+**** Itaka fibration
+Let $X$ be a variety of nonnegative Kodaira dimension over a field of characteristic zero, and let $B$ be the canonical model of $X$, $B = Proj R(X, K_X)$; the dimension of $B$ is equal to the Kodaira dimension of $X$. There is a natural rational map $X \to B$; any morphism obtained from it by blowing up $X$ and $B$ is called the Iitaka fibration. The minimal model and abundance conjectures would imply that the general fiber of the Iitaka fibration can be arranged to be a Calabi-Yau variety, which in particular has Kodaira dimension zero.
+
+*** Abondance
+
+**** Dimension de Kodaira numérique
+\[
+\kappa(X) = \limsup_{m>0} \dfrac{\log\left(h^0(X,mK_X)\right)}{\log(m)}
+\]
+et pour $A$ diviseur ample qcq
+\[
+\kappa_{\text{num}}(X) = \sup_{k>0}\limsup_{m>0} \dfrac{\log\left(h^0(X,mK_X + kA)\right)}{\log(m)}
+\]
+
+**** Conjecture d'abondance
+\[
+\kappa_{\text{num}} = \kappa
+\]
+
+It is obvious that 
+\[
+\kappa_{\text{num}} \geq \kappa
+\]
+it is called abundance because there would be abundance of sections of powers of the canonical bundle as soon as it has enough numerical bigness.
+
+
+**** Théorème de Nakayama
+Nakayama proved the abundance conjecture for a non-minimal algebraic
+variety whose numerical Kodaira dimension is equal to 0:
+
+Theorem. Let $X$ be a smooth projective variety. Assume that the function
+$h^0 (X, mK_X + A)$ is bounded (and non vanishing) when $m \to\infty$ for arbitrarily fixed ample divisor $A$. Then there exists a positive integer $m$ such that $H^0 (X, mK_X ) \neq 0$.
+
+
+
+
