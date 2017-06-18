@@ -1,4 +1,7 @@
+#+TITLE: Stein
 #+STARTUP: indent
+#+CATEGORY: GeoCom
+#+FILETAGS: Stein
 #+TODO: TEXIFY |
 #+TODO: TODO TOFIDDLE
 

@@ -1,4 +1,8 @@
+#+TITLE: Géométrie Algébrique
 #+STARTUP: indent
+#+CATEGORY: GeoCom
+#+FILETAGS: GéométrieAlgébrique
+
 
 * Retour au [[../Programme.org][fichier général]]                                          :ATTACH:
 :PROPERTIES:

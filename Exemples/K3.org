@@ -1,6 +1,8 @@
 #+TITLE: Surfaces K3
 #+AUTHOR: 
 #+DATE:
+#+CATEGORY: GeoCom-eg
+#+FILETAGS: K3
 # #+LATEX_CLASS: amsdip
 # #+LATEX_HEADER: \documentclass[12pt,makeidx]{amsart}
 #+LATEX_HEADER: \usepackage[couleur,draft]{/home/basile/Git/Latex/Headfiles/amsdip}
@@ -14,7 +16,7 @@
 #+LATEX_HEADER: \newtheorem{defi}{Définition}
 #+LATEX_HEADER: \DeclareMathOperator{\Ext}{Ext}
 #+STARTUP: indent
-#+FILETAGS: K3
+
 
 
 Retour au [[../Programme.org][fichier général]]                                          :ATTACH:

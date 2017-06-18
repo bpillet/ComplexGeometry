@@ -1,14 +1,18 @@
 #+TITLE: Espaces projectifs
 #+AUTHOR: 
 #+DATE:
+#+STARTUP: indent
+#+CATEGORY: GeoCom-eg
+#+FILETAGS: Projectif
+#+TODO: TODO ONGOING VERIFY |
+
 #+LATEX_CLASS: amsdip
 #+LATEX_HEADER: \newtheorem{prop}{Proposition}
 #+LATEX_HEADER: \newtheorem{cor}{Corollaire}
 #+LATEX_HEADER: \newtheorem{thm}{Theoreme}
 #+LATEX_HEADER: \newtheorem{defi}{Définition}
-#+STARTUP: indent
 
-#+TODO: TODO ONGOING VERIFY |
+
 
 * Retour au [[file+emacs:../Programme.org][Fichier général]]
 

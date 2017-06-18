@@ -1,19 +1,22 @@
 #+TITLE: Géométrie Complexe
 #+AUTHOR: 
 #+DATE:
+#+STARTUP: indent
+#+CATEGORY: GeoCom
+#+FILETAGS: Main
+
 #+LATEX_CLASS: amsdip
 #+LATEX_HEADER: \newtheorem{prop}{Proposition}
 #+LATEX_HEADER: \newtheorem{cor}{Corollaire}
 #+LATEX_HEADER: \newtheorem{thm}{Theoreme}
 #+LATEX_HEADER: \newtheorem{defi}{Définition}
-#+STARTUP: indent
 
 * 0
 :PROPERTIES:
 :ID:       5ea17f44-adfb-4697-b098-c79f9879518d
 :END:      
 ** Géométrie Riemannienne                                           :metric:
-*** Connection de Levi-Civitta
+*** [#B] Connection de Levi-Civitta
 **** Courbure
 ***** Ricci
 ***** Gauss

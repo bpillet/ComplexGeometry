@@ -1,6 +1,9 @@
 #+TITLE: Cohomologie
 #+AUTHOR: 
 #+DATE:
+#+STARTUP: indent
+#+CATEGORY: GeoCom
+#+FILETAGS: Cohomologie
 # #+LATEX_CLASS: amsdip
 # #+LATEX_HEADER: \documentclass[12pt,makeidx]{amsart}
 #+LATEX_HEADER: \usepackage[couleur,draft]{/home/basile/Git/Latex/Headfiles/amsdip}
@@ -13,8 +16,6 @@
 #+LATEX_HEADER: \newtheorem{theorem}{Theorem}
 #+LATEX_HEADER: \newtheorem{defi}{Définition}
 #+LATEX_HEADER: \DeclareMathOperator{\Ext}{Ext}
-#+STARTUP: indent
-#+FILETAGS: Cohomologie
 
 Retour au [[../Programme.org][fichier général]]                                          :ATTACH:
 :PROPERTIES:
