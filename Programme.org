@@ -389,3 +389,13 @@ $h^0 (X, mK_X + A)$ is bounded (and non vanishing) when $m \to\infty$ for arbitr
 
 
 
+
+** TODO Semi-continuity
+- Siu's theorem\\
+  https://en.wikipedia.org/wiki/Siu%27s_semicontinuity_theorem
+- Some content about Semi-continuity\\
+  https://en.wikipedia.org/wiki/Semi-continuity
+- Demailly's generalisation
+- Example and application, in particular in Algebraic Geometry, number of intersection and other stuffs which might be seen as Lelong numbers.
+- Find a moral for these theorems.
+- Find a place where to put them.
